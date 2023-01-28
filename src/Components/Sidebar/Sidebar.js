@@ -65,12 +65,14 @@ const Sidebar = ({ toggle, setToggle, sidebar, setSidebar, showSidebar }) => {
                                 setToggle(!toggle);
                             }}
                         />
-                        {/* <Image
-                            src=""
+
+                        <Image
+                            src="https://c4.wallpaperflare.com/wallpaper/452/930/411/batman-dc-comics-logo-wallpaper-preview.jpg"
+                            alt="LOGO"
                             width={43}
                             height={43}
                             className=" ms-5 "
-                        /> */}
+                        />
                     </NavIcon>
                     <TopBar />
                 </Nav>

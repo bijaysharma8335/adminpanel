@@ -6,10 +6,10 @@ import * as RiIcons from "react-icons/ri";
 import { MdCategory } from "react-icons/md";
 import { BiNotepad, BiDetail } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
-import { TbDiscount, TbTruckReturn } from "react-icons/tb";
+import { TbDiscount, TbFileInvoice, TbTruckReturn } from "react-icons/tb";
 import { IoIosAddCircle } from "react-icons/io";
 import { AiFillEdit } from "react-icons/ai";
-import { BsList } from "react-icons/bs";
+import { BsCalculatorFill, BsList } from "react-icons/bs";
 import { HiOutlineViewGrid } from "react-icons/hi";
 
 export const SidebarData = [
@@ -178,6 +178,27 @@ export const SidebarData = [
                 title: "Stock Return",
                 path: "/stock/return",
                 icon: <TbTruckReturn />,
+            },
+        ],
+    },
+
+    {
+        title: "Accounts",
+        path: "#",
+        icon: <BsCalculatorFill />,
+        iconClosed: <RiIcons.RiArrowDownSFill />,
+        iconOpened: <RiIcons.RiArrowUpSFill />,
+
+        subNav: [
+            {
+                title: "Expenses",
+                path: "/stock/list",
+                icon: <BsList />,
+            },
+            {
+                title: "Invoices",
+                path: "/stock/return",
+                icon: <TbFileInvoice />,
             },
         ],
     },

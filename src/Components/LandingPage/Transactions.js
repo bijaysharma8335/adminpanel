@@ -1,6 +1,6 @@
 import React from "react";
-import { Table } from "react-bootstrap";
-import { Customer } from "../Customers/constants";
+import { Image, Table } from "react-bootstrap";
+import { Customers } from "../../constants/Customers";
 
 const Transactions = () => {
     return (
@@ -10,7 +10,7 @@ const Transactions = () => {
                 <thead className="cursor">
                     <tr>
                         <th>ID</th>
-                        <th>Item Name</th>
+                        <th>Item </th>
                         <th>Item Category</th>
                         <th>Customer Name</th>
                         <th>Payment Info</th>
@@ -19,11 +19,20 @@ const Transactions = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {Customer.map((elem, index) => {
+                    {Customers.map((elem, index) => {
                         return (
                             <tr key={index} className-="p-5">
                                 <th scope="row">{elem.id}</th>
-                                <td>{elem.item}</td>
+                                <td>
+                                    <Image
+                                        src={elem.img}
+                                        alt=""
+                                        width={50}
+                                        height={50}
+                                        className="mx-1"
+                                    />
+                                    {elem.item}
+                                </td>
                                 <td>{elem.category}</td>
                                 <td>{elem.customer}</td>
                                 <td>{elem.payment}</td>
@@ -31,7 +40,7 @@ const Transactions = () => {
                                 <td>
                                     <span
                                         className={
-                                            elem.status === "delivered"
+                                            elem.status === "completed"
                                                 ? " bg-success p-1 text-white rounded fw-bold"
                                                 : "bg-warning p-1  text-white rounded fw-bold"
                                         }
