@@ -29,18 +29,15 @@ const ProductLeftPanel = () => {
                 </div>
             </Card>
             <Card className="p-3 d-flex my-2 ">
-                <span className="fw-bold my-2">
+                <span
+                    className="fw-bold my-2 title-head"
+                    onClick={() => setToggle(!toggle)}
+                >
                     Categories
                     {!toggle ? (
-                        <FaChevronUp
-                            className="float-end fw-bold"
-                            onClick={() => setToggle(!toggle)}
-                        />
+                        <FaChevronUp className="float-end fw-bold text-dark" />
                     ) : (
-                        <FaChevronDown
-                            className="float-end fw-bold"
-                            onClick={() => setToggle(!toggle)}
-                        />
+                        <FaChevronDown className="float-end fw-bold text-dark" />
                     )}
                 </span>
                 {toggle && (
@@ -55,154 +52,117 @@ const ProductLeftPanel = () => {
                         />
                         {/*----------------------------  Game Acessories  -----------------------*/}
 
-                        <span className="fw-bold my-2 cursor">
+                        <span
+                            className="fw-bold my-2 title-head"
+                            onClick={() => setToggleGame(!toggleGame)}
+                        >
                             Game Acessories
-                            {!toggleGame ? (
-                                <FaChevronUp
-                                    className="float-end fw-bold"
-                                    onClick={() => setToggleGame(!toggleGame)}
-                                />
-                            ) : (
-                                <FaChevronDown
-                                    className="float-end fw-bold"
-                                    onClick={() => setToggleGame(!toggleGame)}
-                                />
-                            )}
+                            <FaChevronDown className="float-end fw-bold text-dark" />
                         </span>
 
                         {toggleGame && (
-                            <Row className="mx-1 cursor">
-                                <span>Lighting Keyboard</span>
-                                <span>Remote</span>
-                                <span>Oculus VR</span>
-                                <span>PLayStation 4</span>
+                            <Row className="mx-1 ">
+                                <span className="title-head">
+                                    Lighting Keyboard
+                                </span>
+                                <span className="title-head">Remote</span>
+                                <span className="title-head">Oculus VR</span>
+                                <span className="title-head">
+                                    PLayStation 4
+                                </span>
                             </Row>
                         )}
                         {/*----------------------------  Game Acessories  -----------------------*/}
 
                         {/*---------------------------- Bags Section  -----------------------*/}
 
-                        <span className="fw-bold my-2">
+                        <span
+                            className="fw-bold my-2 title-head"
+                            onClick={() => setToggleBag(!toggleBag)}
+                        >
                             Bags
-                            {!toggleBag ? (
-                                <FaChevronUp
-                                    className="float-end fw-bold"
-                                    onClick={() => setToggleBag(!toggleBag)}
-                                />
-                            ) : (
-                                <FaChevronDown
-                                    className="float-end fw-bold"
-                                    onClick={() => setToggleBag(!toggleBag)}
-                                />
-                            )}
+                            <FaChevronDown className="float-end fw-bold text-dark" />
                         </span>
                         {toggleBag && (
                             <Row className="mx-1">
-                                <span>School Bags</span>
-                                <span>Travelling Bags</span>
+                                <span className="title-head">School Bags</span>
+                                <span className="title-head">
+                                    Travelling Bags
+                                </span>
                             </Row>
                         )}
                         {/*---------------------------- Bags Section  -----------------------*/}
 
                         {/*---------------------------- Flower Port  -----------------------*/}
 
-                        <span className="fw-bold my-2">
+                        <span
+                            className="fw-bold my-2 title-head"
+                            onClick={() => setToggleFlower(!toggleFlower)}
+                        >
                             Flower Port
-                            {!toggleFlower ? (
-                                <FaChevronUp
-                                    className="float-end fw-bold"
-                                    onClick={() =>
-                                        setToggleFlower(!toggleFlower)
-                                    }
-                                />
-                            ) : (
-                                <FaChevronDown
-                                    className="float-end fw-bold"
-                                    onClick={() =>
-                                        setToggleFlower(!toggleFlower)
-                                    }
-                                />
-                            )}
+                            <FaChevronDown className="float-end fw-bold text-dark" />
                         </span>
                         {toggleFlower && (
                             <Row className="mx-1">
-                                <span>Wooden Port</span>
-                                <span>Pattern Port</span>
+                                <span className="title-head">Wooden Port</span>
+                                <span className="title-head">Pattern Port</span>
                             </Row>
                         )}
                         {/*---------------------------- Flower Port Section -----------------------*/}
 
                         {/*----------------------------  Watch Section  -----------------------*/}
 
-                        <span className="fw-bold my-2">
+                        <span
+                            className="fw-bold my-2 title-head"
+                            onClick={() => setToggleWatch(!toggleWatch)}
+                        >
                             Watch
-                            {!toggleWatch ? (
-                                <FaChevronUp
-                                    className="float-end fw-bold"
-                                    onClick={() => setToggleWatch(!toggleWatch)}
-                                />
-                            ) : (
-                                <FaChevronDown
-                                    className="float-end fw-bold"
-                                    onClick={() => setToggleWatch(!toggleWatch)}
-                                />
-                            )}
+                            <FaChevronDown className="float-end fw-bold text-dark" />
                         </span>
                         {toggleWatch && (
                             <Row className="mx-1">
-                                <span>Wall Clock</span>
-                                <span>Smart Watch</span>
-                                <span>Rado Watch</span>
-                                <span>Fast Track Watch</span>
-                                <span>Noise Watch</span>
+                                <span className="title-head">Wall Clock</span>
+                                <span className="title-head">Smart Watch</span>
+                                <span className="title-head">Rado Watch</span>
+                                <span className="title-head">
+                                    Fast Track Watch
+                                </span>
+                                <span className="title-head">Noise Watch</span>
                             </Row>
                         )}
-                        {/*---------------------------- Lehenga Section  -----------------------*/}
+                        {/*---------------------------- Watch Section  -----------------------*/}
 
-                        {/*---------------------------- Midies Section  -----------------------*/}
-                        <span className="fw-bold my-2">
+                        {/*---------------------------- Accessories Section  -----------------------*/}
+                        <span
+                            className="fw-bold my-2 title-head"
+                            onClick={() =>
+                                setToggleAccessories(!toggleAccessories)
+                            }
+                        >
                             Accessories
-                            {!toggleAccessories ? (
-                                <FaChevronUp
-                                    className="float-end fw-bold"
-                                    onClick={() =>
-                                        setToggleAccessories(!toggleAccessories)
-                                    }
-                                />
-                            ) : (
-                                <FaChevronDown
-                                    className="float-end fw-bold"
-                                    onClick={() =>
-                                        setToggleAccessories(!toggleAccessories)
-                                    }
-                                />
-                            )}
+                            <FaChevronDown className="float-end fw-bold text-dark" />
                         </span>
                         {toggleAccessories && (
                             <Row className="mx-1">
-                                <span>Note Diaries</span>
-                                <span>Fold Diaries</span>
+                                <span className="title-head">Note Diaries</span>
+                                <span className="title-head">Fold Diaries</span>
                             </Row>
                         )}
-                        {/*---------------------------- Midies Section  -----------------------*/}
+                        {/*---------------------------- Accessories Section  -----------------------*/}
                     </Row>
                 )}
             </Card>
-            {/*------------------------- Bralets section----------------------------  */}
-            {/*------------------------- Size section----------------------------  */}
+
             <Card className="p-3 d-flex my-2 ">
-                <span className="fw-bold">
+                <span
+                    className="fw-bold title-head"
+                    onClick={() => setToggleSize(!toggleSize)}
+                >
                     Select Size
                     {!toggleSize ? (
-                        <FaChevronUp
-                            className="float-end fw-bold"
-                            onClick={() => setToggleSize(!toggleSize)}
-                        />
+                        <FaChevronUp className="float-end fw-bold text-dark" />
                     ) : (
-                        <FaChevronDown
-                            className="float-end fw-bold"
-                            onClick={() => setToggleSize(!toggleSize)}
-                        />
+                        <FaChevronDown className="float-end fw-bold text-dark" />
                     )}
                 </span>
                 {toggleSize && (
@@ -232,17 +192,17 @@ const ProductLeftPanel = () => {
             {/*------------------------- Size section----------------------------  */}
             {/* -------------------Color section  ---------------------------------*/}
             <Card className="p-3 d-flex my-2 ">
-                <span className="fw-bold">
+                <span className="fw-bold title-head"   onClick={() => setToggleColor(!toggleColor)}>
                     Select Color
                     {!toggleColor ? (
                         <FaChevronUp
-                            className="float-end fw-bold"
-                            onClick={() => setToggleColor(!toggleColor)}
+                            className="float-end fw-bold text-dark"
+                          
                         />
                     ) : (
                         <FaChevronDown
-                            className="float-end fw-bold"
-                            onClick={() => setToggleColor(!toggleColor)}
+                            className="float-end fw-bold text-dark"
+                           
                         />
                     )}
                 </span>
@@ -337,17 +297,17 @@ const ProductLeftPanel = () => {
             </Card>
             {/* -------------------Color section  ---------------------------------*/}
             <Card className="p-3 d-flex my-2 ">
-                <span className="fw-bold">
+                <span className="fw-bold title-head" onClick={() => setTogglePrice(!togglePrice)}>
                     Pricing Range
                     {!togglePrice ? (
                         <FaChevronUp
-                            className="float-end fw-bold"
-                            onClick={() => setTogglePrice(!togglePrice)}
+                            className="float-end fw-bold text-dark"
+                            
                         />
                     ) : (
                         <FaChevronDown
-                            className="float-end fw-bold"
-                            onClick={() => setTogglePrice(!togglePrice)}
+                            className="float-end fw-bold text-dark"
+                          
                         />
                     )}
                 </span>
@@ -378,17 +338,17 @@ const ProductLeftPanel = () => {
                 )}
             </Card>
             <Card className="p-3 d-flex my-2 ">
-                <span className="fw-bold my-2">
+                <span className="fw-bold my-2 title-head"  onClick={() => setToggleRating(!toggleRating)}>
                     Select Rating
                     {!toggleRating ? (
                         <FaChevronUp
-                            className="float-end fw-bold"
-                            onClick={() => setToggleRating(!toggleRating)}
+                            className="float-end fw-bold text-dark"
+                           
                         />
                     ) : (
                         <FaChevronDown
-                            className="float-end fw-bold"
-                            onClick={() => setToggleRating(!toggleRating)}
+                            className="float-end fw-bold text-dark"
+                           
                         />
                     )}
                 </span>
