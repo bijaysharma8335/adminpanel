@@ -9,6 +9,9 @@ import OrderList from "./Components/Orders/OrderList";
 import OrderDetail from "./Components/Orders/OrderDetail";
 import ProductList from "./Components/Products/ProductList";
 import ProductGrid from "./Components/Products/ProductGrid";
+import ProductDetail from "./Components/Products/ProductDetail";
+import AddProduct from "./Components/Products/AddProduct";
+import EditProduct from "./Components/Products/EditProduct";
 
 const App = () => {
    
@@ -70,9 +73,30 @@ const App = () => {
                 />
                 <Route
                     exact
+                    path="/product/add"
+                    element={
+                        <AddProduct toggle={toggle} setToggle={setToggle} />
+                    }
+                />
+                <Route
+                    exact
+                    path="/product/edit"
+                    element={
+                        <EditProduct toggle={toggle} setToggle={setToggle} />
+                    }
+                />
+                <Route
+                    exact
                     path="/product/grid"
                     element={
                         <ProductGrid toggle={toggle} setToggle={setToggle} />
+                    }
+                />
+                <Route
+                    exact
+                    path="/product/detail"
+                    element={
+                        <ProductDetail toggle={toggle} setToggle={setToggle} />
                     }
                 />
                 <Route

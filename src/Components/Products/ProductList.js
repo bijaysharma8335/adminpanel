@@ -68,7 +68,14 @@ const ProductList = ({ toggle }) => {
                                             </td>
                                             <td>
                                                 <Row>
-                                                    <span className="fw-bold title-head">
+                                                    <span
+                                                        className="fw-bold title-head"
+                                                        onClick={() =>
+                                                            navigate(
+                                                                "/product/detail"
+                                                            )
+                                                        }
+                                                    >
                                                         {elem.item}
                                                     </span>{" "}
                                                 </Row>
