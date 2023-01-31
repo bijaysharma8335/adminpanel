@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Card, Container, Form, Row } from "react-bootstrap";
 
-import { couponStatus, typeArray } from "../../constants/constant";
+import { categories, couponStatus, typeArray } from "../../constants/constant";
 
 const EditCoupon = ({ toggle, setToggle }) => {
     return (
@@ -78,7 +78,7 @@ const EditCoupon = ({ toggle, setToggle }) => {
                                                         Open this Select
                                                         Category
                                                     </option>
-                                                    {couponStatus.map(
+                                                    {categories.map(
                                                         (elem, index) => {
                                                             return (
                                                                 <option

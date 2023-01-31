@@ -5,8 +5,10 @@ import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { MdAddCircle } from "react-icons/md";
 import { Coupons } from "../../constants/Coupons";
+import { useNavigate } from "react-router-dom";
 
 const CouponList = ({ toggle }) => {
+    const navigate = useNavigate();
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -15,7 +17,7 @@ const CouponList = ({ toggle }) => {
                         <h3>Coupons List</h3>
                     </div>
                     <div>
-                        <Button>
+                        <Button onClick={() => navigate("/coupon/add")}>
                             <MdAddCircle className="text-white me-1" />
                             AddCoupon
                         </Button>

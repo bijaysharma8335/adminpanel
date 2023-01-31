@@ -21,6 +21,7 @@ import AddCoupon from "./Components/Coupons/AddCoupon";
 import EditCoupon from "./Components/Coupons/EditCoupon";
 import StockList from "./Components/Inventory/StockList";
 import StockReturn from "./Components/Inventory/StockReturn";
+import Profile from './Components/Profile';
 
 const App = () => {
     const [toggle, setToggle] = useState(false);
@@ -175,6 +176,13 @@ const App = () => {
                     path="/stock/return"
                     element={
                         <StockReturn toggle={toggle} setToggle={setToggle} />
+                    }
+                />
+                <Route
+                    exact
+                    path="/profile"
+                    element={
+                        <Profile toggle={toggle} setToggle={setToggle} />
                     }
                 />
             </Routes>
