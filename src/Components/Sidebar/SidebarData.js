@@ -65,7 +65,7 @@ export const SidebarData = [
         subNav: [
             {
                 title: "Categories List",
-                path: "/category/list",
+                path: "/categories/list",
                 icon: <BsList />,
                 cName: "sub-nav",
             },
@@ -135,7 +135,7 @@ export const SidebarData = [
     },
 
     {
-        title: "Coupons",
+        title: "Sales Promotion",
         path: "#",
         icon: <TbDiscount />,
 
