@@ -21,7 +21,11 @@ import AddCoupon from "./Components/Coupons/AddCoupon";
 import EditCoupon from "./Components/Coupons/EditCoupon";
 import StockList from "./Components/Inventory/StockList";
 import StockReturn from "./Components/Inventory/StockReturn";
-import Profile from './Components/Profile';
+import Profile from "./Pages/Profile";
+import Suppliers from "./Components/Inventory/Suppliers";
+import Department from './Components/Inventory/Department';
+import Purchase from "./Components/Inventory/Purchase";
+
 
 const App = () => {
     const [toggle, setToggle] = useState(false);
@@ -176,6 +180,27 @@ const App = () => {
                     path="/stock/return"
                     element={
                         <StockReturn toggle={toggle} setToggle={setToggle} />
+                    }
+                />
+                <Route
+                    exact
+                    path="/stock/suppliers"
+                    element={
+                        <Suppliers toggle={toggle} setToggle={setToggle} />
+                    }
+                />
+                <Route
+                    exact
+                    path="/stock/department"
+                    element={
+                        <Department toggle={toggle} setToggle={setToggle} />
+                    }
+                />
+                <Route
+                    exact
+                    path="/stock/purchase"
+                    element={
+                        <Purchase toggle={toggle} setToggle={setToggle} />
                     }
                 />
                 <Route

@@ -1,4 +1,4 @@
-export const Products = [
+export const Stocks = [
     {
         id: 1,
         item: "Oculus VR",
@@ -154,5 +154,172 @@ export const Products = [
         status: "sell",
         basicInfo: { name: "", pageTitle: "", description: "" },
         fileUpload: { productImg: [], patternImg: [], threeDModel: "" },
+    },
+];
+export const department = [
+    {
+        id: 1,
+
+        head: "Joan Dyer",
+        name: "Logistics",
+        staff: "40",
+    },
+    {
+        id: 2,
+
+        head: "Ryan Randall",
+        name: "Digital Marketing",
+        staff: "48",
+    },
+    {
+        id: 3,
+
+        head: "Phil Glover",
+        name: "Customer Service",
+        staff: "15",
+    },
+    {
+        id: 4,
+
+        head: "Victor Rampling",
+        name: "Inventory Associates",
+        staff: "40",
+    },
+    {
+        id: 5,
+
+        head: "Sally Graham",
+        name: "Finance and Accounting",
+        staff: "39",
+    },
+    {
+        id: 6,
+
+        head: "Robert Anderson",
+        name: "Business Analyst",
+        staff: "12",
+    },
+    {
+        id: 7,
+
+        head: "Ema Board",
+        name: "Sales Executive",
+        staff: "90",
+    },
+];
+export const suppliers = [
+    {
+        id: "#SP-00001",
+        item: "cloth",
+        name: "Joan Dyer",
+        regdate: "25/02/2021",
+        mail: "VictorRampling@gmail.com",
+        phone: "404-555-0100",
+        staff: "40",
+    },
+    {
+        id: "#SP-00002",
+        item: "cycle",
+        name: "Ryan Randall",
+        regdate: "18/01/2021",
+        mail: "RobertAnderson@gmail.com",
+        phone: "502-555-0133",
+        staff: "48",
+    },
+    {
+        id: "#SP-00003",
+        item: "Shoes",
+        name: "Phil Glover",
+        regdate: "16/03/2021",
+        mail: "PhilGlover@gmail.com",
+        phone: "843-555-0175",
+        staff: "15",
+    },
+    {
+        id: "#SP-00004",
+        item: "Oil",
+        name: "Victor Rampling",
+        regdate: "16/02/2021",
+        mail: "Victor@gmail.com",
+        phone: "502-555-0118",
+        staff: "40",
+    },
+    {
+        id: "#SP-00005",
+        item: "Sunglasses",
+        name: "Sally Graham",
+        regdate: "12/03/2021",
+        mail: "Sally@gmail.com",
+        phone: "504-555-0100",
+        staff: "39",
+    },
+    {
+        id: "#SP-00006",
+        item: "Laptop",
+        name: "Robert Anderson",
+        regdate: "12/03/2021",
+        mail: "Robert@gmail.com",
+        phone: "604-555-0100",
+        staff: "12",
+    },
+    {
+        id: "#SP-00007",
+        item: "Watch",
+        name: "Ema Board",
+        regdate: "12/08/2021",
+        mail: "Ema@gmail.com",
+        phone: "502-559-0118",
+        staff: "90",
+    },
+];
+export const purchase = [
+    {
+        id: "#PR-00001",
+        item: "cloth",
+        name: "Joan Dyer", date: "12/03/2021",
+        supplier: "Cloth supplier",
+        staff: "40",
+    },
+    {
+        id: "#PR-00002",
+        item: "cycle",
+        name: "Ryan Randall", date: "12/03/2021",
+        supplier: "Cycle supplier",
+        staff: "48",
+    },
+    {
+        id: "#PR-00003",
+        item: "Shoes",
+        name: "Phil Glover", date: "12/03/2021",
+        supplier: "Shoes supplier",
+        staff: "15",
+    },
+    {
+        id: "#PR-00004",
+        item: "Oil",
+        name: "Victor Rampling", date: "12/03/2021",
+        supplier: "Oil supplier",
+        staff: "40",
+    },
+    {
+        id: "#PR-00005",
+        item: "Sunglasses", date: "12/03/2021",
+        name: "Sally Graham",
+        supplier: "Sunglasses supplier",
+        staff: "39",
+    },
+    {
+        id: "#PR-00006",
+        item: "Watch",
+        name: "Robert Anderson", date: "12/03/2021",
+        supplier: "Watch supplier",
+        staff: "12",
+    },
+    {
+        id: "#PR-00007",
+        item: "Laptop",
+        name: "Ema Board", date: "12/03/2021",
+        supplier: "Laptop supplier",
+        staff: "90",
     },
 ];

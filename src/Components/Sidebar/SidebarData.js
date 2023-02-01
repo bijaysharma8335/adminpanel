@@ -179,6 +179,21 @@ export const SidebarData = [
                 path: "/stock/return",
                 icon: <TbTruckReturn />,
             },
+            {
+                title: "Suppliers",
+                path: "/stock/suppliers",
+                icon: <TbTruckReturn />,
+            },
+            {
+                title: "Purchase",
+                path: "/stock/purchase",
+                icon: <TbTruckReturn />,
+            },
+            {
+                title: "Department",
+                path: "/stock/department",
+                icon: <TbTruckReturn />,
+            },
         ],
     },
 

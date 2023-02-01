@@ -1,20 +1,12 @@
 import React from "react";
-import {  Container, Form, Row, Table } from "react-bootstrap";
-import { FaEdit } from "react-icons/fa";
+import { Container, Form, Image, Row, Table } from "react-bootstrap";
+import { Stocks, suppliers } from "../../constants/Stocks";
 
-import { RiDeleteBin5Line } from "react-icons/ri";
-import { Products } from "../../constants/Products";
-const StockReturn = ({ toggle }) => {
+const Suppliers = ({ toggle }) => {
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
-                <div className="my-2 d-flex flex-row justify-content-between">
-                    <div>
-                        <h3>Returns Items</h3>
-                    </div>
-                   
-                </div>
-
+                <h3>Suppliers Information</h3>
                 <div className="p-2 border">
                     <Row>
                         <div className="col-4 flex-column my-2">
@@ -51,31 +43,34 @@ const StockReturn = ({ toggle }) => {
                         </div>
                     </Row>
 
-                    <Table hover className=" my-1">
-                        <thead className="cursor">
+                    <Table hover className="  my-2 ">
+                        <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>ITEMS</th>
-                                <th>CUSTOMERS</th>
-                                <th>RETURN DATE</th>
-                                <th>TOTAL </th>
-                                <th>ACTION</th>
+                                <th>SUPPLIERS</th>
+                                <th>SUPPLIERS REGDATE</th>
+                                <th>MAIL</th>
+                                <th>PHONE</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {Products.map((elem, index) => (
-                                <tr key={index} className-="p-5">
-                                    <th scope="row">{elem.id}</th>
-                                    <td>{elem.item}</td>
-                                    <td className="fw-bold">{elem.customer}</td>
-                                    <td>{elem.date}</td>
-                                    <td>${elem.instock}</td>
-                                    <td>
-                                        <FaEdit className="text-success mx-1" />
-                                        <RiDeleteBin5Line className="text-danger mx-1" />
-                                    </td>
-                                </tr>
-                            ))}
+                            {suppliers.map((elem, index) => {
+                                return (
+                                    <tr
+                                        key={index}
+                                        className-="p-5 vertical-align-middle"
+                                    >
+                                        <td className="fw-bold">{elem.id}</td>
+
+                                        <td>{elem.item}</td>
+                                        <td className="fw-bold">{elem.name}</td>
+                                        <td>{elem.regdate}</td>
+                                        <td>{elem.mail}</td>
+                                        <td>{elem.phone}</td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </Table>
                 </div>
@@ -84,4 +79,4 @@ const StockReturn = ({ toggle }) => {
     );
 };
 
-export default StockReturn;
+export default Suppliers;

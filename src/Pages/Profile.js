@@ -40,6 +40,7 @@ const Profile = ({ toggle }) => {
                             </div>
                             <div className="text-center  my-2">
                                 <Image
+                                    src="https://static.thenounproject.com/png/363640-200.png"
                                     width={50}
                                     height={50}
                                     className="cursor"
