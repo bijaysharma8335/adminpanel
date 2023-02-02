@@ -5,7 +5,7 @@ import { MdAddCircle } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 import { useNavigate } from "react-router-dom";
-import { Categories } from "../../constants/Categories";
+import { categories } from "../../constants/categories";
 
 const CategoryList = ({ toggle, setToggle }) => {
     const navigate = useNavigate();
@@ -74,7 +74,7 @@ const CategoryList = ({ toggle, setToggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {Categories.map((elem, index) => {
+                            {categories.map((elem, index) => {
                                 return (
                                     <tr
                                         key={index}

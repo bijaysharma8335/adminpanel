@@ -3,7 +3,7 @@ import { Card, Container, Form, Image, Row, Table } from "react-bootstrap";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaAddressBook, FaBirthdayCake } from "react-icons/fa";
 import { GoDeviceMobile } from "react-icons/go";
-import { Customers } from "../../constants/Customers";
+import { customers } from "../../constants/customers";
 
 const CustomerDetail = ({ toggle }) => {
     return (
@@ -197,7 +197,7 @@ const CustomerDetail = ({ toggle }) => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {Customers.map((elem, index) => {
+                                    {customers.map((elem, index) => {
                                         return (
                                             <tr
                                                 key={index}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Form, Image, Row, Table } from "react-bootstrap";
-import { Orders } from "../../constants/Orders";
+import { orders } from "../../constants/orders";
 
 const OrderList = ({ toggle }) => {
     return (
@@ -57,7 +57,7 @@ const OrderList = ({ toggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {Orders.map((elem, index) => {
+                            {orders.map((elem, index) => {
                                 return (
                                     <tr
                                         key={index}

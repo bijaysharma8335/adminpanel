@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Form, Image, Row, Table } from "react-bootstrap";
 
-import { Products } from "../../constants/Products";
+import { products } from "../../constants/products";
 
 const StockList = ({ toggle }) => {
     return (
@@ -58,7 +58,7 @@ const StockList = ({ toggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {Products.map((elem, index) => {
+                            {products.map((elem, index) => {
                                 return (
                                     <tr
                                         key={index}

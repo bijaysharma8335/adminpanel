@@ -3,7 +3,7 @@ import { Container, Form, Image, Row, Table } from "react-bootstrap";
 import { AiFillPrinter } from "react-icons/ai";
 import { FiDownload } from "react-icons/fi";
 import { BiMailSend } from "react-icons/bi";
-import { Orders } from "../../constants/Orders";
+import { orders } from "../../constants/orders";
 
 const OrderInvoice = ({ toggle }) => {
     return (
@@ -60,7 +60,7 @@ const OrderInvoice = ({ toggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {Orders.map((elem, index) => {
+                            {orders.map((elem, index) => {
                                 return (
                                     <tr
                                         key={index}

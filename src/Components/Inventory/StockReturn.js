@@ -3,7 +3,7 @@ import {  Container, Form, Row, Table } from "react-bootstrap";
 import { FaEdit } from "react-icons/fa";
 
 import { RiDeleteBin5Line } from "react-icons/ri";
-import { Products } from "../../constants/Products";
+import { products } from "../../constants/products";
 const StockReturn = ({ toggle }) => {
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
@@ -63,7 +63,7 @@ const StockReturn = ({ toggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {Products.map((elem, index) => (
+                            {products.map((elem, index) => (
                                 <tr key={index} className-="p-5">
                                     <th scope="row">{elem.id}</th>
                                     <td>{elem.item}</td>

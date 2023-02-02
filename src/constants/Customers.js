@@ -1,4 +1,4 @@
-export const Customers = [
+export const customers = [
     {
         id: "#Order-1100",
         item: "Note Diaries",

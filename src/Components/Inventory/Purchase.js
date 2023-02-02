@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Form, Image, Row, Table } from "react-bootstrap";
-import { purchase, Stocks } from "../../constants/Stocks";
+import { Container, Form, Row, Table } from "react-bootstrap";
+import { purchase } from "../../constants/stocks";
 
 const Purchase = ({ toggle }) => {
     return (
@@ -70,17 +70,18 @@ const Purchase = ({ toggle }) => {
                                         <td className="fw-bold">{elem.name}</td>
                                         <td>{elem.date}</td>
                                         <td>{elem.supplier}</td>
-                                        <td>{elem.date}</td>
-                                        <td>{elem.price}</td>
+                                        <td>{elem.total}</td>
+                                        <td>{elem.paid}</td>
+                                        <td>{elem.balance}</td>
+                                        <td>{elem.credit}</td>
+                                       
                                         <td>
                                             <span
                                                 className={
-                                                    elem?.status === "sell"
-                                                        ? " bg-success p-2 text-white rounded fw-bold mx-1 "
-                                                        : elem?.status ===
-                                                          "out of stock"
-                                                        ? "bg-danger p-2 text-white rounded fw-bold mx-1 text-center"
-                                                        : "bg-warning p-2  text-white rounded fw-bold mx-1 text-center"
+                                                    elem?.status ===
+                                                    "Item Received"
+                                                        ? " bg-success p-1 text-white rounded fw-bold mx-1 "
+                                                        : "bg-warning p-1  text-white rounded fw-bold mx-1 text-center"
                                                 }
                                             >
                                                 {elem.status}

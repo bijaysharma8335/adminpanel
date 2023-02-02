@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Table } from "react-bootstrap";
-import { Customers } from "../../constants/Customers";
+import { customers } from "../../constants/customers";
 
 const Transactions = () => {
     return (
@@ -19,7 +19,7 @@ const Transactions = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {Customers.map((elem, index) => {
+                    {customers.map((elem, index) => {
                         return (
                             <tr key={index} className-="p-5">
                                 <th scope="row">{elem.id}</th>

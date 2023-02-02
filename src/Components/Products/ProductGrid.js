@@ -15,7 +15,7 @@ import { FiGrid } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 import ProductLeftPanel from "./ProductLeftPanel";
-import { Products } from "../../constants/Products";
+import { products } from "../../constants/products";
 
 const ProductGrid = ({ toggle }) => {
     let navigate = useNavigate();
@@ -54,7 +54,7 @@ const ProductGrid = ({ toggle }) => {
                     </div>
                     <div className="col-md-9 " style={{ maxHeight: "100vh" }}>
                         <div className="d-flex flex-wrap">
-                            {Products.map((elem, index) => {
+                            {products.map((elem, index) => {
                                 return (
                                     <div className="me-1" key={index}>
                                         <Card

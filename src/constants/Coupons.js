@@ -1,4 +1,4 @@
-export const Coupons = [
+export const coupons = [
     {
         id: 1,
         code: "AXXQT-2547",

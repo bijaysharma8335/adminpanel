@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Form, Image, Row, Table } from "react-bootstrap";
-import { Stocks, suppliers } from "../../constants/Stocks";
+import { suppliers } from "../../constants/stocks";
 
 const Suppliers = ({ toggle }) => {
     return (

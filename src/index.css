@@ -74,6 +74,9 @@ li:hover {
 table tbody tr {
     cursor: pointer;
 }
+/* table tbody tr td {
+    padding: 20px 0  !important;
+} */
 
 .title-head:hover {
     color: orange;

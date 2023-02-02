@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Form, Image, Row, Table } from "react-bootstrap";
-import { department } from "../../constants/Stocks";
+import { department } from "../../constants/stocks";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 

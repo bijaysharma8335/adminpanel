@@ -1,4 +1,4 @@
-export const Categories = [
+export const categories = [
     {
         id: "#0001",
         category: "Watch",

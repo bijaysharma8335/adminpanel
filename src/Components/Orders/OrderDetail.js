@@ -14,7 +14,7 @@ import {
     AiOutlineUser,
 } from "react-icons/ai";
 import { MdOutlineCall } from "react-icons/md";
-import { Orders } from "../../constants/Orders";
+import { orders } from "../../constants/orders";
 
 const OrderDetail = ({ toggle, setToggle }) => {
     return (
@@ -31,7 +31,7 @@ const OrderDetail = ({ toggle, setToggle }) => {
                     <div>
                         <Form.Select style={{ boxShadow: "unset" }}>
                             <option>Select Order Id</option>
-                            {Orders.map((x, index) => {
+                            {orders.map((x, index) => {
                                 return <option key={index}>{x.id}</option>;
                             })}
                         </Form.Select>
@@ -186,7 +186,7 @@ const OrderDetail = ({ toggle, setToggle }) => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {Orders.map((elem, index) => {
+                                    {orders.map((elem, index) => {
                                         return (
                                             <tr
                                                 key={index}

@@ -7,7 +7,8 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
 import ProductLeftPanel from "./ProductLeftPanel";
-import { Products } from "../../constants/Products";
+import { products } from "../../constants/products";
+
 
 const ProductList = ({ toggle }) => {
     let navigate = useNavigate();
@@ -52,7 +53,7 @@ const ProductList = ({ toggle }) => {
                     <div className="col-md-9 " style={{ maxHeight: "100vh" }}>
                         <Table hover className=" my-1 border">
                             <tbody>
-                                {Products.map((elem, index) => {
+                                {products.map((elem, index) => {
                                     return (
                                         <tr
                                             key={index}

@@ -11,9 +11,9 @@ import {
 import { FaEdit } from "react-icons/fa";
 import { MdAddCircle } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
-
-import { Customers } from "../../constants/Customers";
 import { useNavigate } from 'react-router-dom';
+import { customers } from "../../constants/customers";
+
 
 const CustomerList = ({ toggle, setToggle }) => {
     const navigate=useNavigate()
@@ -87,7 +87,7 @@ const CustomerList = ({ toggle, setToggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {Customers.map((elem, index) => {
+                            {customers.map((elem, index) => {
                                 return (
                                     <tr key={index} className-="p-5">
                                         <th scope="row">{elem.id}</th>

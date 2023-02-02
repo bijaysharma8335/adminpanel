@@ -4,8 +4,9 @@ import { Container, Row, Form, Table, Button } from "react-bootstrap";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { MdAddCircle } from "react-icons/md";
-import { Coupons } from "../../constants/Coupons";
+
 import { useNavigate } from "react-router-dom";
+import { coupons } from './../../constants/coupons';
 
 const CouponList = ({ toggle }) => {
     const navigate = useNavigate();
@@ -72,7 +73,7 @@ const CouponList = ({ toggle }) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {Coupons.map((elem, index) => (
+                                {coupons.map((elem, index) => (
                                     <tr key={index} className="p-5">
                                         <td>{index + 1}</td>
                                         <td>{elem?.code}</td>
