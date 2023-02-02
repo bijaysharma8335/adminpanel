@@ -20,20 +20,20 @@ ChartJS.register(
     Legend
 );
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
+const labels = ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"];
 
 export const data = {
     labels,
     datasets: [
         {
-            label: "Data1",
+            label: "Puchase",
             data: labels.map(() =>
                 faker.datatype.number({ min: 0, max: 10000000 })
             ),
             backgroundColor: "blue",
         },
         {
-            label: "Data2",
+            label: "Sell",
             data: labels.map(() =>
                 faker.datatype.number({ min: 0, max: 1000000 })
             ),

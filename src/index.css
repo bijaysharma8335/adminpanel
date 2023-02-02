@@ -85,3 +85,15 @@ table tbody tr {
 .cursor {
     cursor: pointer;
 }
+.topbar-landingpage4 {
+    margin-left: 10rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+}
+.topbar-landingpage3 {
+    margin-left: 10rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+}
