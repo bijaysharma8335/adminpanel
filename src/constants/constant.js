@@ -12,3 +12,4 @@ export const Status = ["Published", "Scheduled", "Hidden"];
 
 export const couponStatus = ["Active", "In Active", "Future Plan"];
 export const typeArray = ["Free", "Shipping", "Discounts"];
+export const displayItemsPerPage=10

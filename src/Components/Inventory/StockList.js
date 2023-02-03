@@ -2,8 +2,17 @@ import React from "react";
 import { Container, Form, Image, Row, Table } from "react-bootstrap";
 
 import { products } from "../../constants/products";
+import usePagination from "../../custom hooks/usePagination";
+import PaginationList from "../../Pages/PaginationList";
 
 const StockList = ({ toggle }) => {
+    const {
+        indexOfFirstItem,
+        currentData,
+        pageNumbers,
+        currentPage,
+        setCurrentPage,
+    } = usePagination({ data: products });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -43,10 +52,10 @@ const StockList = ({ toggle }) => {
                             </Row>
                         </div>
                     </Row>
-
                     <Table hover className="  my-2 ">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>ID</th>
                                 <th>PRODUCTS</th>
                                 <th>CATEGORY</th>
@@ -58,13 +67,16 @@ const StockList = ({ toggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {products.map((elem, index) => {
+                            {currentData.map((elem, index) => {
                                 return (
                                     <tr
                                         key={index}
                                         className-="p-5 vertical-align-middle"
                                     >
-                                        <td className="fw-bold">{elem.id}</td>
+                                        <td className="fw-bold">
+                                            {indexOfFirstItem + index + 1}
+                                        </td>
+                                        <td>{elem.id}</td>
                                         <td>
                                             <Image
                                                 style={{ objectFit: "contain" }}
@@ -80,7 +92,6 @@ const StockList = ({ toggle }) => {
                                         <td>{elem.date}</td>
                                         <td>{elem.price}</td>
                                         <td>
-                                            {" "}
                                             <span
                                                 className={
                                                     elem?.status === "sell"
@@ -99,6 +110,13 @@ const StockList = ({ toggle }) => {
                             })}
                         </tbody>
                     </Table>
+                    <div className="pagination-list">
+                        <PaginationList
+                            pageNumbers={pageNumbers}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                        />
+                    </div>
                 </div>
             </div>
         </Container>

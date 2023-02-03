@@ -1,8 +1,17 @@
 import React from "react";
 import { Container, Form, Row, Table } from "react-bootstrap";
 import { purchase } from "../../constants/stocks";
+import usePagination from "../../custom hooks/usePagination";
+import PaginationList from "../../Pages/PaginationList";
 
 const Purchase = ({ toggle }) => {
+    const {
+        indexOfFirstItem,
+        currentData,
+        pageNumbers,
+        currentPage,
+        setCurrentPage,
+    } = usePagination({ data: purchase });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -42,10 +51,10 @@ const Purchase = ({ toggle }) => {
                             </Row>
                         </div>
                     </Row>
-
                     <Table hover className="  my-2 ">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>ID</th>
                                 <th>ITEMS</th>
                                 <th>ORDER BY</th>
@@ -59,13 +68,16 @@ const Purchase = ({ toggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {purchase.map((elem, index) => {
+                            {currentData.map((elem, index) => {
                                 return (
                                     <tr
                                         key={index}
                                         className-="p-5 vertical-align-middle"
                                     >
-                                        <td className="fw-bold">{elem.id}</td>
+                                        <td className="fw-bold">
+                                            {indexOfFirstItem + index + 1}
+                                        </td>
+                                        <td>{elem.id}</td>
                                         <td>{elem.item}</td>
                                         <td className="fw-bold">{elem.name}</td>
                                         <td>{elem.date}</td>
@@ -74,7 +86,7 @@ const Purchase = ({ toggle }) => {
                                         <td>{elem.paid}</td>
                                         <td>{elem.balance}</td>
                                         <td>{elem.credit}</td>
-                                       
+
                                         <td>
                                             <span
                                                 className={
@@ -92,6 +104,13 @@ const Purchase = ({ toggle }) => {
                             })}
                         </tbody>
                     </Table>
+                    <div className="pagination-list">
+                        <PaginationList
+                            pageNumbers={pageNumbers}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                        />
+                    </div>
                 </div>
             </div>
         </Container>

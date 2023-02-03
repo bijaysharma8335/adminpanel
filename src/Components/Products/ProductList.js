@@ -8,11 +8,18 @@ import { useNavigate } from "react-router-dom";
 
 import ProductLeftPanel from "./ProductLeftPanel";
 import { products } from "../../constants/products";
-
+import usePagination from "../../custom hooks/usePagination";
+import PaginationList from "../../Pages/PaginationList";
 
 const ProductList = ({ toggle }) => {
     let navigate = useNavigate();
-
+    const {
+        indexOfFirstItem,
+        currentData,
+        pageNumbers,
+        currentPage,
+        setCurrentPage,
+    } = usePagination({ data: products });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -53,12 +60,15 @@ const ProductList = ({ toggle }) => {
                     <div className="col-md-9 " style={{ maxHeight: "100vh" }}>
                         <Table hover className=" my-1 border">
                             <tbody>
-                                {products.map((elem, index) => {
+                                {currentData.map((elem, index) => {
                                     return (
                                         <tr
                                             key={index}
                                             className-="p-3 vertical-align-middle"
                                         >
+                                            <td className="fw-bold">
+                                                {indexOfFirstItem + index + 1}
+                                            </td>
                                             <td>
                                                 <img
                                                     src={elem.img}
@@ -145,6 +155,13 @@ const ProductList = ({ toggle }) => {
                                 })}
                             </tbody>
                         </Table>
+                        <div className="pagination-list">
+                            <PaginationList
+                                pageNumbers={pageNumbers}
+                                currentPage={currentPage}
+                                setCurrentPage={setCurrentPage}
+                            />
+                        </div>
                     </div>
                 </Row>
             </div>

@@ -1,8 +1,17 @@
 import React from "react";
-import { Container, Form, Image, Row, Table } from "react-bootstrap";
+import { Container, Form, Row, Table } from "react-bootstrap";
 import { suppliers } from "../../constants/stocks";
+import usePagination from "../../custom hooks/usePagination";
+import PaginationList from "../../Pages/PaginationList";
 
 const Suppliers = ({ toggle }) => {
+    const {
+        indexOfFirstItem,
+        currentData,
+        pageNumbers,
+        currentPage,
+        setCurrentPage,
+    } = usePagination({ data: suppliers });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -42,10 +51,10 @@ const Suppliers = ({ toggle }) => {
                             </Row>
                         </div>
                     </Row>
-
                     <Table hover className="  my-2 ">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>ID</th>
                                 <th>ITEMS</th>
                                 <th>SUPPLIERS</th>
@@ -55,13 +64,16 @@ const Suppliers = ({ toggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {suppliers.map((elem, index) => {
+                            {currentData.map((elem, index) => {
                                 return (
                                     <tr
                                         key={index}
                                         className-="p-5 vertical-align-middle"
                                     >
-                                        <td className="fw-bold">{elem.id}</td>
+                                        <td className="fw-bold">
+                                            {indexOfFirstItem + index + 1}
+                                        </td>
+                                        <td>{elem.id}</td>
 
                                         <td>{elem.item}</td>
                                         <td className="fw-bold">{elem.name}</td>
@@ -73,6 +85,13 @@ const Suppliers = ({ toggle }) => {
                             })}
                         </tbody>
                     </Table>
+                    <div className="pagination-list">
+                        <PaginationList
+                            pageNumbers={pageNumbers}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                        />
+                    </div>
                 </div>
             </div>
         </Container>

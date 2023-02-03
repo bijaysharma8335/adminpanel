@@ -6,10 +6,18 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 
 import { useNavigate } from "react-router-dom";
 import { categories } from "../../constants/categories";
+import usePagination from "../../custom hooks/usePagination";
+import PaginationList from "../../Pages/PaginationList";
 
 const CategoryList = ({ toggle, setToggle }) => {
     const navigate = useNavigate();
-
+    const {
+        indexOfFirstItem,
+        currentData,
+        pageNumbers,
+        currentPage,
+        setCurrentPage,
+    } = usePagination({ data: categories });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -66,6 +74,7 @@ const CategoryList = ({ toggle, setToggle }) => {
                     <Table hover className=" mx-1 my-1">
                         <thead className="cursor">
                             <tr>
+                                <th>#</th>
                                 <th>ID</th>
                                 <th>Category </th>
                                 <th>Date</th>
@@ -74,13 +83,14 @@ const CategoryList = ({ toggle, setToggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {categories.map((elem, index) => {
+                            {currentData.map((elem, index) => {
                                 return (
                                     <tr
                                         key={index}
                                         className-="p-5 vertical-align-middle"
                                     >
-                                        <td className="fw-bold">{elem.id}</td>
+                                        <td className="fw-bold">{indexOfFirstItem + index + 1}</td>
+                                        <td >{elem.id}</td>
 
                                         <td>{elem.category}</td>
                                         <td>{elem.date}</td>
@@ -108,6 +118,13 @@ const CategoryList = ({ toggle, setToggle }) => {
                             })}
                         </tbody>
                     </Table>
+                    <div className="pagination-list">
+                        <PaginationList
+                            pageNumbers={pageNumbers}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                        />
+                    </div>
                 </div>
             </div>
         </Container>

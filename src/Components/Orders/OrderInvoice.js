@@ -4,8 +4,17 @@ import { AiFillPrinter } from "react-icons/ai";
 import { FiDownload } from "react-icons/fi";
 import { BiMailSend } from "react-icons/bi";
 import { orders } from "../../constants/orders";
+import usePagination from "../../custom hooks/usePagination";
+import PaginationList from "../../Pages/PaginationList";
 
 const OrderInvoice = ({ toggle }) => {
+    const {
+        indexOfFirstItem,
+        currentData,
+        pageNumbers,
+        currentPage,
+        setCurrentPage,
+    } = usePagination({ data: orders });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -47,10 +56,10 @@ const OrderInvoice = ({ toggle }) => {
                             </Row>
                         </div>
                     </Row>
-
                     <Table hover className=" mx-1 my-1">
                         <thead className="cursor">
                             <tr>
+                                <th>#</th>
                                 <th>ID</th>
                                 <th>ITEM </th>
                                 <th>BILLING DATE</th>
@@ -60,12 +69,15 @@ const OrderInvoice = ({ toggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {orders.map((elem, index) => {
+                            {currentData.map((elem, index) => {
                                 return (
                                     <tr
                                         key={index}
                                         className-="p-5 vertical-align-middle"
                                     >
+                                        <td className="fw-bold">
+                                            {indexOfFirstItem + index + 1}
+                                        </td>
                                         <td>{elem.id}</td>
                                         <td>
                                             <Image
@@ -92,6 +104,13 @@ const OrderInvoice = ({ toggle }) => {
                             })}
                         </tbody>
                     </Table>
+                    <div className="pagination-list">
+                        <PaginationList
+                            pageNumbers={pageNumbers}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                        />
+                    </div>
                 </div>
             </div>
         </Container>

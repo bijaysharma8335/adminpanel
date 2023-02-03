@@ -16,10 +16,17 @@ import { useNavigate } from "react-router-dom";
 
 import ProductLeftPanel from "./ProductLeftPanel";
 import { products } from "../../constants/products";
+import PaginationList from "../../Pages/PaginationList";
+import usePagination from "../../custom hooks/usePagination";
 
 const ProductGrid = ({ toggle }) => {
     let navigate = useNavigate();
-
+    const {
+        currentData,
+        pageNumbers,
+        currentPage,
+        setCurrentPage,
+    } = usePagination({ data: products });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -54,7 +61,7 @@ const ProductGrid = ({ toggle }) => {
                     </div>
                     <div className="col-md-9 " style={{ maxHeight: "100vh" }}>
                         <div className="d-flex flex-wrap">
-                            {products.map((elem, index) => {
+                            {currentData.map((elem, index) => {
                                 return (
                                     <div className="me-1" key={index}>
                                         <Card
@@ -100,6 +107,13 @@ const ProductGrid = ({ toggle }) => {
                                     </div>
                                 );
                             })}
+                        </div>
+                        <div className="pagination-list">
+                            <PaginationList
+                                pageNumbers={pageNumbers}
+                                currentPage={currentPage}
+                                setCurrentPage={setCurrentPage}
+                            />
                         </div>
                     </div>
                 </Row>

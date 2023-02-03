@@ -15,8 +15,17 @@ import {
 } from "react-icons/ai";
 import { MdOutlineCall } from "react-icons/md";
 import { orders } from "../../constants/orders";
+import usePagination from "../../custom hooks/usePagination";
+import PaginationList from "../../Pages/PaginationList";
 
 const OrderDetail = ({ toggle, setToggle }) => {
+    const {
+        indexOfFirstItem,
+        currentData,
+        pageNumbers,
+        currentPage,
+        setCurrentPage,
+    } = usePagination({ data: orders });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -179,6 +188,7 @@ const OrderDetail = ({ toggle, setToggle }) => {
                             <Table hover className="  my-2 ">
                                 <thead className="cursor">
                                     <tr>
+                                        <th>#</th>
                                         <th>PRODUCT IMAGE</th>
                                         <th>PRODUCT NAME</th>
                                         <th>QUANTITY </th>
@@ -186,12 +196,17 @@ const OrderDetail = ({ toggle, setToggle }) => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {orders.map((elem, index) => {
+                                    {currentData.map((elem, index) => {
                                         return (
                                             <tr
                                                 key={index}
                                                 className-="p-5 vertical-align-middle"
                                             >
+                                                <td className="fw-bold">
+                                                    {indexOfFirstItem +
+                                                        index +
+                                                        1}
+                                                </td>
                                                 <td>
                                                     <Image
                                                         style={{
@@ -213,6 +228,13 @@ const OrderDetail = ({ toggle, setToggle }) => {
                                     })}
                                 </tbody>
                             </Table>
+                            <div className="pagination-list">
+                                <PaginationList
+                                    pageNumbers={pageNumbers}
+                                    currentPage={currentPage}
+                                    setCurrentPage={setCurrentPage}
+                                />
+                            </div>
                             <Row className="p-2 pt-0">
                                 <div className=" col-md-9 "></div>
                                 <div className=" col-md-3 ">

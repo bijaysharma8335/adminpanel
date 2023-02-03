@@ -1,10 +1,19 @@
 import React from "react";
-import {  Container, Form, Row, Table } from "react-bootstrap";
+import { Container, Form, Row, Table } from "react-bootstrap";
 import { FaEdit } from "react-icons/fa";
 
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { products } from "../../constants/products";
+import usePagination from "../../custom hooks/usePagination";
+import PaginationList from "../../Pages/PaginationList";
 const StockReturn = ({ toggle }) => {
+    const {
+        indexOfFirstItem,
+        currentData,
+        pageNumbers,
+        currentPage,
+        setCurrentPage,
+    } = usePagination({ data: products });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -12,7 +21,6 @@ const StockReturn = ({ toggle }) => {
                     <div>
                         <h3>Returns Items</h3>
                     </div>
-                   
                 </div>
 
                 <div className="p-2 border">
@@ -50,10 +58,10 @@ const StockReturn = ({ toggle }) => {
                             </Row>
                         </div>
                     </Row>
-
                     <Table hover className=" my-1">
                         <thead className="cursor">
                             <tr>
+                                <th>#</th>
                                 <th>ID</th>
                                 <th>ITEMS</th>
                                 <th>CUSTOMERS</th>
@@ -63,9 +71,12 @@ const StockReturn = ({ toggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {products.map((elem, index) => (
+                            {currentData.map((elem, index) => (
                                 <tr key={index} className-="p-5">
-                                    <th scope="row">{elem.id}</th>
+                                    <td className="fw-bold">
+                                        {indexOfFirstItem + index + 1}
+                                    </td>
+                                    <td>{elem.id}</td>
                                     <td>{elem.item}</td>
                                     <td className="fw-bold">{elem.customer}</td>
                                     <td>{elem.date}</td>
@@ -78,6 +89,13 @@ const StockReturn = ({ toggle }) => {
                             ))}
                         </tbody>
                     </Table>
+                    <div className="pagination-list">
+                        <PaginationList
+                            pageNumbers={pageNumbers}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                        />
+                    </div>
                 </div>
             </div>
         </Container>

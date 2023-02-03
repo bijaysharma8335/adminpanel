@@ -60,7 +60,7 @@ export const categories = [
         fileUpload: { productImg: [] },
     },
     {
-        id: "#0006",
+        id: "#0007",
         category: "Footwear",
         date: "2022-03-02",
         status: "Hidden",
@@ -70,7 +70,7 @@ export const categories = [
         fileUpload: { productImg: [] },
     },
     {
-        id: "#0006",
+        id: "#0008",
         category: "Beautywear",
         date: "2022-01-06",
         status: "Scheduled",

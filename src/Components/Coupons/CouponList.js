@@ -6,10 +6,19 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import { MdAddCircle } from "react-icons/md";
 
 import { useNavigate } from "react-router-dom";
-import { coupons } from './../../constants/coupons';
+import { coupons } from "./../../constants/coupons";
+import usePagination from "../../custom hooks/usePagination";
+import PaginationList from "../../Pages/PaginationList";
 
 const CouponList = ({ toggle }) => {
     const navigate = useNavigate();
+    const {
+        indexOfFirstItem,
+        currentData,
+        pageNumbers,
+        currentPage,
+        setCurrentPage,
+    } = usePagination({ data: coupons });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -59,7 +68,7 @@ const CouponList = ({ toggle }) => {
                         <Table responsive hover className="my-1">
                             <thead className="cursor">
                                 <tr>
-                                    <th>S.N.</th>
+                                    <th>#</th>
                                     <th>Coupon Code</th>
                                     <th>Type</th>
                                     <th>Discount</th>
@@ -73,9 +82,9 @@ const CouponList = ({ toggle }) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {coupons.map((elem, index) => (
+                                {currentData.map((elem, index) => (
                                     <tr key={index} className="p-5">
-                                        <td>{index + 1}</td>
+                                        <td>{indexOfFirstItem + index + 1}</td>
                                         <td>{elem?.code}</td>
                                         <td>{elem?.type}</td>
                                         <td>{elem?.discount}</td>
@@ -106,6 +115,13 @@ const CouponList = ({ toggle }) => {
                                 ))}
                             </tbody>
                         </Table>
+                        <div className="pagination-list">
+                            <PaginationList
+                                pageNumbers={pageNumbers}
+                                currentPage={currentPage}
+                                setCurrentPage={setCurrentPage}
+                            />
+                        </div>
                     </Row>
                 </div>
             </div>

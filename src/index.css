@@ -97,3 +97,7 @@ table tbody tr {
     grid-template-columns: repeat(3,1fr);
     align-items: center;
 }
+.pagination-list{
+    display: flex;
+    justify-content: flex-end;
+}

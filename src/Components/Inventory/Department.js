@@ -3,8 +3,17 @@ import { Container, Form, Image, Row, Table } from "react-bootstrap";
 import { department } from "../../constants/stocks";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import PaginationList from "../../Pages/PaginationList";
+import usePagination from "../../custom hooks/usePagination";
 
 const Department = ({ toggle }) => {
+    const {
+        indexOfFirstItem,
+        currentData,
+        pageNumbers,
+        currentPage,
+        setCurrentPage,
+    } = usePagination({ data: department });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -44,10 +53,10 @@ const Department = ({ toggle }) => {
                             </Row>
                         </div>
                     </Row>
-
                     <Table hover className="  my-2 ">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>ID</th>
                                 <th>DEPARTMENT HEAD</th>
                                 <th>DEPARTMENT NAME</th>
@@ -57,13 +66,16 @@ const Department = ({ toggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {department.map((elem, index) => {
+                            {currentData.map((elem, index) => {
                                 return (
                                     <tr
                                         key={index}
                                         className-="p-5 vertical-align-middle"
                                     >
-                                        <td className="fw-bold">{elem.id}</td>
+                                        <td className="fw-bold">
+                                            {indexOfFirstItem + index + 1}
+                                        </td>
+                                        <td>{elem.id}</td>
 
                                         <td className="fw-bold">{elem.head}</td>
                                         <td>{elem.name}</td>
@@ -78,6 +90,13 @@ const Department = ({ toggle }) => {
                             })}
                         </tbody>
                     </Table>
+                    <div className="pagination-list">
+                        <PaginationList
+                            pageNumbers={pageNumbers}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                        />
+                    </div>
                 </div>
             </div>
         </Container>

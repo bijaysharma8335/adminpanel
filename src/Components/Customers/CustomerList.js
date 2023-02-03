@@ -11,14 +11,21 @@ import {
 import { FaEdit } from "react-icons/fa";
 import { MdAddCircle } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { customers } from "../../constants/customers";
-
+import usePagination from "../../custom hooks/usePagination";
+import PaginationList from "../../Pages/PaginationList";
 
 const CustomerList = ({ toggle, setToggle }) => {
-    const navigate=useNavigate()
+    const navigate = useNavigate();
     const [show, setShow] = useState(false);
-
+    const {
+        indexOfFirstItem,
+        currentData,
+        pageNumbers,
+        currentPage,
+        setCurrentPage,
+    } = usePagination({ data: customers });
     return (
         <Container className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -72,10 +79,10 @@ const CustomerList = ({ toggle, setToggle }) => {
                             </Row>
                         </div>
                     </Row>
-
                     <Table hover className=" mx-1 my-1">
                         <thead className="cursor">
                             <tr>
+                                <th>#</th>
                                 <th>ID</th>
                                 <th>CUSTOMERS</th>
                                 <th>REGISTER DATE</th>
@@ -87,11 +94,16 @@ const CustomerList = ({ toggle, setToggle }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {customers.map((elem, index) => {
+                            {currentData.map((elem, index) => {
                                 return (
                                     <tr key={index} className-="p-5">
-                                        <th scope="row">{elem.id}</th>
-                                        <td onClick={()=>navigate('/customer/detail')}>
+                                        <td className="fw-bold">{indexOfFirstItem + index + 1}</td>
+                                        <td>{elem.id}</td>
+                                        <td
+                                            onClick={() =>
+                                                navigate("/customer/detail")
+                                            }
+                                        >
                                             <Image
                                                 style={{
                                                     objectFit: "contain",
@@ -147,6 +159,13 @@ const CustomerList = ({ toggle, setToggle }) => {
                             )} */}
                         </tbody>
                     </Table>
+                    <div className="pagination-list">
+                        <PaginationList
+                            pageNumbers={pageNumbers}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrentPage}
+                        />
+                    </div>
                 </div>
             </div>
             {/* <Modal show={show}>
