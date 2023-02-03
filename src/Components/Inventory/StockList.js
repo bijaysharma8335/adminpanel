@@ -56,7 +56,7 @@ const StockList = ({ toggle }) => {
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>ID</th>
+                               
                                 <th>PRODUCTS</th>
                                 <th>CATEGORY</th>
                                 <th>STOCKS</th>
@@ -76,14 +76,14 @@ const StockList = ({ toggle }) => {
                                         <td className="fw-bold">
                                             {indexOfFirstItem + index + 1}
                                         </td>
-                                        <td>{elem.id}</td>
+                                       
                                         <td>
                                             <Image
                                                 style={{ objectFit: "contain" }}
                                                 src={elem.img}
                                                 width={50}
                                                 height={50}
-                                            />{" "}
+                                            />
                                             {elem.item}
                                         </td>
                                         <td>{elem.category}</td>

@@ -57,7 +57,7 @@ const Department = ({ toggle }) => {
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>ID</th>
+                                
                                 <th>DEPARTMENT HEAD</th>
                                 <th>DEPARTMENT NAME</th>
                                 <th>STAFF</th>
@@ -75,7 +75,6 @@ const Department = ({ toggle }) => {
                                         <td className="fw-bold">
                                             {indexOfFirstItem + index + 1}
                                         </td>
-                                        <td>{elem.id}</td>
 
                                         <td className="fw-bold">{elem.head}</td>
                                         <td>{elem.name}</td>

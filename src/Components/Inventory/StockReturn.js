@@ -62,7 +62,7 @@ const StockReturn = ({ toggle }) => {
                         <thead className="cursor">
                             <tr>
                                 <th>#</th>
-                                <th>ID</th>
+                                
                                 <th>ITEMS</th>
                                 <th>CUSTOMERS</th>
                                 <th>RETURN DATE</th>
@@ -76,7 +76,7 @@ const StockReturn = ({ toggle }) => {
                                     <td className="fw-bold">
                                         {indexOfFirstItem + index + 1}
                                     </td>
-                                    <td>{elem.id}</td>
+                                   
                                     <td>{elem.item}</td>
                                     <td className="fw-bold">{elem.customer}</td>
                                     <td>{elem.date}</td>
