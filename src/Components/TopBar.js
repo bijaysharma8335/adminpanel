@@ -6,8 +6,11 @@ import { FaSignOutAlt, FaUser } from "react-icons/fa";
 import { BiNotepad } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi";
+import { useSelector } from "react-redux";
+import { getUser } from "../Redux/slice/userSlice";
 
 const TopBar = () => {
+    const user = useSelector(getUser);
     const [show, setShow] = useState(false);
 
     let navigate = useNavigate();
@@ -79,15 +82,12 @@ const TopBar = () => {
                                 />
                             </div>
                             <div className="my-2">
-                                {" "}
                                 <Row>
-                                    {" "}
-                                    <span>Bijay Sharma</span>{" "}
-                                </Row>{" "}
+                                    <span>Bijay Sharma</span>
+                                </Row>
                                 <Row>
-                                    {" "}
-                                    <span>bijay@gmail.com</span>{" "}
-                                </Row>{" "}
+                                    <span>{user.email}</span>
+                                </Row>
                             </div>
                         </div>
                         <hr />

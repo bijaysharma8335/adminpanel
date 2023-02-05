@@ -10,7 +10,6 @@ import PieChart from "./PieChart";
 import Transactions from "./Transactions";
 
 const LandingPage = ({ toggle, setToggle }) => {
-    console.log(toggle);
     return (
         <Container className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-80vw"}>

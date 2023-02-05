@@ -1,16 +1,27 @@
 import React, { useState } from "react";
 import { Button, Card, Col, Container, Row, Form } from "react-bootstrap";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setUser } from "../Redux/slice/userSlice";
 
 const Login = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [message, setMessage] = useState("");
     const [passwordShown, setPasswordShown] = useState(false);
-
+    const togglePasswordVisiblity = () => {
+        setPasswordShown(passwordShown ? false : true);
+    };
     const handleSubmit = () => {
-        navigate("/landingPage");
+        if (!email || !password) {
+            setMessage("Please fill out the fields");
+        } else {
+            dispatch(setUser({ email, password }));
+            navigate("/landingPage");
+        }
     };
     return (
         <Container>
@@ -27,6 +38,7 @@ const Login = () => {
                             </Card.Title>
                         </Card.Header>
                         <Card.Body className="pt-0">
+                            <p className="text-danger">{message}</p>
                             <Form
                                 autoComplete="off"
                                 className="p-2"
@@ -35,19 +47,24 @@ const Login = () => {
                                 <Form.Group className="mb-3">
                                     <Form.Label>Email</Form.Label>
                                     <Form.Control
-                                        type="text"
+                                        type="email"
                                         name="email"
                                         placeholder="Enter your E-mail"
+                                        value={email}
+                                        onChange={(e) =>
+                                            setEmail(e.target.value)
+                                        }
                                     />
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label>Password</Form.Label>
                                     <div className="pass-wrapper ">
                                         <div
-                                            className="position-absolute mt-1 "
+                                            className="position-absolute mt-1 cursor "
                                             style={{
                                                 right: "2rem",
                                             }}
+                                            onClick={togglePasswordVisiblity}
                                         >
                                             {password !== "" ? (
                                                 passwordShown ? (
@@ -72,14 +89,7 @@ const Login = () => {
                                         />
                                     </div>
                                 </Form.Group>
-                                <Form.Group>
-                                    <input
-                                        type="checkbox"
-                                        placeholder="Password"
-                                        className="mt-2 me-2"
-                                    />
-                                    Remember me
-                                </Form.Group>
+
                                 <Col sm={12}>
                                     <Button
                                         variant="secondary"
