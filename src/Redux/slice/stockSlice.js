@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Stocks,purchase,department,suppliers } from "../../constants/stocks";
+import { Stocks, purchase, department, suppliers } from "../../constants/stocks";
 
 const initialState = {
     Stocks,

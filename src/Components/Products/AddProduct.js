@@ -8,8 +8,6 @@ import AddProductLeftPanel from "./AddProductLeftPanel";
 const AddProduct = ({ toggle }) => {
     const navigate = useNavigate();
 
-   
-
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -34,9 +32,7 @@ const AddProduct = ({ toggle }) => {
                     </div>
                     <div className="col-md-8 ">
                         <Card className="p-2">
-                            <span className="fw-bold my-2">
-                                Basic Information
-                            </span>
+                            <span className="fw-bold my-2">Basic Information</span>
                             <Row>
                                 <div className="col-6 my-2 ">
                                     <Form.Group>
@@ -46,22 +42,15 @@ const AddProduct = ({ toggle }) => {
                                 </div>
                                 <div className="col-6 my-2 ">
                                     <Form.Group>
-                                        <span className="fw-bold ">
-                                            Page Title
-                                        </span>
-                                        <Form.Control
-                                            type="text"
-                                            name="pageTitle"
-                                        />
+                                        <span className="fw-bold ">Page Title</span>
+                                        <Form.Control type="text" name="pageTitle" />
                                     </Form.Group>
                                 </div>
                             </Row>
                             <Row>
                                 <div className="col-6 my-2 ">
                                     <Form.Group>
-                                        <span className="fw-bold ">
-                                            Offers Ends
-                                        </span>
+                                        <span className="fw-bold ">Offers Ends</span>
                                         <Form.Control
                                             required={true}
                                             type="time"
@@ -72,20 +61,14 @@ const AddProduct = ({ toggle }) => {
                                 <div className="col-6 my-2 ">
                                     <Form.Group>
                                         <span className="fw-bold ">Rating</span>
-                                        <Form.Control
-                                            required={true}
-                                            type="text"
-                                            name="ratings"
-                                        />
+                                        <Form.Control required={true} type="text" name="ratings" />
                                     </Form.Group>
                                 </div>
                             </Row>
                             <Row className="align-items-center">
                                 <div className="col-4 my-2 ">
                                     <Form.Group>
-                                        <span className="fw-bold ">
-                                            Reference
-                                        </span>
+                                        <span className="fw-bold ">Reference</span>
                                         <Form.Control
                                             required={true}
                                             type="text"
@@ -95,14 +78,8 @@ const AddProduct = ({ toggle }) => {
                                 </div>
                                 <div className="col-4 my-2 ">
                                     <Form.Group>
-                                        <span className="fw-bold ">
-                                            Payment
-                                        </span>
-                                        <Form.Control
-                                            required={true}
-                                            type="text"
-                                            name="payment"
-                                        />
+                                        <span className="fw-bold ">Payment</span>
+                                        <Form.Control required={true} type="text" name="payment" />
                                     </Form.Group>
                                 </div>
                                 <div className="col-4 my-2 ">
@@ -112,20 +89,14 @@ const AddProduct = ({ toggle }) => {
                                         aria-label="Default select example"
                                         name="offer"
                                     >
-                                        <option value="">
-                                            Select Your Offer
-                                        </option>
-                                        <option value="Bank Offer">
-                                            Bank Offer
-                                        </option>
+                                        <option value="">Select Your Offer</option>
+                                        <option value="Bank Offer">Bank Offer</option>
                                     </Form.Select>
                                 </div>
                             </Row>
 
                             <div>
-                                <span className="fw-bold ">
-                                    Product Description
-                                </span>
+                                <span className="fw-bold ">Product Description</span>
                                 <Form.Control
                                     as="textarea"
                                     name="description"
@@ -161,10 +132,7 @@ const AddProduct = ({ toggle }) => {
                                         multiple
                                         accept=".png,.jpg"
                                     />
-                                    <label
-                                        htmlFor="myProductImage"
-                                        className="me-2"
-                                    >
+                                    <label htmlFor="myProductImage" className="me-2">
                                         Click to upload image &nbsp;
                                         <FaUpload />
                                     </label>

@@ -1,5 +1,5 @@
 import React from "react";
-import {  Card, Form } from "react-bootstrap";
+import { Card, Form } from "react-bootstrap";
 
 import { categories, sizes } from "./../../constants/constant";
 
@@ -10,11 +10,7 @@ const EditProductLeftPanel = ({ product, editProduct, setEditProduct }) => {
                 <span className="fw-bold my-2">Pricing Info</span>
                 <div>
                     <span className="fw-bold my-2">Product Price Old</span>
-                    <Form.Control
-                        type="number"
-                        name="productPriceOld"
-                        className="my-2"
-                    />
+                    <Form.Control type="number" name="productPriceOld" className="my-2" />
                 </div>
                 <div>
                     <span className="fw-bold my-2">Product Price New</span>
@@ -27,11 +23,7 @@ const EditProductLeftPanel = ({ product, editProduct, setEditProduct }) => {
                 </div>
                 <div>
                     <span className="fw-bold my-2">Coupon</span>
-                    <Form.Control
-                        type="text"
-                        name="coupon"
-                        className="my-2"
-                    />
+                    <Form.Control type="text" name="coupon" className="my-2" />
                 </div>
             </Card>
             <Card className="p-3 d-flex my-2">
@@ -80,28 +72,16 @@ const EditProductLeftPanel = ({ product, editProduct, setEditProduct }) => {
                 <span className="fw-bold my-2">Publish Schedule</span>
                 <Form.Group>
                     <Form.Label>Publish Date</Form.Label>
-                    <Form.Control
-                        type="date"
-                        name="pubDate"
-                        className="my-2"
-                    />
+                    <Form.Control type="date" name="pubDate" className="my-2" />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Publish Time</Form.Label>
-                    <Form.Control
-                        type="time"
-                        name="pubTime"
-                        className="my-2"
-                    />
+                    <Form.Control type="time" name="pubTime" className="my-2" />
                 </Form.Group>
             </Card>
             <Card className="my-2 p-2">
                 <span className="fw-bold my-2">Tags</span>
-                <Form.Control
-                    type="text"
-                    name="tag"
-                    className="my-3"
-                />
+                <Form.Control type="text" name="tag" className="my-3" />
             </Card>
             <Card className=" d-flex my-2 ">
                 <span className="fw-bold my-2 mx-1">Categories</span>
@@ -130,12 +110,7 @@ const EditProductLeftPanel = ({ product, editProduct, setEditProduct }) => {
             <Card className="my-2 p-2">
                 <span className="fw-bold my-3">Inventory Info</span>
                 <span className="fw-bold my-1">Total Stock Quantity</span>
-                <Form.Control
-                    type="text"
-                    name="totalStockQty"
-                    className="my-2"
-                   
-                />
+                <Form.Control type="text" name="totalStockQty" className="my-2" />
             </Card>
         </>
     );

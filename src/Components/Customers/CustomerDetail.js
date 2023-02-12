@@ -37,9 +37,8 @@ const CustomerDetail = ({ toggle }) => {
                                 <span>24 years, California</span>
                             </div>
                             <p className=" mx-2 my-2">
-                                Duis felis ligula, pharetra at nisl sit amet,
-                                ullamcorper fringilla mi. Cras luctus metus non
-                                enim porttitor sagittis. Sed tristique
+                                Duis felis ligula, pharetra at nisl sit amet, ullamcorper fringilla
+                                mi. Cras luctus metus non enim porttitor sagittis. Sed tristique
                                 scelerisque arcu id dignissim.
                             </p>
                             <div>
@@ -67,91 +66,57 @@ const CustomerDetail = ({ toggle }) => {
                             <div className="col-md-6">
                                 <Card>
                                     <div className="my-2">
-                                        <span className="fw-bold  mx-2 ">
-                                            Delivery Address
-                                        </span>
+                                        <span className="fw-bold  mx-2 ">Delivery Address</span>
                                     </div>
                                     <div className="my-2">
-                                        <span className="fw-bold mx-2 ">
-                                            Block Number:
-                                        </span>
-                                        <span className="fw-bold mx-2 ">
-                                            #1421
-                                        </span>
+                                        <span className="fw-bold mx-2 ">Block Number:</span>
+                                        <span className="fw-bold mx-2 ">#1421</span>
                                     </div>
                                     <div className="my-2">
-                                        <span className="fw-bold mx-2 ">
-                                            Address:
-                                        </span>
+                                        <span className="fw-bold mx-2 ">Address:</span>
                                         <span className="fw-bold mx-2 ">
                                             SahakarNagar,Bangalore ,Karnataka
                                         </span>
                                     </div>
                                     <div className="my-2">
-                                        <span className="fw-bold mx-2 ">
-                                            Pincode:
-                                        </span>
-                                        <span className="fw-bold mx-2 ">
-                                            560092
-                                        </span>
+                                        <span className="fw-bold mx-2 ">Pincode:</span>
+                                        <span className="fw-bold mx-2 ">560092</span>
                                     </div>
                                     <div className="my-2">
-                                        <span className="fw-bold mx-2  ">
-                                            Phone:
-                                        </span>
-                                        <span className="fw-bold mx-2  ">
-                                            123-4567-890
-                                        </span>
+                                        <span className="fw-bold mx-2  ">Phone:</span>
+                                        <span className="fw-bold mx-2  ">123-4567-890</span>
                                     </div>
                                 </Card>
                             </div>
                             <div className="col-md-6">
                                 <Card>
                                     <div className="my-2">
-                                        <span className="fw-bold  mx-2 ">
-                                            Billing Address
-                                        </span>
+                                        <span className="fw-bold  mx-2 ">Billing Address</span>
                                     </div>
                                     <div className="my-2">
-                                        <span className="fw-bold mx-2 ">
-                                            Block Number:
-                                        </span>
-                                        <span className="fw-bold mx-2 ">
-                                            #1421
-                                        </span>
+                                        <span className="fw-bold mx-2 ">Block Number:</span>
+                                        <span className="fw-bold mx-2 ">#1421</span>
                                     </div>
                                     <div className="my-2">
-                                        <span className="fw-bold mx-2 ">
-                                            Address:
-                                        </span>
+                                        <span className="fw-bold mx-2 ">Address:</span>
                                         <span className="fw-bold mx-2 ">
                                             SahakarNagar,Bangalore ,Karnataka
                                         </span>
                                     </div>
                                     <div className="my-2">
-                                        <span className="fw-bold mx-2 ">
-                                            Pincode:
-                                        </span>
-                                        <span className="fw-bold mx-2 ">
-                                            560092
-                                        </span>
+                                        <span className="fw-bold mx-2 ">Pincode:</span>
+                                        <span className="fw-bold mx-2 ">560092</span>
                                     </div>
                                     <div className="my-2">
-                                        <span className="fw-bold mx-2  ">
-                                            Phone:
-                                        </span>
-                                        <span className="fw-bold mx-2  ">
-                                            123-4567-890
-                                        </span>
+                                        <span className="fw-bold mx-2  ">Phone:</span>
+                                        <span className="fw-bold mx-2  ">123-4567-890</span>
                                     </div>
                                 </Card>
                             </div>
                         </Row>
                         <Card className="my-2 p-2">
                             <Row>
-                                <span className="fw-bold mx-1 my-2">
-                                    Customer Order
-                                </span>
+                                <span className="fw-bold mx-1 my-2">Customer Order</span>
                             </Row>
                             <Row>
                                 <div className="col-4 flex-column my-2">
@@ -173,9 +138,7 @@ const CustomerDetail = ({ toggle }) => {
                                 <div className="col-3 p-2">
                                     <Row>
                                         <div className="d-flex flex-row ">
-                                            <span className="me-2 my-2">
-                                                Search:
-                                            </span>
+                                            <span className="me-2 my-2">Search:</span>
                                             <Form.Control
                                                 type="search"
                                                 style={{
@@ -199,19 +162,13 @@ const CustomerDetail = ({ toggle }) => {
                                 <tbody>
                                     {customers.map((elem, index) => {
                                         return (
-                                            <tr
-                                                key={index}
-                                                className-="p-5 vertical-align-middle"
-                                            >
-                                                <td className="fw-bold">
-                                                    {elem.id}
-                                                </td>
+                                            <tr key={index} className-="p-5 vertical-align-middle">
+                                                <td className="fw-bold">{elem.id}</td>
 
                                                 <td>
                                                     <Image
                                                         style={{
-                                                            objectFit:
-                                                                "contain",
+                                                            objectFit: "contain",
                                                         }}
                                                         src={elem.img}
                                                         width={50}

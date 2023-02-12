@@ -6,13 +6,8 @@ import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
 
 const StockList = ({ toggle }) => {
-    const {
-        indexOfFirstItem,
-        currentData,
-        pageNumbers,
-        currentPage,
-        setCurrentPage,
-    } = usePagination({ data: products });
+    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage } =
+        usePagination({ data: products });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -39,9 +34,7 @@ const StockList = ({ toggle }) => {
                             <Row>
                                 <Form>
                                     <Form.Group className="d-flex flew-column my-2 ">
-                                        <Form.Label className="me-1 my-2">
-                                            Search:
-                                        </Form.Label>
+                                        <Form.Label className="me-1 my-2">Search:</Form.Label>
                                         <Form.Control
                                             type="search"
                                             className="ps-2 pt-0 pb-0 pe-0"
@@ -56,7 +49,7 @@ const StockList = ({ toggle }) => {
                         <thead>
                             <tr>
                                 <th>#</th>
-                               
+
                                 <th>PRODUCTS</th>
                                 <th>CATEGORY</th>
                                 <th>STOCKS</th>
@@ -69,14 +62,9 @@ const StockList = ({ toggle }) => {
                         <tbody>
                             {currentData.map((elem, index) => {
                                 return (
-                                    <tr
-                                        key={index}
-                                        className-="p-5 vertical-align-middle"
-                                    >
-                                        <td className="fw-bold">
-                                            {indexOfFirstItem + index + 1}
-                                        </td>
-                                       
+                                    <tr key={index} className-="p-5 vertical-align-middle">
+                                        <td className="fw-bold">{indexOfFirstItem + index + 1}</td>
+
                                         <td>
                                             <Image
                                                 style={{ objectFit: "contain" }}
@@ -96,8 +84,7 @@ const StockList = ({ toggle }) => {
                                                 className={
                                                     elem?.status === "sell"
                                                         ? " bg-success p-2 text-white rounded fw-bold mx-1 "
-                                                        : elem?.status ===
-                                                          "out of stock"
+                                                        : elem?.status === "out of stock"
                                                         ? "bg-danger p-2 text-white rounded fw-bold mx-1 text-center"
                                                         : "bg-warning p-2  text-white rounded fw-bold mx-1 text-center"
                                                 }

@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-    Container,
-    Row,
-    Card,
-    Image,
-    ButtonGroup,
-    Button,
-    ProgressBar,
-} from "react-bootstrap";
+import { Container, Row, Card, Image, ButtonGroup, Button, ProgressBar } from "react-bootstrap";
 import { ImStarFull } from "react-icons/im";
 import img1 from "../../Assets/Images/img1.jpg";
 import img2 from "../../Assets/Images/img2.jpg";
@@ -18,13 +10,7 @@ import img6 from "../../Assets/Images/img6.jpg";
 import img7 from "../../Assets/Images/img7.jpg";
 
 const ProductDetail = ({ toggle, setToggle }) => {
-    const [toggleImage, setToggleImage] = useState([
-        img1,
-        img2,
-        img3,
-        img4,
-        img5,
-    ]);
+    const [toggleImage, setToggleImage] = useState([img1, img2, img3, img4, img5]);
     const [img, setImg] = useState(img1);
     const [desc, setDesc] = useState(false);
     const [about, setAbout] = useState(false);
@@ -88,40 +74,18 @@ const ProductDetail = ({ toggle, setToggle }) => {
                                 <span>(449 customer Review)</span>
                             </div>
                             <Row>
-                                <span className="fw-bold my-2">
-                                    Select your Oculus VR
-                                </span>
+                                <span className="fw-bold my-2">Select your Oculus VR</span>
                             </Row>
-                            <div
-                                style={{ width: "39%" }}
-                                className="d-flex flex-row"
-                            >
-                                <Image
-                                    src={img5}
-                                    width={60}
-                                    height={100}
-                                    className="border m-1"
-                                />
+                            <div style={{ width: "39%" }} className="d-flex flex-row">
+                                <Image src={img5} width={60} height={100} className="border m-1" />
 
-                                <Image
-                                    src={img6}
-                                    width={60}
-                                    height={100}
-                                    className="border m-1"
-                                />
+                                <Image src={img6} width={60} height={100} className="border m-1" />
 
-                                <Image
-                                    src={img7}
-                                    width={60}
-                                    height={100}
-                                    className="border m-1"
-                                />
+                                <Image src={img7} width={60} height={100} className="border m-1" />
                             </div>
 
                             <Row>
-                                <span className="fw-bold my-2">
-                                    Select Color
-                                </span>
+                                <span className="fw-bold my-2">Select Color</span>
                                 <div className="d-flex d-row">
                                     <span
                                         className="bg-success me-2"
@@ -164,12 +128,10 @@ const ProductDetail = ({ toggle, setToggle }) => {
                                     </span>
                                 </div>
                                 <p>
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's standard dummy
-                                    text ever since the 1500s, when an unknown
-                                    printer took a galley of type and scrambled
-                                    it to make a type specimen book.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy
+                                    text ever since the 1500s, when an unknown printer took a galley
+                                    of type and scrambled it to make a type specimen book.
                                 </p>
                             </Row>
                         </div>
@@ -213,23 +175,18 @@ const ProductDetail = ({ toggle, setToggle }) => {
                     {desc && (
                         <div className=" p-2">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Suspendisse aliquet sem in erat
-                                volutpat, nec sollicitudin erat varius. Sed
-                                feugiat, leo varius facilisis sagittis, lorem
-                                magna cursus tortor, molestie venenatis odio
-                                nunc quis eros.Morbi volutpat dui vitae
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                                aliquet sem in erat volutpat, nec sollicitudin erat varius. Sed
+                                feugiat, leo varius facilisis sagittis, lorem magna cursus tortor,
+                                molestie venenatis odio nunc quis eros.Morbi volutpat dui vitae
                                 efficitur posuere.
                                 <p className="mt-2">
-                                    Donec ut libero imperdiet, eleifend ipsum
-                                    vitae, laoreet nisl. Morbi volutpat dui
-                                    vitae efficitur posuere. Pellentesque mi
-                                    libero, dapibus ut tellus eu, volutpat
-                                    viverra magna. Phasellus vitae erat porta,
-                                    condimentum enim ac, luctus dui. Fusce
-                                    dignissim, neque quis aliquet posuere, ante
-                                    tortor lobortis eros, et facilisis dolor
-                                    ipsum malesuada ante.
+                                    Donec ut libero imperdiet, eleifend ipsum vitae, laoreet nisl.
+                                    Morbi volutpat dui vitae efficitur posuere. Pellentesque mi
+                                    libero, dapibus ut tellus eu, volutpat viverra magna. Phasellus
+                                    vitae erat porta, condimentum enim ac, luctus dui. Fusce
+                                    dignissim, neque quis aliquet posuere, ante tortor lobortis
+                                    eros, et facilisis dolor ipsum malesuada ante.
                                 </p>
                             </p>
                         </div>
@@ -241,34 +198,25 @@ const ProductDetail = ({ toggle, setToggle }) => {
                                     Where can I get some?
                                     <li>Lorem ipsum dolor sit amet.</li>
                                     <li>
-                                        consectetur adipiscing elit. Phasellus
-                                        accumsan orci sit amet orci malesuada
-                                        tristique.
+                                        consectetur adipiscing elit. Phasellus accumsan orci sit
+                                        amet orci malesuada tristique.
                                     </li>
                                     <li>
-                                        Morbi varius odio et lorem ornare,
-                                        auctor rutrum est rhoncus.
+                                        Morbi varius odio et lorem ornare, auctor rutrum est
+                                        rhoncus.
                                     </li>
-                                    <li>
-                                        Vivamus consequat tortor eu consequat
-                                        eleifend.
-                                    </li>
+                                    <li>Vivamus consequat tortor eu consequat eleifend.</li>
                                 </ul>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Suspendisse aliquet sem in erat
-                                volutpat, nec sollicitudin erat varius. Sed
-                                feugiat, leo varius facilisis sagittis, lorem
-                                magna cursus tortor, molestie venenatis odio
-                                nunc quis eros.Morbi volutpat dui vitae
-                                efficitur posuere. Donec ut libero imperdiet,
-                                eleifend ipsum vitae, laoreet nisl. Morbi
-                                volutpat dui vitae efficitur posuere.
-                                Pellentesque mi libero, dapibus ut tellus eu,
-                                volutpat viverra magna. Phasellus vitae erat
-                                porta, condimentum enim ac, luctus dui. Fusce
-                                dignissim, neque quis aliquet posuere, ante
-                                tortor lobortis eros, et facilisis dolor ipsum
-                                malesuada ante.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                                aliquet sem in erat volutpat, nec sollicitudin erat varius. Sed
+                                feugiat, leo varius facilisis sagittis, lorem magna cursus tortor,
+                                molestie venenatis odio nunc quis eros.Morbi volutpat dui vitae
+                                efficitur posuere. Donec ut libero imperdiet, eleifend ipsum vitae,
+                                laoreet nisl. Morbi volutpat dui vitae efficitur posuere.
+                                Pellentesque mi libero, dapibus ut tellus eu, volutpat viverra
+                                magna. Phasellus vitae erat porta, condimentum enim ac, luctus dui.
+                                Fusce dignissim, neque quis aliquet posuere, ante tortor lobortis
+                                eros, et facilisis dolor ipsum malesuada ante.
                             </p>
                         </div>
                     )}
@@ -277,9 +225,7 @@ const ProductDetail = ({ toggle, setToggle }) => {
                             <div className="col-md-4">
                                 <Card className="p-2">
                                     <h3>4.5</h3>
-                                    <span className="text-secondary">
-                                        based on 1,032 ratings
-                                    </span>
+                                    <span className="text-secondary">based on 1,032 ratings</span>
                                     <div className="d-flex flex-row my-2">
                                         <ImStarFull className="mx-1 text-warning" />
                                         <ImStarFull className="mx-1 text-warning" />
@@ -290,22 +236,15 @@ const ProductDetail = ({ toggle, setToggle }) => {
 
                                     <div className="my-2">
                                         <div className="d-flex flex-row">
-                                            <span className="fw-bold mx-1">
-                                                5
-                                            </span>
+                                            <span className="fw-bold mx-1">5</span>
                                             <ImStarFull className="mx-1 text-warning" />
                                         </div>
-                                        <ProgressBar
-                                            variant="success"
-                                            now={80}
-                                        />
+                                        <ProgressBar variant="success" now={80} />
                                     </div>
 
                                     <div className="my-2">
                                         <div className="d-flex flex-row">
-                                            <span className="fw-bold mx-1">
-                                                4
-                                            </span>
+                                            <span className="fw-bold mx-1">4</span>
                                             <ImStarFull className="mx-1 text-warning" />
                                         </div>
                                         <ProgressBar variant="info" now={60} />
@@ -313,41 +252,26 @@ const ProductDetail = ({ toggle, setToggle }) => {
 
                                     <div className="my-2">
                                         <div className="d-flex flex-row">
-                                            <span className="fw-bold mx-1">
-                                                3
-                                            </span>
+                                            <span className="fw-bold mx-1">3</span>
                                             <ImStarFull className="mx-1 text-warning" />
                                         </div>
-                                        <ProgressBar
-                                            variant="warning"
-                                            now={50}
-                                        />
+                                        <ProgressBar variant="warning" now={50} />
                                     </div>
 
                                     <div className="my-2">
                                         <div className="d-flex flex-row">
-                                            <span className="fw-bold mx-1">
-                                                2
-                                            </span>
+                                            <span className="fw-bold mx-1">2</span>
                                             <ImStarFull className="mx-1 text-warning" />
                                         </div>
-                                        <ProgressBar
-                                            variant="primary"
-                                            now={30}
-                                        />
+                                        <ProgressBar variant="primary" now={30} />
                                     </div>
 
                                     <div className="my-2">
                                         <div className="d-flex flex-row">
-                                            <span className="fw-bold mx-1">
-                                                1
-                                            </span>
+                                            <span className="fw-bold mx-1">1</span>
                                             <ImStarFull className="mx-1 text-warning" />
                                         </div>
-                                        <ProgressBar
-                                            variant="danger"
-                                            now={20}
-                                        />
+                                        <ProgressBar variant="danger" now={20} />
                                     </div>
                                 </Card>
                             </div>
@@ -364,13 +288,9 @@ const ProductDetail = ({ toggle, setToggle }) => {
                                                 objectFit: "contain",
                                             }}
                                         />
-                                        <span className="d-block text-dark">
-                                            Joan Dyer
-                                        </span>
+                                        <span className="d-block text-dark">Joan Dyer</span>
 
-                                        <span className="text-secondary">
-                                            3 hours ago
-                                        </span>
+                                        <span className="text-secondary">3 hours ago</span>
                                     </div>
 
                                     <div className="d-flex flex-row">
@@ -384,12 +304,10 @@ const ProductDetail = ({ toggle, setToggle }) => {
                                     <hr />
                                     <span className="my-1">Top-Oculus VR</span>
                                     <p className="my-2">
-                                        A good fit for many households, this
-                                        Oculus VR has a movable deli drawer and
-                                        door shelves that can accommodate gallon
-                                        containers.Though its low price means
-                                        fewer features, this pick is quiet and
-                                        an energy-saving option, resulting in a
+                                        A good fit for many households, this Oculus VR has a movable
+                                        deli drawer and door shelves that can accommodate gallon
+                                        containers.Though its low price means fewer features, this
+                                        pick is quiet and an energy-saving option, resulting in a
                                         lower energy bill.
                                     </p>
                                 </Card>
@@ -406,13 +324,9 @@ const ProductDetail = ({ toggle, setToggle }) => {
                                             }}
                                         />
 
-                                        <span className="d-block text-dark">
-                                            Joan Dyer
-                                        </span>
+                                        <span className="d-block text-dark">Joan Dyer</span>
 
-                                        <span className="text-secondary d-block">
-                                            3 hours ago
-                                        </span>
+                                        <span className="text-secondary d-block">3 hours ago</span>
                                     </div>
 
                                     <div className="d-flex flex-row">
@@ -426,12 +340,10 @@ const ProductDetail = ({ toggle, setToggle }) => {
                                     <hr />
                                     <span className="my-1">Top-Oculus VR</span>
                                     <p className="my-2">
-                                        A good fit for many households, this
-                                        Oculus VR has a movable deli drawer and
-                                        door shelves that can accommodate gallon
-                                        containers.Though its low price means
-                                        fewer features, this pick is quiet and
-                                        an energy-saving option, resulting in a
+                                        A good fit for many households, this Oculus VR has a movable
+                                        deli drawer and door shelves that can accommodate gallon
+                                        containers.Though its low price means fewer features, this
+                                        pick is quiet and an energy-saving option, resulting in a
                                         lower energy bill.
                                     </p>
                                 </Card>
@@ -448,13 +360,9 @@ const ProductDetail = ({ toggle, setToggle }) => {
                                             }}
                                         />
 
-                                        <span className="text-dark d-block">
-                                            Joan Dyer
-                                        </span>
+                                        <span className="text-dark d-block">Joan Dyer</span>
 
-                                        <span className="text-secondary">
-                                            3 hours ago
-                                        </span>
+                                        <span className="text-secondary">3 hours ago</span>
                                     </div>
 
                                     <div className="d-flex flex-row">
@@ -468,12 +376,10 @@ const ProductDetail = ({ toggle, setToggle }) => {
                                     <hr />
                                     <span className="my-1">Top-Oculus VR</span>
                                     <p className="my-2">
-                                        A good fit for many households, this
-                                        Oculus VR has a movable deli drawer and
-                                        door shelves that can accommodate gallon
-                                        containers.Though its low price means
-                                        fewer features, this pick is quiet and
-                                        an energy-saving option, resulting in a
+                                        A good fit for many households, this Oculus VR has a movable
+                                        deli drawer and door shelves that can accommodate gallon
+                                        containers.Though its low price means fewer features, this
+                                        pick is quiet and an energy-saving option, resulting in a
                                         lower energy bill.
                                     </p>
                                 </Card>

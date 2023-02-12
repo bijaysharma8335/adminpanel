@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-    Button,
-    Container,
-    Image,
-    Modal,
-    Form,
-    Row,
-    Table,
-} from "react-bootstrap";
+import { Button, Container, Image, Modal, Form, Row, Table } from "react-bootstrap";
 import { FaEdit } from "react-icons/fa";
 import { MdAddCircle } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
@@ -19,13 +11,8 @@ import PaginationList from "../../Pages/PaginationList";
 const CustomerList = ({ toggle, setToggle }) => {
     const navigate = useNavigate();
     const [show, setShow] = useState(false);
-    const {
-        indexOfFirstItem,
-        currentData,
-        pageNumbers,
-        currentPage,
-        setCurrentPage,
-    } = usePagination({ data: customers });
+    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage } =
+        usePagination({ data: customers });
     return (
         <Container className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -47,10 +34,7 @@ const CustomerList = ({ toggle, setToggle }) => {
                         <div className="col-4 flex-column my-2">
                             {/* <span className="d-flex  "> */}
                             <label className="my-2">Show</label>
-                            <Form.Select
-                                aria-label="Default select example "
-                                className="w-25 mx-2"
-                            >
+                            <Form.Select aria-label="Default select example " className="w-25 mx-2">
                                 <option value="1">10</option>
                                 <option value="2">25</option>
                                 <option value="3">50</option>
@@ -64,9 +48,7 @@ const CustomerList = ({ toggle, setToggle }) => {
                             <Row>
                                 <Form>
                                     <Form.Group className="d-flex flew-column my-2 ">
-                                        <Form.Label className="me-1 my-2">
-                                            Search:
-                                        </Form.Label>
+                                        <Form.Label className="me-1 my-2">Search:</Form.Label>
                                         <Form.Control
                                             type="search"
                                             className="ps-2 pt-0 pb-0 pe-0"
@@ -99,11 +81,7 @@ const CustomerList = ({ toggle, setToggle }) => {
                                     <tr key={index} className-="p-5">
                                         <td className="fw-bold">{indexOfFirstItem + index + 1}</td>
                                         <td>{elem.id}</td>
-                                        <td
-                                            onClick={() =>
-                                                navigate("/customer/detail")
-                                            }
-                                        >
+                                        <td onClick={() => navigate("/customer/detail")}>
                                             <Image
                                                 style={{
                                                     objectFit: "contain",

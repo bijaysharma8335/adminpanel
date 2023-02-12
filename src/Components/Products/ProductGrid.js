@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-    Button,
-    ButtonGroup,
-    Card,
-    Container,
-    Image,
-    Row,
-} from "react-bootstrap";
+import { Button, ButtonGroup, Card, Container, Image, Row } from "react-bootstrap";
 import { FaEdit, FaListUl } from "react-icons/fa";
 import { ImStarFull } from "react-icons/im";
 import { RiDeleteBin5Line } from "react-icons/ri";
@@ -21,12 +14,9 @@ import usePagination from "../../custom hooks/usePagination";
 
 const ProductGrid = ({ toggle }) => {
     let navigate = useNavigate();
-    const {
-        currentData,
-        pageNumbers,
-        currentPage,
-        setCurrentPage,
-    } = usePagination({ data: products });
+    const { currentData, pageNumbers, currentPage, setCurrentPage } = usePagination({
+        data: products,
+    });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -92,9 +82,7 @@ const ProductGrid = ({ toggle }) => {
                                             </Row>
                                             <Row className="mx-2">
                                                 <span>
-                                                    <span className="me-2">
-                                                        Reference
-                                                    </span>
+                                                    <span className="me-2">Reference</span>
                                                     {elem.Reference}
                                                 </span>
                                             </Row>

@@ -34,11 +34,7 @@ const TopBar = () => {
                     onClick={handleClose}
                 ></div>
             )}
-            <Form.Control
-                type="search"
-                placeholder="search"
-                style={{ width: "30%" }}
-            />
+            <Form.Control type="search" placeholder="search" style={{ width: "30%" }} />
             <div
                 style={{ gap: "2rem" }}
                 className=" text-center d-flex flex-row justify-content-end align-items-center position-relative"
@@ -46,14 +42,8 @@ const TopBar = () => {
                 <IoMdHelpCircle className="cursor my-2" size="2em" />
                 <IoMdNotifications className="cursor my-2" size="2em" />
                 <div onClick={() => handleShow()}>
-                    <span
-                        className=" text-white fw-bold"
-                        style={{ letterSpacing: "1px" }}
-                    >
-                        Bijay{" "}
-                        <small>
-                            {show ? <HiChevronUp /> : <HiChevronDown />}
-                        </small>
+                    <span className=" text-white fw-bold" style={{ letterSpacing: "1px" }}>
+                        Bijay <small>{show ? <HiChevronUp /> : <HiChevronDown />}</small>
                     </span>
                 </div>
                 {show && (
@@ -101,10 +91,7 @@ const TopBar = () => {
                                     handleClose();
                                 }}
                             >
-                                <FaUser
-                                    className="text-dark my-2 me-2"
-                                    size="1em"
-                                />
+                                <FaUser className="text-dark my-2 me-2" size="1em" />
                                 Profile Page
                             </span>
                         </div>
@@ -117,10 +104,7 @@ const TopBar = () => {
                                     handleClose();
                                 }}
                             >
-                                <BiNotepad
-                                    className="text-dark my-2 me-2"
-                                    size="1em"
-                                />
+                                <BiNotepad className="text-dark my-2 me-2" size="1em" />
                                 Order Invoices
                             </span>
                         </div>
@@ -133,10 +117,7 @@ const TopBar = () => {
                                     handleClose();
                                 }}
                             >
-                                <FaSignOutAlt
-                                    className="text-dark my-2 me-2"
-                                    size="1em"
-                                />
+                                <FaSignOutAlt className="text-dark my-2 me-2" size="1em" />
                                 Signout
                             </span>
                         </div>

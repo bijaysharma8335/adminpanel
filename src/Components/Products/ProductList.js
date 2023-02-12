@@ -13,13 +13,8 @@ import PaginationList from "../../Pages/PaginationList";
 
 const ProductList = ({ toggle }) => {
     let navigate = useNavigate();
-    const {
-        indexOfFirstItem,
-        currentData,
-        pageNumbers,
-        currentPage,
-        setCurrentPage,
-    } = usePagination({ data: products });
+    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage } =
+        usePagination({ data: products });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -28,9 +23,7 @@ const ProductList = ({ toggle }) => {
                         <h3>Products</h3>
                     </div>
                     <div>
-                        <Button onClick={() => navigate("/product/add", {})}>
-                            Add
-                        </Button>
+                        <Button onClick={() => navigate("/product/add", {})}>Add</Button>
                     </div>
                     <div>
                         <ButtonGroup size="sm" className="mb-2 border">
@@ -62,39 +55,25 @@ const ProductList = ({ toggle }) => {
                             <tbody>
                                 {currentData.map((elem, index) => {
                                     return (
-                                        <tr
-                                            key={index}
-                                            className-="p-3 vertical-align-middle"
-                                        >
+                                        <tr key={index} className-="p-3 vertical-align-middle">
                                             <td className="fw-bold">
                                                 {indexOfFirstItem + index + 1}
                                             </td>
                                             <td>
-                                                <img
-                                                    src={elem.img}
-                                                    alt=""
-                                                    width={80}
-                                                    height={80}
-                                                />
+                                                <img src={elem.img} alt="" width={80} height={80} />
                                             </td>
                                             <td>
                                                 <Row>
                                                     <span
                                                         className="fw-bold title-head"
-                                                        onClick={() =>
-                                                            navigate(
-                                                                "/product/detail"
-                                                            )
-                                                        }
+                                                        onClick={() => navigate("/product/detail")}
                                                     >
                                                         {elem.item}
                                                     </span>{" "}
                                                 </Row>
                                                 <Row>
                                                     <span>
-                                                        <span className="me-2">
-                                                            Reference
-                                                        </span>
+                                                        <span className="me-2">Reference</span>
                                                         {elem.Reference}
                                                     </span>
                                                 </Row>
@@ -106,9 +85,7 @@ const ProductList = ({ toggle }) => {
                                                                 {`${elem?.priceends?.slice(
                                                                     0,
                                                                     2
-                                                                )}h:${elem?.priceends?.slice(
-                                                                    3
-                                                                )}s`}
+                                                                )}h:${elem?.priceends?.slice(3)}s`}
                                                             </span>
                                                         </Row>
                                                     </span>
@@ -119,9 +96,7 @@ const ProductList = ({ toggle }) => {
                                                     <span>Offer</span>
                                                 </Row>
                                                 <Row>
-                                                    <span className="fw-bold">
-                                                        {elem.offer}
-                                                    </span>
+                                                    <span className="fw-bold">{elem.offer}</span>
                                                 </Row>
                                             </td>
 

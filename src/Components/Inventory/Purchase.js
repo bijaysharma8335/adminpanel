@@ -5,13 +5,8 @@ import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
 
 const Purchase = ({ toggle }) => {
-    const {
-        indexOfFirstItem,
-        currentData,
-        pageNumbers,
-        currentPage,
-        setCurrentPage,
-    } = usePagination({ data: purchase });
+    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage } =
+        usePagination({ data: purchase });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -38,9 +33,7 @@ const Purchase = ({ toggle }) => {
                             <Row>
                                 <Form>
                                     <Form.Group className="d-flex flew-column my-2 ">
-                                        <Form.Label className="me-1 my-2">
-                                            Search:
-                                        </Form.Label>
+                                        <Form.Label className="me-1 my-2">Search:</Form.Label>
                                         <Form.Control
                                             type="search"
                                             className="ps-2 pt-0 pb-0 pe-0"
@@ -70,13 +63,8 @@ const Purchase = ({ toggle }) => {
                         <tbody>
                             {currentData.map((elem, index) => {
                                 return (
-                                    <tr
-                                        key={index}
-                                        className-="p-5 vertical-align-middle"
-                                    >
-                                        <td className="fw-bold">
-                                            {indexOfFirstItem + index + 1}
-                                        </td>
+                                    <tr key={index} className-="p-5 vertical-align-middle">
+                                        <td className="fw-bold">{indexOfFirstItem + index + 1}</td>
                                         <td>{elem.id}</td>
                                         <td>{elem.item}</td>
                                         <td className="fw-bold">{elem.name}</td>
@@ -90,8 +78,7 @@ const Purchase = ({ toggle }) => {
                                         <td>
                                             <span
                                                 className={
-                                                    elem?.status ===
-                                                    "Item Received"
+                                                    elem?.status === "Item Received"
                                                         ? " bg-success p-1 text-white rounded fw-bold mx-1 "
                                                         : "bg-warning p-1  text-white rounded fw-bold mx-1 text-center"
                                                 }

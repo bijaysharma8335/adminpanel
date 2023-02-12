@@ -11,32 +11,34 @@ import {
 import { Bar } from "react-chartjs-2";
 import faker from "faker";
 
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const labels = ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"];
+const labels = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+];
 
 export const data = {
     labels,
     datasets: [
         {
             label: "Puchase",
-            data: labels.map(() =>
-                faker.datatype.number({ min: 0, max: 10000000 })
-            ),
+            data: labels.map(() => faker.datatype.number({ min: 0, max: 10000000 })),
             backgroundColor: "blue",
         },
         {
             label: "Sell",
-            data: labels.map(() =>
-                faker.datatype.number({ min: 0, max: 1000000 })
-            ),
+            data: labels.map(() => faker.datatype.number({ min: 0, max: 1000000 })),
             backgroundColor: "red",
         },
     ],

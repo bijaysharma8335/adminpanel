@@ -5,13 +5,8 @@ import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
 
 const Suppliers = ({ toggle }) => {
-    const {
-        indexOfFirstItem,
-        currentData,
-        pageNumbers,
-        currentPage,
-        setCurrentPage,
-    } = usePagination({ data: suppliers });
+    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage } =
+        usePagination({ data: suppliers });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -38,9 +33,7 @@ const Suppliers = ({ toggle }) => {
                             <Row>
                                 <Form>
                                     <Form.Group className="d-flex flew-column my-2 ">
-                                        <Form.Label className="me-1 my-2">
-                                            Search:
-                                        </Form.Label>
+                                        <Form.Label className="me-1 my-2">Search:</Form.Label>
                                         <Form.Control
                                             type="search"
                                             className="ps-2 pt-0 pb-0 pe-0"
@@ -66,13 +59,8 @@ const Suppliers = ({ toggle }) => {
                         <tbody>
                             {currentData.map((elem, index) => {
                                 return (
-                                    <tr
-                                        key={index}
-                                        className-="p-5 vertical-align-middle"
-                                    >
-                                        <td className="fw-bold">
-                                            {indexOfFirstItem + index + 1}
-                                        </td>
+                                    <tr key={index} className-="p-5 vertical-align-middle">
+                                        <td className="fw-bold">{indexOfFirstItem + index + 1}</td>
                                         <td>{elem.id}</td>
 
                                         <td>{elem.item}</td>

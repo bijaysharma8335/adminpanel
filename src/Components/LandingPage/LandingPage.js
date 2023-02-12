@@ -74,60 +74,42 @@ const LandingPage = ({ toggle, setToggle }) => {
                             <span>500</span>
                         </div>
 
-                        <BiUser
-                            size="2em"
-                            className="float-end mt-0 text-warning"
-                        />
+                        <BiUser size="2em" className="float-end mt-0 text-warning" />
                     </div>
                     <div className=" p-3 bg-light m-1 text-center border rounded d-flex justify-content-between">
                         <div>
                             <h6>Orders</h6>
                             <span>50</span>
                         </div>
-                        <CgShoppingCart
-                            size="2em"
-                            className="float-end mt-0  text-primary"
-                        />
+                        <CgShoppingCart size="2em" className="float-end mt-0  text-primary" />
                     </div>
                     <div className=" p-3 bg-light m-1 text-center border  rounded d-flex justify-content-between">
                         <div>
                             <h6>Avg Sale</h6>
                             <span>$1770</span>
                         </div>
-                        <FaUsers
-                            size="2em"
-                            className="float-end mt-0 text-success"
-                        />
+                        <FaUsers size="2em" className="float-end mt-0 text-success" />
                     </div>
                     <div className=" p-3 bg-light m-1 text-center border  rounded d-flex justify-content-between">
                         <div>
                             <h6>Avg Item Sale</h6>
                             <span>570</span>
                         </div>
-                        <RiHandbagFill
-                            size="2em"
-                            className="float-end mt-0 text-info"
-                        />
+                        <RiHandbagFill size="2em" className="float-end mt-0 text-info" />
                     </div>
                     <div className=" p-3 bg-light m-1 text-center border rounded d-flex justify-content-between">
                         <div>
                             <h6>Total Sale</h6>
                             <span>$35000</span>
                         </div>
-                        <HiUser
-                            size="2em"
-                            className="float-end mt-0 text-danger"
-                        />
+                        <HiUser size="2em" className="float-end mt-0 text-danger" />
                     </div>
                     <div className=" p-3 bg-light m-1 text-center border rounded d-flex justify-content-between">
                         <div>
                             <h6> Visitors</h6>
                             <span>1000</span>
                         </div>
-                        <FaUsers
-                            size="2em"
-                            className="float-end mt-0 text-danger"
-                        />
+                        <FaUsers size="2em" className="float-end mt-0 text-danger" />
                     </div>
                     <div className=" p-3 bg-light m-1 text-center border  rounded d-flex justify-content-between">
                         <div>
@@ -141,10 +123,7 @@ const LandingPage = ({ toggle, setToggle }) => {
                             <h6> Top Selling Item</h6>
                             <span>234</span>
                         </div>
-                        <FaUsers
-                            size="2em"
-                            className="float-end mt-0 text-warning"
-                        />
+                        <FaUsers size="2em" className="float-end mt-0 text-warning" />
                     </div>
                     <div className=" p-3 bg-light m-1 text-center border d-flex justify-content-between">
                         <div>
@@ -152,10 +131,7 @@ const LandingPage = ({ toggle, setToggle }) => {
                             <span>32</span>
                         </div>
 
-                        <FaUsers
-                            size="2em"
-                            className="float-end mt-0 text-black"
-                        />
+                        <FaUsers size="2em" className="float-end mt-0 text-black" />
                     </div>
                 </div>
 

@@ -23,9 +23,8 @@ import StockList from "./Components/Inventory/StockList";
 import StockReturn from "./Components/Inventory/StockReturn";
 import Profile from "./Pages/Profile";
 import Suppliers from "./Components/Inventory/Suppliers";
-import Department from './Components/Inventory/Department';
+import Department from "./Components/Inventory/Department";
 import Purchase from "./Components/Inventory/Purchase";
-
 
 const App = () => {
     const [toggle, setToggle] = useState(false);
@@ -52,163 +51,117 @@ const App = () => {
                 <Route path="/" element={<Login />} />
                 <Route
                     path="/landingpage"
-                    element={
-                        <LandingPage toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<LandingPage toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/customer/list"
-                    element={
-                        <CustomerList toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<CustomerList toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/customer/detail"
-                    element={
-                        <CustomerDetail toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<CustomerDetail toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/orders/list"
-                    element={
-                        <OrderList toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<OrderList toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/orders/invoice"
-                    element={
-                        <OrderInvoice toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<OrderInvoice toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/product/list"
-                    element={
-                        <ProductList toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<ProductList toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/product/add"
-                    element={
-                        <AddProduct toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<AddProduct toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/product/edit"
-                    element={
-                        <EditProduct toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<EditProduct toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/product/grid"
-                    element={
-                        <ProductGrid toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<ProductGrid toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/product/detail"
-                    element={
-                        <ProductDetail toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<ProductDetail toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/orders/detail"
-                    element={
-                        <OrderDetail toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<OrderDetail toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/categories/list"
-                    element={
-                        <CategoryList toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<CategoryList toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/category/add"
-                    element={
-                        <AddCategory toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<AddCategory toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/category/edit"
-                    element={
-                        <EditCategory toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<EditCategory toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/coupon/list"
-                    element={
-                        <CouponList toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<CouponList toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/coupon/add"
-                    element={
-                        <AddCoupon toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<AddCoupon toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/coupon/edit"
-                    element={
-                        <EditCoupon toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<EditCoupon toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/stock/list"
-                    element={
-                        <StockList toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<StockList toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/stock/return"
-                    element={
-                        <StockReturn toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<StockReturn toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/stock/suppliers"
-                    element={
-                        <Suppliers toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<Suppliers toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/stock/department"
-                    element={
-                        <Department toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<Department toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/stock/purchase"
-                    element={
-                        <Purchase toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<Purchase toggle={toggle} setToggle={setToggle} />}
                 />
                 <Route
                     exact
                     path="/profile"
-                    element={
-                        <Profile toggle={toggle} setToggle={setToggle} />
-                    }
+                    element={<Profile toggle={toggle} setToggle={setToggle} />}
                 />
             </Routes>
         </>

@@ -12,13 +12,8 @@ import PaginationList from "../../Pages/PaginationList";
 
 const CouponList = ({ toggle }) => {
     const navigate = useNavigate();
-    const {
-        indexOfFirstItem,
-        currentData,
-        pageNumbers,
-        currentPage,
-        setCurrentPage,
-    } = usePagination({ data: coupons });
+    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage } =
+        usePagination({ data: coupons });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -55,9 +50,7 @@ const CouponList = ({ toggle }) => {
                             <Row>
                                 <Form>
                                     <Form.Group className="d-flex flew-column my-2 ">
-                                        <Form.Label className="me-1 my-2">
-                                            Search:
-                                        </Form.Label>
+                                        <Form.Label className="me-1 my-2">Search:</Form.Label>
                                         <Form.Control type="search" />
                                     </Form.Group>
                                 </Form>
@@ -96,8 +89,7 @@ const CouponList = ({ toggle }) => {
                                                 className={
                                                     elem?.status === "Active"
                                                         ? " bg-success p-1 text-white rounded fw-bold mx-1"
-                                                        : elem?.status ===
-                                                          "In Active"
+                                                        : elem?.status === "In Active"
                                                         ? "bg-danger p-1 text-white rounded fw-bold mx-1"
                                                         : "bg-warning p-1  text-white rounded fw-bold mx-1"
                                                 }

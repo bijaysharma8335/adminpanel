@@ -23,39 +23,25 @@ const EditProduct = ({ toggle }) => {
                         </div>
                         <div className="col-md-8 ">
                             <Card className="p-2">
-                                <span className="fw-bold my-2">
-                                    Basic Information
-                                </span>
+                                <span className="fw-bold my-2">Basic Information</span>
                                 <Row>
                                     <div className="col-6 my-2 ">
                                         <Form.Group>
-                                            <span className="fw-bold ">
-                                                Name
-                                            </span>
-                                            <Form.Control
-                                                type="text"
-                                                name="name"
-                                            />
+                                            <span className="fw-bold ">Name</span>
+                                            <Form.Control type="text" name="name" />
                                         </Form.Group>
                                     </div>
                                     <div className="col-6 my-2 ">
                                         <Form.Group>
-                                            <span className="fw-bold ">
-                                                Page Title
-                                            </span>
-                                            <Form.Control
-                                                type="text"
-                                                name="pageTitle"
-                                            />
+                                            <span className="fw-bold ">Page Title</span>
+                                            <Form.Control type="text" name="pageTitle" />
                                         </Form.Group>
                                     </div>
                                 </Row>
                                 <Row>
                                     <div className="col-6 my-2 ">
                                         <Form.Group>
-                                            <span className="fw-bold ">
-                                                Offers Ends
-                                            </span>
+                                            <span className="fw-bold ">Offers Ends</span>
                                             <Form.Control
                                                 required={true}
                                                 type="time"
@@ -65,9 +51,7 @@ const EditProduct = ({ toggle }) => {
                                     </div>
                                     <div className="col-6 my-2 ">
                                         <Form.Group>
-                                            <span className="fw-bold ">
-                                                Rating
-                                            </span>
+                                            <span className="fw-bold ">Rating</span>
                                             <Form.Control
                                                 required={true}
                                                 type="text"
@@ -79,9 +63,7 @@ const EditProduct = ({ toggle }) => {
                                 <Row className="align-items-center">
                                     <div className="col-4 my-2 ">
                                         <Form.Group>
-                                            <span className="fw-bold ">
-                                                Reference
-                                            </span>
+                                            <span className="fw-bold ">Reference</span>
                                             <Form.Control
                                                 required={true}
                                                 type="text"
@@ -91,9 +73,7 @@ const EditProduct = ({ toggle }) => {
                                     </div>
                                     <div className="col-4 my-2 ">
                                         <Form.Group>
-                                            <span className="fw-bold ">
-                                                Payment
-                                            </span>
+                                            <span className="fw-bold ">Payment</span>
                                             <Form.Control
                                                 required={true}
                                                 type="text"
@@ -108,20 +88,14 @@ const EditProduct = ({ toggle }) => {
                                             aria-label="Default select example"
                                             name="offer"
                                         >
-                                            <option value="">
-                                                Select Your Offer
-                                            </option>
-                                            <option value="Bank Offer">
-                                                Bank Offer
-                                            </option>
+                                            <option value="">Select Your Offer</option>
+                                            <option value="Bank Offer">Bank Offer</option>
                                         </Form.Select>
                                     </div>
                                 </Row>
 
                                 <div>
-                                    <span className="fw-bold ">
-                                        Product Description
-                                    </span>
+                                    <span className="fw-bold ">Product Description</span>
                                     <Form.Control
                                         as="textarea"
                                         name="description"
