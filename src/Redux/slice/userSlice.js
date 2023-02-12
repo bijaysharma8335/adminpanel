@@ -5,7 +5,7 @@ const initialState = {
     password: "",
 };
 
-const userSlice = createSlice({
+const profileSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
@@ -15,6 +15,6 @@ const userSlice = createSlice({
     },
 });
 
-export const { setUser } = userSlice.actions;
+export const { setUser } = profileSlice.actions;
 export const getUser = (state) => state.user;
-export default userSlice.reducer;
+export default profileSlice.reducer;

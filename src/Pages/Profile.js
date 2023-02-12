@@ -1,25 +1,23 @@
 import React, { useState } from "react";
-import {
-    Button,
-    Card,
-    Container,
-    Form,
-    Image,
-    Row,
-    Modal,
-} from "react-bootstrap";
+import { Button, Card, Container, Form, Image, Row, Modal } from "react-bootstrap";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaAddressBook, FaBirthdayCake, FaEdit } from "react-icons/fa";
 import { FaCcVisa } from "react-icons/fa";
 import { GoDeviceMobile } from "react-icons/go";
+import { useDispatch, useSelector } from "react-redux";
+import { getProfile, setProfile } from "../Redux/slice/profileSlice";
 
 const Profile = ({ toggle }) => {
+    const dispatch = useDispatch();
+    const profile = useSelector(getProfile);
     const [authShow, setAuthShow] = useState(false);
     const [editProfileShow, setEditProfileShow] = useState(false);
 
     const handleClose = () => setEditProfileShow(false);
     const handleShow = () => setEditProfileShow(true);
-
+    const changeHandler = (e) => {
+        dispatch(setProfile({ ...profile, [e.target.name]: e.target.value }));
+    };
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -40,7 +38,7 @@ const Profile = ({ toggle }) => {
                             </div>
                             <div className="text-center  my-2">
                                 <Image
-                                    src="https://static.thenounproject.com/png/363640-200.png"
+                                    src={profile.profileImg}
                                     width={50}
                                     height={50}
                                     className="cursor"
@@ -52,27 +50,27 @@ const Profile = ({ toggle }) => {
                                     <span>ID : #CS-00002</span>
                                 </Row>
                                 <Row>
-                                    <span className="fw-bold">name</span>
+                                    <span className="fw-bold">{profile.name}</span>
                                 </Row>
 
                                 <span>24 years, California</span>
                             </div>
-                            <p className=" mx-2 my-2">details</p>
+                            <p className=" mx-2 my-2">{profile.details}</p>
                             <div>
                                 <GoDeviceMobile className="mx-2 my-2" />
-                                <span className="mx-2 my-2">mobile</span>
+                                <span className="mx-2 my-2">{profile.mobile}</span>
                             </div>
                             <div>
                                 <AiOutlineMail className="mx-2 my-2" />
-                                <span className="mx-2 my-2">email</span>
+                                <span className="mx-2 my-2">{profile.email}</span>
                             </div>
                             <div>
                                 <FaBirthdayCake className="mx-2 my-2" />
-                                <span className="mx-2 my-2">birthDate</span>
+                                <span className="mx-2 my-2">{profile.birthDate}</span>
                             </div>
                             <div>
                                 <FaAddressBook className="mx-2 my-2" />
-                                <span className="mx-2 my-2">address</span>
+                                <span className="mx-2 my-2">{profile.address}</span>
                             </div>
                         </Card>
                         <Card className="my-2 p-2">
@@ -83,12 +81,8 @@ const Profile = ({ toggle }) => {
                             </span>
                             <span>Next billing charged $48</span>
                             <div>
-                                <i className="text-secondary">
-                                    Auto Pay on July 20,2021
-                                </i>
-                                <span className=" mx-2 text-warning cursor">
-                                    Edit Payment Info
-                                </span>
+                                <i className="text-secondary">Auto Pay on July 20,2021</i>
+                                <span className=" mx-2 text-warning cursor">Edit Payment Info</span>
                             </div>
                             <div className="my-2">
                                 <Button> Add Payment Info</Button>
@@ -97,8 +91,8 @@ const Profile = ({ toggle }) => {
                         <Card className="my-2 p-2">
                             <span>Notification Preferences</span>
                             <span className="text-secondary my-2">
-                                Control all our newsletter and email related
-                                notifications to your email
+                                Control all our newsletter and email related notifications to your
+                                email
                             </span>
                             <span>
                                 <Form.Check
@@ -127,9 +121,7 @@ const Profile = ({ toggle }) => {
                     <div className="col-md-8">
                         <Card className="my-1 p-3">
                             <div className="my-2 ">
-                                <span className="fw-bold  ">
-                                    Profile Settings
-                                </span>
+                                <span className="fw-bold  ">Profile Settings</span>
                             </div>
                             <Row>
                                 <div className="col-6">
@@ -138,6 +130,8 @@ const Profile = ({ toggle }) => {
                                         type="text"
                                         className="my-2"
                                         name="username"
+                                        value={profile.username}
+                                        onChange={changeHandler}
                                     />
                                 </div>
 
@@ -147,47 +141,49 @@ const Profile = ({ toggle }) => {
                                         type="password"
                                         className="my-2"
                                         name="password"
+                                        value={profile.password}
+                                        onChange={changeHandler}
                                     />
                                 </div>
-                            </Row>{" "}
+                            </Row>
                             <Row>
                                 <div className="col-4">
                                     <span className="fw-bold">
                                         Company Name
-                                        <span className="text-danger ms-1">
-                                            *
-                                        </span>
+                                        <span className="text-danger ms-1">*</span>
                                     </span>
                                     <Form.Control
                                         required
                                         type="text"
                                         className="my-2"
+                                        value={profile.cmpName}
                                         name="cmpName"
+                                        onChange={changeHandler}
                                     />
                                 </div>
 
                                 <div className="col-4">
                                     <span className="fw-bold">
                                         Mobile
-                                        <span className="text-danger ms-1">
-                                            *
-                                        </span>
+                                        <span className="text-danger ms-1">*</span>
                                     </span>
                                     <Form.Control
                                         type="number"
                                         className="my-2 "
                                         name="mobile"
+                                        value={profile.mobile}
+                                        onChange={changeHandler}
                                     />
                                 </div>
                                 <div className="col-4">
-                                    <span className="fw-bold">
-                                        Alternate Mobile
-                                    </span>
+                                    <span className="fw-bold">Alternate Mobile</span>
                                     <Form.Control
                                         required
                                         type="number"
                                         className="my-2"
                                         name="altMobile"
+                                        value={profile.altMobile}
+                                        onChange={changeHandler}
                                     />
                                 </div>
                             </Row>
@@ -197,6 +193,8 @@ const Profile = ({ toggle }) => {
                                     type="email"
                                     name="email"
                                     className="my-2"
+                                    value={profile.email}
+                                    onChange={changeHandler}
                                 />
                             </div>
                             <div>
@@ -205,6 +203,8 @@ const Profile = ({ toggle }) => {
                                     as="textarea"
                                     className="my-2"
                                     name="address"
+                                    value={profile.address}
+                                    onChange={changeHandler}
                                 />
                             </div>
                             <div>
@@ -213,6 +213,8 @@ const Profile = ({ toggle }) => {
                                     as="textarea"
                                     className="my-2"
                                     name="details"
+                                    value={profile.details}
+                                    onChange={changeHandler}
                                 />
                             </div>
                             <Row>
@@ -222,6 +224,8 @@ const Profile = ({ toggle }) => {
                                         type="text"
                                         className="my-2"
                                         name="state"
+                                        value={profile.state}
+                                        onChange={changeHandler}
                                     />
                                 </div>
                                 <div className="col-3">
@@ -230,6 +234,8 @@ const Profile = ({ toggle }) => {
                                         type="text"
                                         className="my-2"
                                         name="city"
+                                        value={profile.city}
+                                        onChange={changeHandler}
                                     />
                                 </div>
                                 <div className="col-3">
@@ -238,6 +244,8 @@ const Profile = ({ toggle }) => {
                                         type="number"
                                         className="my-2"
                                         name="pinCode"
+                                        value={profile.pinCode}
+                                        onChange={changeHandler}
                                     />
                                 </div>
                             </Row>
@@ -248,9 +256,7 @@ const Profile = ({ toggle }) => {
 
                         <Card className="my-2 p-2">
                             <div className="d-flex flex-row  justify-content-between ">
-                                <span className="fw-bold ">
-                                    Authentication Details
-                                </span>
+                                <span className="fw-bold ">Authentication Details</span>
                                 <FaEdit
                                     className="text-primary cursor "
                                     size="2em"
@@ -259,54 +265,32 @@ const Profile = ({ toggle }) => {
                             </div>
                             <Row>
                                 <div className="col-4">
-                                    <span className="d-block  my-2">
-                                        User Name :
-                                    </span>
-                                    <span className="d-block   my-2">
-                                        Login Password :
-                                    </span>
-                                    <span className="d-block   my-2">
-                                        Last Login:
-                                    </span>
-                                    <span className="d-block   my-2">
-                                        Last Password change:
-                                    </span>
+                                    <span className="d-block  my-2">User Name :</span>
+                                    <span className="d-block   my-2">Login Password :</span>
+                                    <span className="d-block   my-2">Last Login:</span>
+                                    <span className="d-block   my-2">Last Password change:</span>
                                 </div>
                                 <div className="col-4">
-                                    <span className="d-block fw-bold my-2">
-                                        username
-                                    </span>
-                                    <span className="d-block fw-bold my-2">
-                                        password
-                                    </span>
+                                    <span className="d-block fw-bold my-2">{profile.username}</span>
+                                    <span className="d-block fw-bold my-2">{profile.password}</span>
                                     <span className="d-block fw-bold my-2">
                                         128.456.89 (Apple) safari
                                     </span>
-                                    <span className="d-block fw-bold my-2">
-                                        3 Months Ago
-                                    </span>
+                                    <span className="d-block fw-bold my-2">3 Months Ago</span>
                                 </div>
                             </Row>
                         </Card>
                     </div>
                 </Row>
             </div>
-            <Modal
-                show={editProfileShow}
-                onHide={handleClose}
-                style={{ top: "61px" }}
-            >
+            <Modal show={editProfileShow} onHide={handleClose} style={{ top: "61px" }}>
                 <Modal.Header closeButton className="bg-light">
                     <Modal.Title className="fw-bold">Edit Profile</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="bg-light p-2">
                     <div>
                         <span className="fw-bold">Name</span>
-                        <Form.Control
-                            type="text"
-                            className="my-2"
-                            name="name"
-                        />
+                        <Form.Control type="text" className="my-2" name="name" />
                     </div>
                     <div>
                         <span className="fw-bold">Profile</span>
@@ -319,11 +303,7 @@ const Profile = ({ toggle }) => {
                     </div>
                     <div>
                         <span className="fw-bold">Details</span>
-                        <Form.Control
-                            as="textarea"
-                            className="my-2"
-                            name="details"
-                        />
+                        <Form.Control as="textarea" className="my-2" name="details" />
                     </div>
                     <Row>
                         <div className="col-6">
@@ -332,38 +312,22 @@ const Profile = ({ toggle }) => {
                         </div>
                         <div className="col-6">
                             <span className="fw-bold">Birthday Date</span>
-                            <Form.Control
-                                type="date"
-                                className="my-2"
-                                name="birthDate"
-                            />
+                            <Form.Control type="date" className="my-2" name="birthDate" />
                         </div>
                     </Row>
                     <Row>
                         <div className="col-6">
                             <span className="fw-bold">Email</span>
-                            <Form.Control
-                                type="email"
-                                name="email"
-                                className="my-2"
-                            />
+                            <Form.Control type="email" name="email" className="my-2" />
                         </div>
                         <div className="col-6">
                             <span className="fw-bold">Phone</span>
-                            <Form.Control
-                                type="number"
-                                name="mobile"
-                                className="my-2"
-                            />
+                            <Form.Control type="number" name="mobile" className="my-2" />
                         </div>
                     </Row>
                     <div>
                         <span className="fw-bold">Address</span>
-                        <Form.Control
-                            as="textarea"
-                            name="address"
-                            className="my-2"
-                        />
+                        <Form.Control as="textarea" name="address" className="my-2" />
                     </div>
                 </Modal.Body>
                 <Modal.Footer className="bg-light">
@@ -382,10 +346,7 @@ const Profile = ({ toggle }) => {
                 onHide={() => setAuthShow(!authShow)}
             >
                 <Modal.Header closeButton className="bg-light">
-                    <Modal.Title
-                        id="contained-modal-title-vcenter"
-                        className="fw-bold"
-                    >
+                    <Modal.Title id="contained-modal-title-vcenter" className="fw-bold">
                         Edit Authentication
                     </Modal.Title>
                 </Modal.Header>
@@ -393,19 +354,11 @@ const Profile = ({ toggle }) => {
                     <Row>
                         <div className="col-6">
                             <span className="fw-bold">User Name</span>
-                            <Form.Control
-                                type="email"
-                                className="my-2"
-                                name="username"
-                            />
+                            <Form.Control type="email" className="my-2" name="username" />
                         </div>
                         <div className="col-6">
                             <span className="fw-bold">Password</span>
-                            <Form.Control
-                                type="password"
-                                className="my-2"
-                                name="username"
-                            />
+                            <Form.Control type="password" className="my-2" name="username" />
                         </div>
                     </Row>
                     <div className="my-2">
@@ -414,10 +367,7 @@ const Profile = ({ toggle }) => {
                     </div>
                 </Modal.Body>
                 <Modal.Footer className="bg-light">
-                    <Button
-                        variant="secondary"
-                        onClick={() => setAuthShow(!authShow)}
-                    >
+                    <Button variant="secondary" onClick={() => setAuthShow(!authShow)}>
                         Done
                     </Button>
                     <Button variant="primary">Save</Button>

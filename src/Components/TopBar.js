@@ -7,10 +7,11 @@ import { BiNotepad } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { useSelector } from "react-redux";
-import { getUser } from "../Redux/slice/userSlice";
+
+import { getProfile } from "../Redux/slice/profileSlice";
 
 const TopBar = () => {
-    const user = useSelector(getUser);
+    const profile = useSelector(getProfile);
     const [show, setShow] = useState(false);
 
     let navigate = useNavigate();
@@ -83,10 +84,10 @@ const TopBar = () => {
                             </div>
                             <div className="my-2">
                                 <Row>
-                                    <span>Bijay Sharma</span>
+                                    <span>{profile.name}</span>
                                 </Row>
                                 <Row>
-                                    <span>{user.email}</span>
+                                    <span>{profile.email}</span>
                                 </Row>
                             </div>
                         </div>
