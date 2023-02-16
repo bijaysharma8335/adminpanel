@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, Form } from "react-bootstrap";
-
 import { categories, sizes } from "./../../constants/constant";
 
 const EditProductLeftPanel = ({ product, editProduct, setEditProduct }) => {

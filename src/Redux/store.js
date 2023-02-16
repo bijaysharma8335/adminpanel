@@ -7,6 +7,7 @@ import customerReducer from "./slice/customerSlice";
 import stockReducer from "./slice/stockSlice";
 import userReducer from "./slice/userSlice";
 import profileReducer from "./slice/profileSlice";
+import themeSlice from "./slice/themeSlice";
 const store = configureStore({
     reducer: {
         user: userReducer,
@@ -17,6 +18,7 @@ const store = configureStore({
         customers: customerReducer,
         stocks: stockReducer,
         profile: profileReducer,
+        theme:themeSlice
     },
 });
 

@@ -1,8 +1,11 @@
 import React from "react";
 import { Button, Card, Container, Form, Row } from "react-bootstrap";
 import EditCategoryLeftPanel from "./EditCategoryLeftPanel";
+import { useSelector } from "react-redux";
+import { getThemeColor } from "../../Redux/slice/themeSlice";
 
 const EditCategory = ({ toggle }) => {
+    const color = useSelector(getThemeColor);
     return (
         <>
             <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
@@ -14,49 +17,33 @@ const EditCategory = ({ toggle }) => {
                         </div>
 
                         <div>
-                            <Button>Save</Button>
+                            <Button style={{ backgroundColor: color }}>Save</Button>
                         </div>
                     </div>
                     <hr />
                     <Row>
-                        <div
-                            className="col-md-4 "
-                            style={{ maxHeight: "100vh" }}
-                        >
+                        <div className="col-md-4 " style={{ maxHeight: "100vh" }}>
                             <EditCategoryLeftPanel toggle={toggle} />
                         </div>
-                        <div
-                            className="col-md-8 "
-                            style={{ maxHeight: "100vh" }}
-                        >
+                        <div className="col-md-8 " style={{ maxHeight: "100vh" }}>
                             <Card className="p-2">
-                                <span className="fw-bold my-2">
-                                    Basic Information
-                                </span>
+                                <span className="fw-bold my-2">Basic Information</span>
                                 <Row>
                                     <div className="col-6 my-2 ">
                                         <Form.Group>
                                             <Form.Label>Name</Form.Label>
-                                            <Form.Control
-                                                name="name"
-                                                type="text"
-                                            />
+                                            <Form.Control name="name" type="text" />
                                         </Form.Group>
                                     </div>
                                     <div className="col-6 my-2 ">
                                         <Form.Group>
                                             <Form.Label>Page Title</Form.Label>
-                                            <Form.Control
-                                                type="text"
-                                                name="pageTitle"
-                                            />
+                                            <Form.Control type="text" name="pageTitle" />
                                         </Form.Group>
                                     </div>
                                 </Row>
                                 <div>
-                                    <span className="fw-bold ">
-                                        Product Description
-                                    </span>
+                                    <span className="fw-bold ">Product Description</span>
                                     <Form.Control
                                         as="textarea"
                                         placeholder="Add your Description here"

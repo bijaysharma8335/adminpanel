@@ -1,8 +1,7 @@
-import React from "react";
-import { Button, ButtonGroup, Container, Row, Table } from "react-bootstrap";
-import { FaEdit, FaListUl } from "react-icons/fa";
+import React, { useState } from "react";
+import { Button, Container, Row, Table } from "react-bootstrap";
+import { FaEdit } from "react-icons/fa";
 import { ImStarFull } from "react-icons/im";
-import { FiGrid } from "react-icons/fi";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
@@ -10,10 +9,15 @@ import ProductLeftPanel from "./ProductLeftPanel";
 import { products } from "../../constants/products";
 import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
+import ProductButtonGroup from "./ProductButtonGroup";
+import { useSelector } from "react-redux";
+import { getThemeColor } from "../../Redux/slice/themeSlice";
 
 const ProductList = ({ toggle }) => {
     let navigate = useNavigate();
-    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage } =
+    const color = useSelector(getThemeColor);
+    const [type, setType] = useState("list");
+    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage, pagesCount } =
         usePagination({ data: products });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
@@ -23,28 +27,14 @@ const ProductList = ({ toggle }) => {
                         <h3>Products</h3>
                     </div>
                     <div>
-                        <Button onClick={() => navigate("/product/add", {})}>Add</Button>
+                        <Button
+                            onClick={() => navigate("/product/add", {})}
+                            style={{ backgroundColor: color }}
+                        >
+                            Add
+                        </Button>
                     </div>
-                    <div>
-                        <ButtonGroup size="sm" className="mb-2 border">
-                            <Button
-                                className="mx-1 "
-                                variant="outline-secondary"
-                                onClick={() => navigate("/product/list")}
-                            >
-                                <FaListUl className="my-2 me-1" />
-                                List View
-                            </Button>
-                            <Button
-                                className="me-1"
-                                variant="outline-secondary"
-                                onClick={() => navigate("/product/grid")}
-                            >
-                                <FiGrid className="my-2 me-1" />
-                                Grid View
-                            </Button>
-                        </ButtonGroup>
-                    </div>
+                    <ProductButtonGroup type={type} />
                 </div>
                 <Row>
                     <div className="col-md-3 " style={{ maxHeight: "100vh" }}>
@@ -135,6 +125,7 @@ const ProductList = ({ toggle }) => {
                                 pageNumbers={pageNumbers}
                                 currentPage={currentPage}
                                 setCurrentPage={setCurrentPage}
+                                pagesCount={pagesCount}
                             />
                         </div>
                     </div>

@@ -1,31 +1,18 @@
 import React from "react";
-import {
-    Button,
-    Card,
-    Container,
-    Form,
-    Image,
-    Row,
-    Table,
-} from "react-bootstrap";
-import {
-    AiOutlineMail,
-    AiOutlineShoppingCart,
-    AiOutlineUser,
-} from "react-icons/ai";
+import { Button, Card, Container, Form, Image, Row, Table } from "react-bootstrap";
+import { AiOutlineMail, AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 import { MdOutlineCall } from "react-icons/md";
+import { useSelector } from "react-redux";
 import { orders } from "../../constants/orders";
 import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
 
+import { getThemeColor } from "../../Redux/slice/themeSlice";
+
 const OrderDetail = ({ toggle, setToggle }) => {
-    const {
-        indexOfFirstItem,
-        currentData,
-        pageNumbers,
-        currentPage,
-        setCurrentPage,
-    } = usePagination({ data: orders });
+    const color = useSelector(getThemeColor);
+    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage, pagesCount } =
+        usePagination({ data: orders });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -53,9 +40,7 @@ const OrderDetail = ({ toggle, setToggle }) => {
                             <AiOutlineShoppingCart className=" my-2 text-white bg-success " />
                         </div>
                         <span className="d-block ms-1">Order Created at</span>
-                        <span className="d-block ms-1">
-                            16/03/2021 at 04:23 PM
-                        </span>
+                        <span className="d-block ms-1">16/03/2021 at 04:23 PM</span>
                     </div>
                     <div className="col-md-3 border  my-2  p-2 bg-danger ">
                         <div className="p-2 bg-light float-start bg-danger ">
@@ -69,9 +54,7 @@ const OrderDetail = ({ toggle, setToggle }) => {
                             <AiOutlineMail className=" my-2 text-white  bg-primary" />
                         </div>
                         <span className="d-block ms-1">Email</span>
-                        <span className="d-block ms-1">
-                            gabrielle.db@gmail.com
-                        </span>
+                        <span className="d-block ms-1">gabrielle.db@gmail.com</span>
                     </div>
                     <div className="col-md-3  border  my-2 p-2  bg-warning">
                         <div className="p-2 bg-light float-start bg-warning  text-white">
@@ -85,15 +68,11 @@ const OrderDetail = ({ toggle, setToggle }) => {
                     <div className="col-md-4 my-2">
                         <Card>
                             <div className="my-2">
-                                <span className="fw-bold  mx-2 ">
-                                    Delivery Address
-                                </span>
+                                <span className="fw-bold  mx-2 ">Delivery Address</span>
                                 <span className="float-end  me-2 ">Edit</span>
                             </div>
                             <div className="my-2">
-                                <span className="fw-bold mx-2 ">
-                                    Block Number:
-                                </span>
+                                <span className="fw-bold mx-2 ">Block Number:</span>
                                 <span className="fw-bold mx-2 ">#1421</span>
                             </div>
                             <div className="my-2">
@@ -108,24 +87,18 @@ const OrderDetail = ({ toggle, setToggle }) => {
                             </div>
                             <div className="my-2">
                                 <span className="fw-bold mx-2  ">Phone:</span>
-                                <span className="fw-bold mx-2  ">
-                                    123-4567-890
-                                </span>
+                                <span className="fw-bold mx-2  ">123-4567-890</span>
                             </div>
                         </Card>
                     </div>
                     <div className="col-md-4 my-2">
                         <Card>
                             <div className="my-2">
-                                <span className="fw-bold  mx-2 ">
-                                    Billing Address
-                                </span>
+                                <span className="fw-bold  mx-2 ">Billing Address</span>
                                 <span className="float-end me-2">Edit</span>
                             </div>
                             <div className="my-2">
-                                <span className="fw-bold mx-2 ">
-                                    Block Number:
-                                </span>
+                                <span className="fw-bold mx-2 ">Block Number:</span>
                                 <span className="fw-bold mx-2 ">#1421</span>
                             </div>
                             <div className="my-2">
@@ -140,40 +113,28 @@ const OrderDetail = ({ toggle, setToggle }) => {
                             </div>
                             <div className="my-2">
                                 <span className="fw-bold mx-2  ">Phone:</span>
-                                <span className="fw-bold mx-2  ">
-                                    123-4567-890
-                                </span>
+                                <span className="fw-bold mx-2  ">123-4567-890</span>
                             </div>
                         </Card>
                     </div>
                     <div className="col-md-4 my-2">
                         <Card>
                             <div className="my-2">
-                                <span className="fw-bold  mx-2 ">
-                                    Invoice Detail
-                                </span>
-                                <span className="float-end  me-2">
-                                    Download
-                                </span>
+                                <span className="fw-bold  mx-2 ">Invoice Detail</span>
+                                <span className="float-end  me-2">Download</span>
                             </div>
 
                             <div className="my-2">
-                                <span className="fw-bold mx-2 my-2">
-                                    Number:
-                                </span>
+                                <span className="fw-bold mx-2 my-2">Number:</span>
                                 <span className="fw-bold mx-2 my-2">XXXX</span>
                             </div>
                             <div className="my-2">
-                                <span className="fw-bold mx-2 my-2">
-                                    Seller GST :
-                                </span>
+                                <span className="fw-bold mx-2 my-2">Seller GST :</span>
                                 <span className="fw-bold mx-2 my-2"> XXXX</span>
                             </div>
 
                             <div className="my-2">
-                                <span className="fw-bold mx-2 my-2">
-                                    Purchase GST :
-                                </span>
+                                <span className="fw-bold mx-2 my-2">Purchase GST :</span>
                                 <span className="fw-bold mx-2 my-2">XXXX</span>
                             </div>
                         </Card>
@@ -182,9 +143,7 @@ const OrderDetail = ({ toggle, setToggle }) => {
                 <Row>
                     <div className="col-md-8">
                         <Card className="my-2">
-                            <span className="fw-bold mx-2 my-2">
-                                Order Summary
-                            </span>
+                            <span className="fw-bold mx-2 my-2">Order Summary</span>
                             <Table hover className="  my-2 ">
                                 <thead className="cursor">
                                     <tr>
@@ -198,20 +157,14 @@ const OrderDetail = ({ toggle, setToggle }) => {
                                 <tbody>
                                     {currentData.map((elem, index) => {
                                         return (
-                                            <tr
-                                                key={index}
-                                                className-="p-5 vertical-align-middle"
-                                            >
+                                            <tr key={index} className-="p-5 vertical-align-middle">
                                                 <td className="fw-bold">
-                                                    {indexOfFirstItem +
-                                                        index +
-                                                        1}
+                                                    {indexOfFirstItem + index + 1}
                                                 </td>
                                                 <td>
                                                     <Image
                                                         style={{
-                                                            objectFit:
-                                                                "contain",
+                                                            objectFit: "contain",
                                                         }}
                                                         src={elem.img}
                                                         width={50}
@@ -233,6 +186,7 @@ const OrderDetail = ({ toggle, setToggle }) => {
                                     pageNumbers={pageNumbers}
                                     currentPage={currentPage}
                                     setCurrentPage={setCurrentPage}
+                                    pagesCount={pagesCount}
                                 />
                             </div>
                             <Row className="p-2 pt-0">
@@ -241,34 +195,24 @@ const OrderDetail = ({ toggle, setToggle }) => {
                                     <div className="border ">
                                         <div className="p-2">
                                             <span>SubTotal Price:</span>
-                                            <span className="float-end">
-                                                $1096.00
-                                            </span>
+                                            <span className="float-end">$1096.00</span>
                                         </div>
                                         <div className="p-2">
                                             <span>Shipping Cost:</span>
-                                            <span className="float-end">
-                                                $12.00
-                                            </span>
+                                            <span className="float-end">$12.00</span>
                                         </div>
                                         <div className="p-2">
                                             <span>Discount:</span>
-                                            <span className="float-end">
-                                                $10.00
-                                            </span>
+                                            <span className="float-end">$10.00</span>
                                         </div>
                                         <div className="p-2">
                                             <span>Tax:</span>
-                                            <span className="float-end">
-                                                $198.00
-                                            </span>
+                                            <span className="float-end">$198.00</span>
                                         </div>
                                         <hr />
                                         <div className="mx-2 my-2">
                                             <span>Total Payable:</span>
-                                            <span className="float-end">
-                                                $1296.00
-                                            </span>
+                                            <span className="float-end">$1296.00</span>
                                         </div>
                                     </div>
                                 </div>
@@ -277,17 +221,13 @@ const OrderDetail = ({ toggle, setToggle }) => {
                     </div>
                     <div className="col-md-4">
                         <Card className="my-2 p-2">
-                            <span className="fw-bold mx-2 my-2">
-                                Orders Status
-                            </span>
+                            <span className="fw-bold mx-2 my-2">Orders Status</span>
                             <div className="p-2">
                                 <span className="fw-bold  my-2">Order ID</span>
                                 <Form.Control type="text" className=" my-1" />
                             </div>
                             <div className="p-2">
-                                <span className="fw-bold  my-2">
-                                    Order Status
-                                </span>
+                                <span className="fw-bold  my-2">Order Status</span>
                                 <Form.Select>
                                     <option>Progress</option>
                                     <option>Completed</option>
@@ -299,9 +239,7 @@ const OrderDetail = ({ toggle, setToggle }) => {
                                 <Form.Control type="number" className=" my-1" />
                             </div>
                             <div className="p-2">
-                                <span className="fw-bold  my-2">
-                                    Order Transaction
-                                </span>
+                                <span className="fw-bold  my-2">Order Transaction</span>
                                 <Form.Select>
                                     <option>Completed</option>
                                     <option>Fail</option>
@@ -312,7 +250,7 @@ const OrderDetail = ({ toggle, setToggle }) => {
                                 <Form.Control as="textarea" className=" my-1" />
                             </div>
                             <div className=" mx-3 my-2">
-                                <Button>Submit</Button>
+                                <Button style={{ backgroundColor: color }}>Submit</Button>
                             </div>
                         </Card>
                     </div>

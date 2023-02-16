@@ -1,8 +1,11 @@
 import React from "react";
 import { Button, Card, Container, Form, Row } from "react-bootstrap";
 import { categories, couponStatus, typeArray } from "../../constants/constant";
+import { useSelector } from "react-redux";
+import { getThemeColor } from "../../Redux/slice/themeSlice";
 
 const AddCoupon = ({ toggle }) => {
+    const color = useSelector(getThemeColor);
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -113,7 +116,12 @@ const AddCoupon = ({ toggle }) => {
                                             name="discount"
                                         />
                                     </div>
-                                    <Button className="my-2 text-white">Submit</Button>
+                                    <Button
+                                        className="my-2 text-white"
+                                        style={{ backgroundColor: color }}
+                                    >
+                                        Submit
+                                    </Button>
                                 </Form>
                             </Card.Body>
                         </Card>

@@ -1,10 +1,12 @@
 import React from "react";
 import { Button, Card, Container, Form, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { getThemeColor } from "../../Redux/slice/themeSlice";
 
 import CategoryLeftpanel from "./CategoryLeftpanel";
-import { FaUpload } from "react-icons/fa";
 
 const AddCategory = ({ toggle }) => {
+    const color = useSelector(getThemeColor);
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -14,7 +16,7 @@ const AddCategory = ({ toggle }) => {
                     </div>
 
                     <div>
-                        <Button>Save</Button>
+                        <Button style={{ backgroundColor: color }}>Save</Button>
                     </div>
                 </div>
                 <hr />

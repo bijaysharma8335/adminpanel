@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Card, Image, ButtonGroup, Button, ProgressBar } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { ImStarFull } from "react-icons/im";
 import img1 from "../../Assets/Images/img1.jpg";
 import img2 from "../../Assets/Images/img2.jpg";
@@ -9,12 +10,16 @@ import img5 from "../../Assets/Images/img5.jpg";
 import img6 from "../../Assets/Images/img6.jpg";
 import img7 from "../../Assets/Images/img7.jpg";
 
+import { getThemeColor } from "../../Redux/slice/themeSlice";
+
 const ProductDetail = ({ toggle, setToggle }) => {
+    const color = useSelector(getThemeColor);
     const [toggleImage, setToggleImage] = useState([img1, img2, img3, img4, img5]);
     const [img, setImg] = useState(img1);
-    const [desc, setDesc] = useState(false);
-    const [about, setAbout] = useState(false);
-    const [review, setReview] = useState(true);
+
+    const [hoverButton, setHoverButton] = useState({ desc: false, about: false, review: false });
+    const [toggleButton, settoggleButton] = useState({ desc: false, about: false, review: true });
+    const { desc, review, about } = toggleButton;
 
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
@@ -141,32 +146,44 @@ const ProductDetail = ({ toggle, setToggle }) => {
                     <div>
                         <ButtonGroup size="sm" className="my-2 border ">
                             <Button
-                                variant="outline-secondary"
-                                onClick={() => {
-                                    setReview(true);
-                                    setDesc(false);
-                                    setAbout(false);
-                                }}
+                                style={
+                                    review
+                                        ? { backgroundColor: color, color: "white" }
+                                        : hoverButton.review
+                                        ? { backgroundColor: "white", color: color }
+                                        : { color: "black", backgroundColor: "white" }
+                                }
+                                onClick={() => settoggleButton({ review: true })}
+                                onMouseEnter={() => setHoverButton({ review: true })}
+                                onMouseLeave={() => setHoverButton(false)}
                             >
                                 Reviews
                             </Button>
                             <Button
-                                variant="outline-secondary"
-                                onClick={() => {
-                                    setDesc(true);
-                                    setAbout(false);
-                                    setReview(false);
-                                }}
+                                style={
+                                    desc
+                                        ? { backgroundColor: color, color: "white" }
+                                        : hoverButton.desc
+                                        ? { backgroundColor: "white", color: color }
+                                        : { color: "black", backgroundColor: "white" }
+                                }
+                                onClick={() => settoggleButton({ desc: true })}
+                                onMouseEnter={() => setHoverButton({ desc: true })}
+                                onMouseLeave={() => setHoverButton(false)}
                             >
                                 Description
                             </Button>
                             <Button
-                                variant="outline-secondary"
-                                onClick={() => {
-                                    setDesc(false);
-                                    setAbout(true);
-                                    setReview(false);
-                                }}
+                                style={
+                                    about
+                                        ? { backgroundColor: color, color: "white" }
+                                        : hoverButton.about
+                                        ? { backgroundColor: "white", color: color }
+                                        : { color: "black", backgroundColor: "white" }
+                                }
+                                onClick={() => settoggleButton({ about: true })}
+                                onMouseEnter={() => setHoverButton({ about: true })}
+                                onMouseLeave={() => setHoverButton(false)}
                             >
                                 About
                             </Button>

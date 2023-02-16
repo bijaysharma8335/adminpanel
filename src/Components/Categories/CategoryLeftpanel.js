@@ -1,8 +1,7 @@
 import React from "react";
 import { Card, Form } from "react-bootstrap";
-
-
 import { Status, categories } from "../../constants/constant";
+
 const CategoryLeftpanel = () => {
     return (
         <>

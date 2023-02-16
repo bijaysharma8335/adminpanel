@@ -6,7 +6,7 @@ import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
 
 const StockList = ({ toggle }) => {
-    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage } =
+    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage, pagesCount } =
         usePagination({ data: products });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
@@ -102,6 +102,7 @@ const StockList = ({ toggle }) => {
                             pageNumbers={pageNumbers}
                             currentPage={currentPage}
                             setCurrentPage={setCurrentPage}
+                            pagesCount={pagesCount}
                         />
                     </div>
                 </div>

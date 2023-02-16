@@ -9,10 +9,13 @@ import { useNavigate } from "react-router-dom";
 import { coupons } from "./../../constants/coupons";
 import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
+import { getThemeColor } from "../../Redux/slice/themeSlice";
+import { useSelector } from "react-redux";
 
 const CouponList = ({ toggle }) => {
     const navigate = useNavigate();
-    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage } =
+    const color = useSelector(getThemeColor);
+    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage, pagesCount } =
         usePagination({ data: coupons });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
@@ -22,7 +25,10 @@ const CouponList = ({ toggle }) => {
                         <h3>Coupons List</h3>
                     </div>
                     <div>
-                        <Button onClick={() => navigate("/coupon/add")}>
+                        <Button
+                            onClick={() => navigate("/coupon/add")}
+                            style={{ backgroundColor: color }}
+                        >
                             <MdAddCircle className="text-white me-1" />
                             AddCoupon
                         </Button>
@@ -112,6 +118,7 @@ const CouponList = ({ toggle }) => {
                                 pageNumbers={pageNumbers}
                                 currentPage={currentPage}
                                 setCurrentPage={setCurrentPage}
+                                pagesCount={pagesCount}
                             />
                         </div>
                     </Row>

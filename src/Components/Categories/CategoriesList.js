@@ -8,16 +8,14 @@ import { useNavigate } from "react-router-dom";
 import { categories } from "../../constants/categories";
 import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
+import { useSelector } from "react-redux";
+import { getThemeColor } from "../../Redux/slice/themeSlice";
 
 const CategoryList = ({ toggle, setToggle }) => {
     const navigate = useNavigate();
-    const {
-        indexOfFirstItem,
-        currentData,
-        pageNumbers,
-        currentPage,
-        setCurrentPage,
-    } = usePagination({ data: categories });
+    const color = useSelector(getThemeColor);
+    const { indexOfFirstItem, currentData, pageNumbers, currentPage, pagesCount, setCurrentPage } =
+        usePagination({ data: categories });
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -27,7 +25,10 @@ const CategoryList = ({ toggle, setToggle }) => {
                     </div>
 
                     <div>
-                        <Button onClick={() => navigate("/category/add")}>
+                        <Button
+                            onClick={() => navigate("/category/add")}
+                            style={{ backgroundColor: color }}
+                        >
                             <MdAddCircle className="text-white me-1" />
                             Add Categories
                         </Button>
@@ -56,9 +57,7 @@ const CategoryList = ({ toggle, setToggle }) => {
                             <Row>
                                 <Form>
                                     <Form.Group className="d-flex flew-column my-2 ">
-                                        <Form.Label className="me-1 my-2">
-                                            Search:
-                                        </Form.Label>
+                                        <Form.Label className="me-1 my-2">Search:</Form.Label>
                                         <Form.Control
                                             type="search"
                                             style={{
@@ -85,12 +84,9 @@ const CategoryList = ({ toggle, setToggle }) => {
                         <tbody>
                             {currentData.map((elem, index) => {
                                 return (
-                                    <tr
-                                        key={index}
-                                        className-="p-5 vertical-align-middle"
-                                    >
+                                    <tr key={index} className-="p-5 vertical-align-middle">
                                         <td className="fw-bold">{indexOfFirstItem + index + 1}</td>
-                                        <td >{elem.id}</td>
+                                        <td>{elem.id}</td>
 
                                         <td>{elem.category}</td>
                                         <td>{elem.date}</td>
@@ -100,8 +96,7 @@ const CategoryList = ({ toggle, setToggle }) => {
                                                 className={
                                                     elem.status === "Published"
                                                         ? " bg-success p-1 text-white rounded fw-bold mx-1"
-                                                        : elem.status ===
-                                                          "Hidden"
+                                                        : elem.status === "Hidden"
                                                         ? "bg-danger p-1 text-white rounded fw-bold mx-1"
                                                         : "bg-warning p-1  text-white rounded fw-bold mx-1"
                                                 }
@@ -123,6 +118,7 @@ const CategoryList = ({ toggle, setToggle }) => {
                             pageNumbers={pageNumbers}
                             currentPage={currentPage}
                             setCurrentPage={setCurrentPage}
+                            pagesCount={pagesCount}
                         />
                     </div>
                 </div>

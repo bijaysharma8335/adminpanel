@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { Row, Form, Card, Button } from "react-bootstrap";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { ImStarFull } from "react-icons/im";
+import { useSelector } from "react-redux";
+import { getThemeColor } from "../../Redux/slice/themeSlice";
 
 const ProductLeftPanel = () => {
+    const color = useSelector(getThemeColor);
     const [toggle, setToggle] = useState(false);
     const [toggleGame, setToggleGame] = useState(false);
     const [toggleBag, setToggleBag] = useState(false);
@@ -24,7 +27,9 @@ const ProductLeftPanel = () => {
                 <div className="row">
                     <span className="fw-bold ">
                         Filter
-                        <Button className="float-end ">Reset</Button>
+                        <Button className="float-end " style={{ backgroundColor: color }}>
+                            Reset
+                        </Button>
                     </span>
                 </div>
             </Card>
@@ -151,23 +156,23 @@ const ProductLeftPanel = () => {
                 </span>
                 {toggleSize && (
                     <div className="my-2">
-                        <Button className="mx-1" variant="outline-primary">
+                        <Button className="mx-1" style={{ backgroundColor: color }}>
                             XS
                         </Button>
 
-                        <Button className="mx-1" variant="outline-primary">
+                        <Button className="mx-1" style={{ backgroundColor: color }}>
                             S
                         </Button>
 
-                        <Button className="mx-1" variant="outline-primary">
+                        <Button className="mx-1" style={{ backgroundColor: color }}>
                             M
                         </Button>
 
-                        <Button className="mx-1" variant="outline-primary">
+                        <Button className="mx-1" style={{ backgroundColor: color }}>
                             L
                         </Button>
 
-                        <Button className="mx-1" variant="outline-primary">
+                        <Button className="mx-1" style={{ backgroundColor: color }}>
                             XL
                         </Button>
                     </div>

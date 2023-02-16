@@ -1,9 +1,11 @@
 import React from "react";
 import { Container, Row, Button, Form, Card, Badge } from "react-bootstrap";
-
 import EditProductLeftPanel from "./EditProductLeftPanel";
+import { useSelector } from "react-redux";
+import { getThemeColor } from "../../Redux/slice/themeSlice";
 
 const EditProduct = ({ toggle }) => {
+    const color = useSelector(getThemeColor);
     return (
         <>
             <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
@@ -13,7 +15,7 @@ const EditProduct = ({ toggle }) => {
                             <h3>Products Edit</h3>
                         </div>
                         <div>
-                            <Button>Save</Button>
+                            <Button style={{ backgroundColor: color }}>Save</Button>
                         </div>
                     </div>
                     <hr />

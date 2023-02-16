@@ -7,11 +7,14 @@ import { useNavigate } from "react-router-dom";
 import { customers } from "../../constants/customers";
 import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
+import { useSelector } from "react-redux";
+import { getThemeColor } from "../../Redux/slice/themeSlice";
 
 const CustomerList = ({ toggle, setToggle }) => {
     const navigate = useNavigate();
+    const color = useSelector(getThemeColor);
     const [show, setShow] = useState(false);
-    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage } =
+    const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage, pagesCount } =
         usePagination({ data: customers });
     return (
         <Container className={toggle ? "margin-0" : "margin-18rem"}>
@@ -22,7 +25,7 @@ const CustomerList = ({ toggle, setToggle }) => {
                     </div>
 
                     <div>
-                        <Button>
+                        <Button style={{ backgroundColor: color }}>
                             <MdAddCircle className="text-white me-1" />
                             AddCustomer
                         </Button>
@@ -142,6 +145,7 @@ const CustomerList = ({ toggle, setToggle }) => {
                             pageNumbers={pageNumbers}
                             currentPage={currentPage}
                             setCurrentPage={setCurrentPage}
+                            pagesCount={pagesCount}
                         />
                     </div>
                 </div>

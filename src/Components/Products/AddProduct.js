@@ -2,11 +2,15 @@ import React from "react";
 import { Container, Row, Button, Form, Card, Badge } from "react-bootstrap";
 import { FaUpload } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import AddProductLeftPanel from "./AddProductLeftPanel";
 
+import { getThemeColor } from "../../Redux/slice/themeSlice";
+
 const AddProduct = ({ toggle }) => {
     const navigate = useNavigate();
+    const color = useSelector(getThemeColor);
 
     return (
         <Container fluid className={toggle ? "margin-0" : "margin-18rem"}>
@@ -20,6 +24,7 @@ const AddProduct = ({ toggle }) => {
                             onClick={() => {
                                 navigate("/product/list");
                             }}
+                            style={{ backgroundColor: color }}
                         >
                             Save
                         </Button>

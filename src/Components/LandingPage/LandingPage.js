@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ButtonGroup, Container, Row } from "react-bootstrap";
+import { Button, ButtonGroup, Container } from "react-bootstrap";
 import { HiOutlineShoppingBag, HiUser } from "react-icons/hi";
 import { CgShoppingCart } from "react-icons/cg";
 import { FaShoppingBag, FaUsers } from "react-icons/fa";

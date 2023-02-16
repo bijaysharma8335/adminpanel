@@ -11,11 +11,13 @@ const usePagination = ({ data }) => {
     for (let i = 1; i <= Math.ceil(data.length / itemsPerPage); i++) {
         pageNumbers.push(i);
     }
+    const pagesCount = Math.ceil(data.length / itemsPerPage);
     return {
         indexOfFirstItem,
         currentData,
         pageNumbers,
         currentPage,
+        pagesCount,
         setCurrentPage,
     };
 };

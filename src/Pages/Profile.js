@@ -6,9 +6,11 @@ import { FaCcVisa } from "react-icons/fa";
 import { GoDeviceMobile } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile, setProfile } from "../Redux/slice/profileSlice";
+import { getThemeColor } from "../Redux/slice/themeSlice";
 
 const Profile = ({ toggle }) => {
     const dispatch = useDispatch();
+    const color = useSelector(getThemeColor);
     const profile = useSelector(getProfile);
     const [authShow, setAuthShow] = useState(false);
     const [editProfileShow, setEditProfileShow] = useState(false);
@@ -31,7 +33,8 @@ const Profile = ({ toggle }) => {
                             <div className="d-flex flex-row  justify-content-between ">
                                 <span className="fw-bold ">Profile</span>
                                 <FaEdit
-                                    className="text-primary cursor "
+                                    className=" cursor "
+                                    style={{ color: color }}
                                     size="2em"
                                     onClick={handleShow}
                                 />
@@ -85,7 +88,9 @@ const Profile = ({ toggle }) => {
                                 <span className=" mx-2 text-warning cursor">Edit Payment Info</span>
                             </div>
                             <div className="my-2">
-                                <Button> Add Payment Info</Button>
+                                <Button style={{ backgroundColor: color }}>
+                                    Add Payment Info
+                                </Button>
                             </div>
                         </Card>
                         <Card className="my-2 p-2">
@@ -250,7 +255,7 @@ const Profile = ({ toggle }) => {
                                 </div>
                             </Row>
                             <div className="mx-1 my-2 ">
-                                <Button>Save</Button>
+                                <Button style={{ backgroundColor: color }}>Save</Button>
                             </div>
                         </Card>
 
@@ -258,7 +263,8 @@ const Profile = ({ toggle }) => {
                             <div className="d-flex flex-row  justify-content-between ">
                                 <span className="fw-bold ">Authentication Details</span>
                                 <FaEdit
-                                    className="text-primary cursor "
+                                    className=" cursor "
+                                    style={{ color: color }}
                                     size="2em"
                                     onClick={() => setAuthShow(!authShow)}
                                 />
@@ -334,7 +340,7 @@ const Profile = ({ toggle }) => {
                     <Button variant="secondary" onClick={handleClose}>
                         Done
                     </Button>
-                    <Button variant="primary">Save</Button>
+                    <Button style={{ backgroundColor: color }}>Save</Button>
                 </Modal.Footer>
             </Modal>
 
@@ -370,7 +376,7 @@ const Profile = ({ toggle }) => {
                     <Button variant="secondary" onClick={() => setAuthShow(!authShow)}>
                         Done
                     </Button>
-                    <Button variant="primary">Save</Button>
+                    <Button style={{ backgroundColor: color }}>Save</Button>
                 </Modal.Footer>
             </Modal>
         </Container>

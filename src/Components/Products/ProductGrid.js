@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Button, ButtonGroup, Card, Container, Image, Row } from "react-bootstrap";
-import { FaEdit, FaListUl } from "react-icons/fa";
+import { Card, Container, Image, Row } from "react-bootstrap";
 import { ImStarFull } from "react-icons/im";
-import { RiDeleteBin5Line } from "react-icons/ri";
-
-import { FiGrid } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
-
 import ProductLeftPanel from "./ProductLeftPanel";
 import { products } from "../../constants/products";
 import PaginationList from "../../Pages/PaginationList";
 import usePagination from "../../custom hooks/usePagination";
+import ProductButtonGroup from "./ProductButtonGroup";
 
 const ProductGrid = ({ toggle }) => {
-    let navigate = useNavigate();
-    const { currentData, pageNumbers, currentPage, setCurrentPage } = usePagination({
+    const [type, setType] = useState("grid");
+    const { currentData, pageNumbers, currentPage, setCurrentPage, pagesCount } = usePagination({
         data: products,
     });
     return (
@@ -24,26 +19,7 @@ const ProductGrid = ({ toggle }) => {
                     <div className=" my-2">
                         <h3>Products</h3>
                     </div>
-                    <div className=" justify-content-end">
-                        <ButtonGroup size="sm" className="mb-2 border">
-                            <Button
-                                className="mx-1 "
-                                variant="outline-secondary"
-                                onClick={() => navigate("/product/list")}
-                            >
-                                <FaListUl className="my-2 me-1" />
-                                List View
-                            </Button>
-                            <Button
-                                className="me-1"
-                                variant="outline-secondary"
-                                onClick={() => navigate("/product/grid")}
-                            >
-                                <FiGrid className="my-2 me-1" />
-                                Grid View
-                            </Button>
-                        </ButtonGroup>
-                    </div>
+                    <ProductButtonGroup type={type} />
                 </div>
                 <Row>
                     <div className="col-md-3" style={{ maxHeight: "100vh" }}>
@@ -101,6 +77,7 @@ const ProductGrid = ({ toggle }) => {
                                 pageNumbers={pageNumbers}
                                 currentPage={currentPage}
                                 setCurrentPage={setCurrentPage}
+                                pagesCount={pagesCount}
                             />
                         </div>
                     </div>

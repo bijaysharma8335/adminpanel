@@ -42,7 +42,7 @@ const TopBar = () => {
                 <IoMdHelpCircle className="cursor my-2" size="2em" />
                 <IoMdNotifications className="cursor my-2" size="2em" />
                 <div onClick={() => handleShow()}>
-                    <span className=" text-white fw-bold" style={{ letterSpacing: "1px" }}>
+                    <span className=" text-white fw-bold cursor" style={{ letterSpacing: "1px" }}>
                         Bijay <small>{show ? <HiChevronUp /> : <HiChevronDown />}</small>
                     </span>
                 </div>
@@ -74,7 +74,7 @@ const TopBar = () => {
                             </div>
                             <div className="my-2">
                                 <Row>
-                                    <span>{profile.name}</span>
+                                    <span className="cursor">{profile.name}</span>
                                 </Row>
                                 <Row>
                                     <span>{profile.email}</span>

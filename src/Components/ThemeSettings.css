@@ -1,0 +1,59 @@
+.theme-container {
+    padding: 20px;
+    background-color: white;
+    float: right;
+    right: 0;
+    position: fixed;
+    top: 55px;
+    width: 400px;
+    height: 100vh;
+    opacity: 1 !important;
+    z-index: 9999;
+}
+.settings-icon:hover {
+    color: orange !important;
+}
+.cross-icon {
+    padding: 3px;
+    background-color: rgb(153, 171, 180);
+    border-radius: 50%;
+}
+.cross-icon:hover {
+    padding: 2px;
+    background-color: rgb(189, 42, 42);
+    border: 1px solid rgb(220, 220, 226);
+    box-shadow: #888888;
+}
+.theme-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.theme-color {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.color-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3;
+}
+.color-name {
+    position: relative;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.theme-color-btn {
+    border-radius: 50%;
+    border: 0 !important;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
