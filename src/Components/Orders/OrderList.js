@@ -1,10 +1,12 @@
 import React from "react";
 import { Container, Form, Image, Row, Table } from "react-bootstrap";
-import { orders } from "../../constants/orders";
+import { useSelector } from "react-redux";
 import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
+import { getOrder } from "../../Redux/slice/orderSlice";
 
 const OrderList = ({ toggle }) => {
+    const orders = useSelector(getOrder);
     const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage, pagesCount } =
         usePagination({ data: orders });
     return (

@@ -1,15 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { customers } from "../../constants/customers";
 const initialState = {
-    customers,
-    newCustomers: [],
+    customer: {
+        orderId: "",
+        name: "",
+        profileImg: "",
+        country: "",
+        registerDate: "",
+        email: "",
+        phone: "",
+        order: "",
+    },
 };
 const customerSlice = createSlice({
     name: "customers",
     initialState,
     reducers: {
-        setCustomer: (state, action) => {
-            state.customer = action.payload;
+        setCustomer: (_, action) => {
+            return action.payload;
         },
     },
 });

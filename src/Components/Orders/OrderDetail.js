@@ -3,14 +3,16 @@ import { Button, Card, Container, Form, Image, Row, Table } from "react-bootstra
 import { AiOutlineMail, AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 import { MdOutlineCall } from "react-icons/md";
 import { useSelector } from "react-redux";
-import { orders } from "../../constants/orders";
 import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
+import { getOrder } from "../../Redux/slice/orderSlice";
 
 import { getThemeColor } from "../../Redux/slice/themeSlice";
 
 const OrderDetail = ({ toggle, setToggle }) => {
     const color = useSelector(getThemeColor);
+    const orders = useSelector(getOrder);
+    console.log(orders)
     const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage, pagesCount } =
         usePagination({ data: orders });
     return (

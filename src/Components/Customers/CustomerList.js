@@ -7,15 +7,50 @@ import { useNavigate } from "react-router-dom";
 import { customers } from "../../constants/customers";
 import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getThemeColor } from "../../Redux/slice/themeSlice";
+import { getCustomer, setCustomer } from "../../Redux/slice/customerSlice";
 
 const CustomerList = ({ toggle, setToggle }) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const color = useSelector(getThemeColor);
+    const customer = useSelector(getCustomer);
+
     const [show, setShow] = useState(false);
+    const [newCustomer, setNewCustomer] = useState({
+        id: "",
+        name: "",
+        profileImg: "",
+        country: "",
+        registerDate: "",
+        email: "",
+        phone: "",
+        totalOrders: "",
+    });
     const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage, pagesCount } =
         usePagination({ data: customers });
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const onChangeHandler = (e) => {
+        dispatch(setCustomer({ ...customer, [e.target.name]: e.target.value }));
+    };
+    const onFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file)
+            dispatch(
+                setCustomer({
+                    ...customer,
+                    profileImg: URL.createObjectURL(file),
+                })
+            );
+    };
+    const onClickHandler = (e) => {
+        setShow(false);
+        setNewCustomer(customer);
+    };
     return (
         <Container className={toggle ? "margin-0" : "margin-18rem"}>
             <div className={toggle ? "width-98vw" : "width-83vw"}>
@@ -25,7 +60,7 @@ const CustomerList = ({ toggle, setToggle }) => {
                     </div>
 
                     <div>
-                        <Button style={{ backgroundColor: color }}>
+                        <Button style={{ backgroundColor: color }} onClick={handleShow}>
                             <MdAddCircle className="text-white me-1" />
                             AddCustomer
                         </Button>
@@ -108,13 +143,8 @@ const CustomerList = ({ toggle, setToggle }) => {
                                     </tr>
                                 );
                             })}
-                            {/* {newCustomer?.name?.length > 0 && (
-                                <tr
-                                    key={Math.random()
-                                        .toString(36)
-                                        .substr(2, 9)}
-                                    className-="p-5"
-                                >
+                            {newCustomer?.name?.length > 0 && (
+                                <tr key={Math.random().toString(36).substr(2, 9)} className-="p-5">
                                     <td>{newCustomer.id}</td>
                                     <td>
                                         <Image
@@ -137,7 +167,7 @@ const CustomerList = ({ toggle, setToggle }) => {
                                         <RiDeleteBin5Line className="text-danger mx-1" />
                                     </td>
                                 </tr>
-                            )} */}
+                            )}
                         </tbody>
                     </Table>
                     <div className="pagination-list">
@@ -150,7 +180,7 @@ const CustomerList = ({ toggle, setToggle }) => {
                     </div>
                 </div>
             </div>
-            {/* <Modal show={show}>
+            <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton className="bg-light">
                     <Modal.Title className="fw-bold">Add Customers</Modal.Title>
                 </Modal.Header>
@@ -158,9 +188,11 @@ const CustomerList = ({ toggle, setToggle }) => {
                     <div>
                         <span className="fw-bold">Order Id</span>
                         <Form.Control
-                            type="number"
+                            type="text"
                             name="id"
                             className="my-2"
+                            value={customers.length + 1}
+                            onChange={onChangeHandler}
                         />
                     </div>
                     <div>
@@ -169,29 +201,28 @@ const CustomerList = ({ toggle, setToggle }) => {
                             type="text"
                             name="name"
                             className="my-2"
+                            value={customer?.name}
+                            onChange={onChangeHandler}
                         />
                     </div>
                     <div>
                         <span className="fw-bold">Customers Profile</span>
-                        <Form.Control type="file" className="my-2" />
+                        <Form.Control type="file" className="my-2" onChange={onFileChange} />
                     </div>
                     <Row>
+                        {" "}
                         <div className="col-6">
                             <span className="fw-bold">Country</span>
-                            <Form.Control
-                                name="country"
-                                type="text"
-                                className="my-2"
-                            />
+                            <Form.Control name="country" type="text" className="my-2" />
                         </div>
                         <div className="col-6">
-                            <span className="fw-bold">
-                                Customers Register Date
-                            </span>
+                            <span className="fw-bold">Register Date</span>
                             <Form.Control
                                 name="registerDate"
                                 type="date"
                                 className="my-2"
+                                value={customer?.registerDate}
+                                onChange={onChangeHandler}
                             />
                         </div>
                     </Row>
@@ -202,6 +233,8 @@ const CustomerList = ({ toggle, setToggle }) => {
                                 name="email"
                                 type="email"
                                 className="my-2"
+                                value={customer.email}
+                                onChange={onChangeHandler}
                             />
                         </div>
                         <div className="col-6">
@@ -210,6 +243,8 @@ const CustomerList = ({ toggle, setToggle }) => {
                                 name="phone"
                                 type="number"
                                 className="my-2"
+                                value={customer.phone}
+                                onChange={onChangeHandler}
                             />
                         </div>
                     </Row>
@@ -219,14 +254,26 @@ const CustomerList = ({ toggle, setToggle }) => {
                             name="order"
                             type="text"
                             className="my-2"
+                            value={customer.order}
+                            onChange={onChangeHandler}
                         />
                     </div>
                 </Modal.Body>
                 <Modal.Footer className="bg-light">
-                    <Button variant="secondary">Done</Button>
-                    <Button variant="primary">Add</Button>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Done
+                    </Button>
+                    <Button
+                        style={{ backgroundColor: color }}
+                        onClick={() => {
+                            handleClose();
+                            onClickHandler();
+                        }}
+                    >
+                        Add
+                    </Button>
                 </Modal.Footer>
-            </Modal> */}
+            </Modal>
         </Container>
     );
 };

@@ -117,4 +117,8 @@ table tbody tr {
 }
 .btn {
     border: unset !important;
+    box-shadow: unset !important;
+}
+.btn:hover {
+    opacity: 0.9;
 }

@@ -3,11 +3,13 @@ import { Container, Form, Image, Row, Table } from "react-bootstrap";
 import { AiFillPrinter } from "react-icons/ai";
 import { FiDownload } from "react-icons/fi";
 import { BiMailSend } from "react-icons/bi";
-import { orders } from "../../constants/orders";
+import { useSelector } from "react-redux";
+import { getOrder } from "../../Redux/slice/orderSlice";
 import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
 
 const OrderInvoice = ({ toggle }) => {
+    const orders = useSelector(getOrder);
     const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage, pagesCount } =
         usePagination({ data: orders });
     return (

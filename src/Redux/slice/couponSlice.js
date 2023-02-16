@@ -1,7 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { coupons } from "../../constants/coupons";
+
 const initialState = {
-    coupons,
+    coupon: {
+        code: "",
+        type: "",
+        discount: "",
+        startDate: "",
+        endDate: "",
+        status: "",
+        discountCountry: "",
+        discountProduct: "",
+        couponLimit: "",
+    },
     newCouponAdded: [],
 };
 const couponSlice = createSlice({
@@ -13,10 +23,7 @@ const couponSlice = createSlice({
         },
         setNewCoupon: (state, action) => {
             const length = 6 + state.newCouponAdded.length;
-            state.newCouponAdded = [
-                ...state.newCouponAdded,
-                { ...state.coupon, id: length },
-            ];
+            state.newCouponAdded = [...state.newCouponAdded, { ...state.coupon, id: length }];
         },
     },
 });

@@ -88,9 +88,7 @@ const Profile = ({ toggle }) => {
                                 <span className=" mx-2 text-warning cursor">Edit Payment Info</span>
                             </div>
                             <div className="my-2">
-                                <Button style={{ backgroundColor: color }}>
-                                    Add Payment Info
-                                </Button>
+                                <Button style={{ backgroundColor: color }}>Add Payment Info</Button>
                             </div>
                         </Card>
                         <Card className="my-2 p-2">
@@ -340,7 +338,12 @@ const Profile = ({ toggle }) => {
                     <Button variant="secondary" onClick={handleClose}>
                         Done
                     </Button>
-                    <Button style={{ backgroundColor: color }}>Save</Button>
+                    <Button
+                        style={{ backgroundColor: color }}
+                        onClick={() => console.log("profile", profile)}
+                    >
+                        Save
+                    </Button>
                 </Modal.Footer>
             </Modal>
 
