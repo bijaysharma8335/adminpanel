@@ -21,10 +21,10 @@ const AddProduct = ({ toggle }) => {
                     </div>
                     <div>
                         <Button
+                            style={{ backgroundColor: color }}
                             onClick={() => {
                                 navigate("/product/list");
                             }}
-                            style={{ backgroundColor: color }}
                         >
                             Save
                         </Button>
@@ -115,9 +115,12 @@ const AddProduct = ({ toggle }) => {
                             <div>
                                 <div className="row">
                                     <div className="col-6 text-center">
-                                        <Badge className="fw-bold d-inline-block mt-4 fs-5">
+                                        <div
+                                            className="fw-bold d-inline-block mt-4 fs-5"
+                                            style={{ color: color }}
+                                        >
                                             Upload Files
-                                        </Badge>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

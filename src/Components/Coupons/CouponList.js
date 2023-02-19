@@ -64,7 +64,7 @@ const CouponList = ({ toggle }) => {
                         </div>
                     </Row>
                     <Row>
-                        <Table responsive hover className="my-1">
+                        <Table responsive  className="my-1">
                             <thead className="cursor">
                                 <tr>
                                     <th>#</th>

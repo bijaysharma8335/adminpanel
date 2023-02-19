@@ -51,7 +51,7 @@ const StockReturn = ({ toggle }) => {
                             </Row>
                         </div>
                     </Row>
-                    <Table hover className=" my-1">
+                    <Table  className=" my-1">
                         <thead className="cursor">
                             <tr>
                                 <th>#</th>

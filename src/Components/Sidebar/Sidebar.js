@@ -48,7 +48,7 @@ const SidebarWrap = styled.div`
     width: 100%;
     min-height: 100vh;
 `;
-const Sidebar = ({ toggle, setToggle, sidebar, setSidebar, showSidebar }) => {
+const Sidebar = ({ toggle, setToggle, sidebar, setSidebar, showSidebar, theme, setTheme }) => {
     useEffect(() => {
         if (toggle) setSidebar(false);
         else setSidebar(true);
@@ -74,7 +74,7 @@ const Sidebar = ({ toggle, setToggle, sidebar, setSidebar, showSidebar }) => {
                             className=" ms-5 "
                         />
                     </NavIcon>
-                    <TopBar />
+                    <TopBar theme={theme} setTheme={setTheme} />
                 </Nav>
 
                 <SidebarNav sidebar={sidebar}>

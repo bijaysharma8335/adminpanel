@@ -28,10 +28,12 @@ const ProductList = ({ toggle }) => {
                     </div>
                     <div>
                         <Button
-                            onClick={() => navigate("/product/add", {})}
+                            className="p-2"
                             style={{ backgroundColor: color }}
+                            
+                            onClick={() => navigate("/product/add", {})}
                         >
-                            Add
+                            Add Product
                         </Button>
                     </div>
                     <ProductButtonGroup type={type} />
@@ -41,7 +43,7 @@ const ProductList = ({ toggle }) => {
                         <ProductLeftPanel />
                     </div>
                     <div className="col-md-9 " style={{ maxHeight: "100vh" }}>
-                        <Table hover className=" my-1 border">
+                        <Table  className=" my-1 border">
                             <tbody>
                                 {currentData.map((elem, index) => {
                                     return (

@@ -1,0 +1,30 @@
+.bg-dark {
+    background-color: #343a40;
+    /* color: #8f8f8f; */
+    color: #fff;
+    border-color: #fff;
+}
+
+.table-dark tr,
+.table-dark tr th,
+.table-dark tr th td {
+    background-color: #343a40;
+    color: #fff;
+    border-color: #fff;
+}
+.table-dark tbody tr:hover {
+    color: #cac3c3;
+}
+.form-control-dark,
+.form-select-dark {
+    border-color: #fff;
+    background-color: #10141f;
+    color: #fff;
+    font-size: 16px;
+}
+.card-dark {
+    color: #fff;
+    border-color: #fff;
+    outline: #fff;
+    background-color: #10141f;
+}

@@ -48,7 +48,7 @@ const OrderList = ({ toggle }) => {
                             </Row>
                         </div>
                     </Row>
-                    <Table hover className=" mx-1 my-1">
+                    <Table  className=" mx-1 my-1">
                         <thead className="cursor">
                             <tr>
                                 <th>#</th>

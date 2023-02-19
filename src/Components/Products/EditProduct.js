@@ -15,7 +15,7 @@ const EditProduct = ({ toggle }) => {
                             <h3>Products Edit</h3>
                         </div>
                         <div>
-                            <Button style={{ backgroundColor: color }}>Save</Button>
+                            <Button style={{ backgroundColor: color }}>Update</Button>
                         </div>
                     </div>
                     <hr />
@@ -111,9 +111,12 @@ const EditProduct = ({ toggle }) => {
                                 <div>
                                     <div className="row">
                                         <div className="col-6 text-center">
-                                            <Badge className="fw-bold d-inline-block mt-4 fs-5">
+                                            <div
+                                                className="fw-bold d-inline-block mt-4 fs-5"
+                                                style={{ color: color }}
+                                            >
                                                 Upload Files
-                                            </Badge>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

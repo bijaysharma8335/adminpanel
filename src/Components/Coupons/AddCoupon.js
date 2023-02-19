@@ -36,7 +36,7 @@ const AddCoupon = ({ toggle }) => {
                 <hr />
                 <div className="row">
                     <div className="col-md-4">
-                        <Card className="p-3 d-flex my-2">
+                        <Card className="p-2 d-flex ">
                             <span className="fw-bold">Coupon status</span>
                             <Form.Group onChange={(e) => onChangeHandler(e, "status")}>
                                 <div className="d-flex flex-row mt-4">
@@ -76,12 +76,12 @@ const AddCoupon = ({ toggle }) => {
                         </Card>
                     </div>
                     <div className="col-md-8">
-                        <Card className="p-1">
+                        <Card className="p-2">
                             <Card.Body>
                                 <h3>Coupon Information</h3>
                                 <Form>
                                     <Row>
-                                        <div className="col-6 my-2">
+                                        <div className="col-6 ">
                                             <div>
                                                 <span className="fw-bold">Coupon Code</span>
                                                 <Form.Control
@@ -92,7 +92,7 @@ const AddCoupon = ({ toggle }) => {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="col-6 my-2">
+                                        <div className="col-6 ">
                                             <div>
                                                 <span className="fw-bold">Discounts Products</span>
                                                 <Form.Select

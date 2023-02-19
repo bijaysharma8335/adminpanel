@@ -1,0 +1,8 @@
+.card-light {
+    border-color: lightgray;
+    /* --bs-card-border-color:  rgb(153, 28, 28); */
+}
+.table-light tbody tr:hover {
+    color: #212529;
+    background-color: rgba(0, 0, 0, 0.075);
+}

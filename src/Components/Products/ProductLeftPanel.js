@@ -37,9 +37,9 @@ const ProductLeftPanel = () => {
                 <span className="fw-bold my-2 title-head" onClick={() => setToggle(!toggle)}>
                     Categories
                     {!toggle ? (
-                        <FaChevronUp className="float-end fw-bold text-dark" />
+                        <FaChevronUp className="float-end fw-bold " style={{ color: color }} />
                     ) : (
-                        <FaChevronDown className="float-end fw-bold text-dark" />
+                        <FaChevronDown className="float-end fw-bold " style={{ color: color }} />
                     )}
                 </span>
                 {toggle && (
@@ -59,7 +59,10 @@ const ProductLeftPanel = () => {
                             onClick={() => setToggleGame(!toggleGame)}
                         >
                             Game Acessories
-                            <FaChevronDown className="float-end fw-bold text-dark" />
+                            <FaChevronDown
+                                className="float-end fw-bold "
+                                style={{ color: color }}
+                            />
                         </span>
 
                         {toggleGame && (
@@ -79,7 +82,10 @@ const ProductLeftPanel = () => {
                             onClick={() => setToggleBag(!toggleBag)}
                         >
                             Bags
-                            <FaChevronDown className="float-end fw-bold text-dark" />
+                            <FaChevronDown
+                                className="float-end fw-bold "
+                                style={{ color: color }}
+                            />
                         </span>
                         {toggleBag && (
                             <Row className="mx-1">
@@ -96,7 +102,7 @@ const ProductLeftPanel = () => {
                             onClick={() => setToggleFlower(!toggleFlower)}
                         >
                             Flower Port
-                            <FaChevronDown className="float-end fw-bold text-dark" />
+                            <FaChevronDown className="float-end fw-bold" style={{ color: color }} />
                         </span>
                         {toggleFlower && (
                             <Row className="mx-1">
@@ -113,7 +119,10 @@ const ProductLeftPanel = () => {
                             onClick={() => setToggleWatch(!toggleWatch)}
                         >
                             Watch
-                            <FaChevronDown className="float-end fw-bold text-dark" />
+                            <FaChevronDown
+                                className="float-end fw-bold "
+                                style={{ color: color }}
+                            />
                         </span>
                         {toggleWatch && (
                             <Row className="mx-1">
@@ -132,7 +141,10 @@ const ProductLeftPanel = () => {
                             onClick={() => setToggleAccessories(!toggleAccessories)}
                         >
                             Accessories
-                            <FaChevronDown className="float-end fw-bold text-dark" />
+                            <FaChevronDown
+                                className="float-end fw-bold "
+                                style={{ color: color }}
+                            />
                         </span>
                         {toggleAccessories && (
                             <Row className="mx-1">
@@ -149,9 +161,9 @@ const ProductLeftPanel = () => {
                 <span className="fw-bold title-head" onClick={() => setToggleSize(!toggleSize)}>
                     Select Size
                     {!toggleSize ? (
-                        <FaChevronUp className="float-end fw-bold text-dark" />
+                        <FaChevronUp className="float-end fw-bold " style={{ color: color }} />
                     ) : (
-                        <FaChevronDown className="float-end fw-bold text-dark" />
+                        <FaChevronDown className="float-end fw-bold " style={{ color: color }} />
                     )}
                 </span>
                 {toggleSize && (
@@ -184,9 +196,9 @@ const ProductLeftPanel = () => {
                 <span className="fw-bold title-head" onClick={() => setToggleColor(!toggleColor)}>
                     Select Color
                     {!toggleColor ? (
-                        <FaChevronUp className="float-end fw-bold text-dark" />
+                        <FaChevronUp className="float-end fw-bold " style={{ color: color }} />
                     ) : (
-                        <FaChevronDown className="float-end fw-bold text-dark" />
+                        <FaChevronDown className="float-end fw-bold " style={{ color: color }} />
                     )}
                 </span>
                 {toggleColor && (
@@ -283,9 +295,9 @@ const ProductLeftPanel = () => {
                 <span className="fw-bold title-head" onClick={() => setTogglePrice(!togglePrice)}>
                     Pricing Range
                     {!togglePrice ? (
-                        <FaChevronUp className="float-end fw-bold text-dark" />
+                        <FaChevronUp className="float-end fw-bold " style={{ color: color }} />
                     ) : (
-                        <FaChevronDown className="float-end fw-bold text-dark" />
+                        <FaChevronDown className="float-end fw-bold " style={{ color: color }} />
                     )}
                 </span>
                 {togglePrice && (
@@ -321,9 +333,9 @@ const ProductLeftPanel = () => {
                 >
                     Select Rating
                     {!toggleRating ? (
-                        <FaChevronUp className="float-end fw-bold text-dark" />
+                        <FaChevronUp className="float-end fw-bold " style={{ color: color }} />
                     ) : (
-                        <FaChevronDown className="float-end fw-bold text-dark" />
+                        <FaChevronDown className="float-end fw-bold " style={{ color: color }} />
                     )}
                 </span>
                 {toggleRating && (

@@ -146,7 +146,7 @@ const OrderDetail = ({ toggle, setToggle }) => {
                     <div className="col-md-8">
                         <Card className="my-2">
                             <span className="fw-bold mx-2 my-2">Order Summary</span>
-                            <Table hover className="  my-2 ">
+                            <Table  className="  my-2 ">
                                 <thead className="cursor">
                                     <tr>
                                         <th>#</th>

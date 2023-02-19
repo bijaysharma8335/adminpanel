@@ -16,7 +16,9 @@ const AddCategory = ({ toggle }) => {
                     </div>
 
                     <div>
-                        <Button style={{ backgroundColor: color }}>Save</Button>
+                        <Button style={{ backgroundColor: color }} >
+                            Submit
+                        </Button>
                     </div>
                 </div>
                 <hr />
@@ -25,7 +27,7 @@ const AddCategory = ({ toggle }) => {
                         <CategoryLeftpanel />
                     </div>
                     <div className="col-md-8 " style={{ maxHeight: "100vh" }}>
-                        <Card className="p-2">
+                        <Card className="p-2 ">
                             <span className="fw-bold my-2">Basic Information</span>
                             <Row>
                                 <div className="col-6 my-2 ">

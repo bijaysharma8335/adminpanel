@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Login from "./Pages/Login";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import Sidebar from "./Components/Sidebar/Sidebar";
@@ -25,8 +26,15 @@ import Profile from "./Pages/Profile";
 import Suppliers from "./Components/Inventory/Suppliers";
 import Department from "./Components/Inventory/Department";
 import Purchase from "./Components/Inventory/Purchase";
+import ThemeSettings from "./Components/ThemeSettings";
+import "./dark-theme.css";
+import "./light-theme.css";
 
+import { getBackgroundColor } from "./Redux/slice/themeSlice";
+import { themeDark, themeLight } from "./constants/constant";
 const App = () => {
+    const backgroundTheme = useSelector(getBackgroundColor);
+    const [theme, setTheme] = useState(false);
     const [toggle, setToggle] = useState(false);
     const [sidebar, setSidebar] = useState(true);
     const { pathname } = useLocation();
@@ -35,9 +43,20 @@ const App = () => {
         if (toggle) setSidebar(false);
         else setSidebar(true);
     }, [toggle]);
+    useEffect(() => {
+        document.getElementById("body").style.backgroundColor =
+            backgroundTheme === "dark" ? "#000" : "";
+    }, [backgroundTheme]);
     const showSidebar = () => setSidebar(!sidebar);
+
     return (
-        <>
+        <div
+            className={
+                backgroundTheme === "dark"
+                    ? `${themeDark.bg}  ${themeDark.table} ${themeDark.card} ${themeDark.form} border-1`
+                    : `${themeLight.card} ${themeLight.table}`
+            }
+        >
             {pathname !== "/" && (
                 <Sidebar
                     sidebar={sidebar}
@@ -45,8 +64,11 @@ const App = () => {
                     toggle={toggle}
                     setToggle={setToggle}
                     showSidebar={showSidebar}
+                    theme={theme}
+                    setTheme={setTheme}
                 />
             )}
+            {theme && <ThemeSettings theme={theme} setTheme={setTheme} />}
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route
@@ -164,7 +186,7 @@ const App = () => {
                     element={<Profile toggle={toggle} setToggle={setToggle} />}
                 />
             </Routes>
-        </>
+        </div>
     );
 };
 

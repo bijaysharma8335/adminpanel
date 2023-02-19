@@ -6,7 +6,7 @@ const Transactions = () => {
     return (
         <div>
             <h3>Recent Transactions</h3>
-            <Table bordered hover className="my-2">
+            <Table bordered  className="my-2">
                 <thead className="cursor">
                     <tr>
                         <th>ID</th>
@@ -22,7 +22,7 @@ const Transactions = () => {
                     {customers.map((elem, index) => {
                         return (
                             <tr key={index} className-="p-5">
-                                <th scope="row">{elem.id}</th>
+                                <td>{elem.id}</td>
                                 <td>
                                     <Image
                                         src={elem.img}

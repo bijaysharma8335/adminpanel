@@ -13,11 +13,11 @@ const EditCategory = ({ toggle }) => {
                 <div className={toggle ? "width-98vw" : "width-83vw"}>
                     <div className="my-2 d-flex flex-row justify-content-between">
                         <div>
-                            <h3>Categories Add</h3>
+                            <h3>Categories Edit</h3>
                         </div>
 
                         <div>
-                            <Button style={{ backgroundColor: color }}>Save</Button>
+                            <Button style={{ backgroundColor: color }}>Update</Button>
                         </div>
                     </div>
                     <hr />

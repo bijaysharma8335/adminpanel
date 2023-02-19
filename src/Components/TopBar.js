@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 
 import { getProfile } from "../Redux/slice/profileSlice";
 
-const TopBar = () => {
+const TopBar = ({theme,setTheme}) => {
     const profile = useSelector(getProfile);
     const [show, setShow] = useState(false);
 
@@ -123,7 +123,11 @@ const TopBar = () => {
                         </div>
                     </div>
                 )}
-                <MdSettings className=" my-2 me-2 cursor" size="2em" />
+                <MdSettings
+                    className=" my-2 me-2 cursor settings-icon"
+                    size="2em"
+                    onClick={() => setTheme(!theme)}
+                />
             </div>
         </>
     );

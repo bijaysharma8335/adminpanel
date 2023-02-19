@@ -5,7 +5,7 @@ import { Status, categories } from "../../constants/constant";
 const CategoryLeftpanel = () => {
     return (
         <>
-            <Card className="p-3 d-flex my-2">
+            <Card className="p-2 d-flex ">
                 <span className="fw-bold">Visibility Status</span>
                 <Form.Group style={{ fontSize: "14px", margin: "unset" }}>
                     <div className="d-flex flex-row mt-4">

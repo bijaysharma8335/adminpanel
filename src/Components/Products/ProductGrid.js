@@ -26,17 +26,11 @@ const ProductGrid = ({ toggle }) => {
                         <ProductLeftPanel />
                     </div>
                     <div className="col-md-9 " style={{ maxHeight: "100vh" }}>
-                        <div className="d-flex flex-wrap">
+                        <div className={!toggle ? "grid3" : "grid4"}>
                             {currentData.map((elem, index) => {
                                 return (
                                     <div className="me-1" key={index}>
-                                        <Card
-                                            className="my-2 p-2 "
-                                            style={{
-                                                minWidth: "80%",
-                                                marginRight: "12rem",
-                                            }}
-                                        >
+                                        <Card className="my-2 p-2 mx-2">
                                             <Image
                                                 style={{
                                                     objectFit: "cover",
