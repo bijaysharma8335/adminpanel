@@ -12,7 +12,7 @@ import { getThemeColor } from "../../Redux/slice/themeSlice";
 const OrderDetail = ({ toggle, setToggle }) => {
     const color = useSelector(getThemeColor);
     const orders = useSelector(getOrder);
-    console.log(orders)
+    console.log(orders);
     const { indexOfFirstItem, currentData, pageNumbers, currentPage, setCurrentPage, pagesCount } =
         usePagination({ data: orders });
     return (
@@ -36,36 +36,83 @@ const OrderDetail = ({ toggle, setToggle }) => {
                     </div>
                 </div>
                 <hr />
-                <Row className="mx-2">
-                    <div className="col-md-3 border  my-2  p-2 bg-success  ">
-                        <div className="p-2 bg-light float-start bg-success ">
-                            <AiOutlineShoppingCart className=" my-2 text-white bg-success " />
-                        </div>
+                <div className=" order-detail-header">
+                    <div
+                        className=" p-3 me-1   text-success text-center border rounded"
+                        style={{ backgroundColor: "#d1e7dd" }}
+                    >
+                        <AiOutlineShoppingCart
+                            size="2em"
+                            className="float-start p-1 mt-0 text-white  border bg-success border rounded"
+                        />
                         <span className="d-block ms-1">Order Created at</span>
                         <span className="d-block ms-1">16/03/2021 at 04:23 PM</span>
                     </div>
-                    <div className="col-md-3 border  my-2  p-2 bg-danger ">
+                    <div
+                        className=" p-3 mx-1  text-center text-danger border rounded"
+                        style={{ backgroundColor: "#f8d7da" }}
+                    >
+                        <AiOutlineUser
+                            size="2em"
+                            className="float-start p-1 mt-0 text-white  bg-danger border rounded"
+                        />
+                        <span className=" ms-2 d-block">Name </span>
+                        <span className=" ms-2 d-block ">Gabrielle</span>
+                    </div>
+                    <div
+                        className=" p-3 mx-1  text-center text-warning border rounded"
+                        style={{ backgroundColor: "#ffecb5" }}
+                    >
+                        <AiOutlineMail
+                            size="2em"
+                            className="float-start mt-0 p-1 text-white bg-warning border rounded"
+                        />
+                        <span className="d-block ms-1">Email</span>
+                        <span className="d-block ms-1">gabrielle.db@gmail.com</span>
+                    </div>
+                    <div
+                        className=" p-3 ms-1  text-center border text-info rounded"
+                        style={{ backgroundColor: "#b6effb" }}
+                    >
+                        <MdOutlineCall
+                            size="2em"
+                            className="float-start mt-0 p-1 text-white bg-info rounded"
+                        />
+                        <span className=" mx-2 d-block">Contact No</span>
+                        <span className=" mx-2 d-block"> 202-906-12354</span>
+                    </div>
+
+                    {/* <div className=" border  my-2  p-2 bg-success rounded d-flex">
+                        <div className="p-2 bg-light float-start bg-success ">
+                            <AiOutlineShoppingCart className=" my-2 text-white bg-success " />
+                        </div>
+                        <div>
+                            <span className="d-block ms-1">Order Created at</span>
+                            <span className="d-block ms-1">16/03/2021 at 04:23 PM</span>
+                        </div>
+                    </div>
+                    <div className=" border  my-2  p-2 bg-danger rounded">
                         <div className="p-2 bg-light float-start bg-danger ">
                             <AiOutlineUser className=" my-2 text-white bg-danger " />
                         </div>
                         <span className=" ms-2 d-block">Name </span>
                         <span className=" ms-2 d-block ">Gabrielle</span>
                     </div>
-                    <div className="col-md-3 b border  my-2 p-2  bg-primary ">
+                    <div className="  border  my-2 p-2  bg-primary rounded">
                         <div className="p-2 bg-light float-start bg-primary">
                             <AiOutlineMail className=" my-2 text-white  bg-primary" />
                         </div>
                         <span className="d-block ms-1">Email</span>
                         <span className="d-block ms-1">gabrielle.db@gmail.com</span>
                     </div>
-                    <div className="col-md-3  border  my-2 p-2  bg-warning">
+                    <div className="  border  my-2 p-2  bg-warning rounded">
                         <div className="p-2 bg-light float-start bg-warning  text-white">
                             <MdOutlineCall className=" my-2 text-white  bg-warning " />
                         </div>
                         <span className=" mx-2 d-block">Contact No</span>
                         <span className=" mx-2 d-block"> 202-906-12354</span>
-                    </div>
-                </Row>
+                    </div> */}
+                </div>
                 <Row>
                     <div className="col-md-4 my-2">
                         <Card>
@@ -146,7 +193,7 @@ const OrderDetail = ({ toggle, setToggle }) => {
                     <div className="col-md-8">
                         <Card className="my-2">
                             <span className="fw-bold mx-2 my-2">Order Summary</span>
-                            <Table  className="  my-2 ">
+                            <Table className="  my-2 ">
                                 <thead className="cursor">
                                     <tr>
                                         <th>#</th>

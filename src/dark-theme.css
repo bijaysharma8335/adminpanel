@@ -2,7 +2,6 @@
     background-color: #343a40;
     /* color: #8f8f8f; */
     color: #fff;
-    border-color: #fff;
 }
 
 .table-dark tr,
@@ -19,12 +18,14 @@
 .form-select-dark {
     border-color: #fff;
     background-color: #10141f;
-    color: #fff;
+    color: #fff !important;
     font-size: 16px;
 }
 .card-dark {
     color: #fff;
-    border-color: #fff;
-    outline: #fff;
+    /* border-color: 1px solid #fff !important; */
     background-color: #10141f;
+}
+.card {
+    border: 1px solid #fff !important;
 }

@@ -3,6 +3,7 @@ import { Container, Row, Button, Form, Card, Badge } from "react-bootstrap";
 import EditProductLeftPanel from "./EditProductLeftPanel";
 import { useSelector } from "react-redux";
 import { getThemeColor } from "../../Redux/slice/themeSlice";
+import { FaUpload } from "react-icons/fa";
 
 const EditProduct = ({ toggle }) => {
     const color = useSelector(getThemeColor);
@@ -118,6 +119,30 @@ const EditProduct = ({ toggle }) => {
                                                 Upload Files
                                             </div>
                                         </div>
+                                    </div>{" "}
+                                    {/* Product_Image Upload Starts */}
+                                    <div className="row align-items-center justify-content-start">
+                                        <div className="col">
+                                            <span className="fw-bold my-2  d-inline-block  me-5">
+                                                Image Upload
+                                            </span>
+                                        </div>
+                                        <div className="col">
+                                            <Form.Control
+                                                className="d-none"
+                                                id="myProductImage"
+                                                type="file"
+                                                max="4"
+                                                multiple
+                                                accept=".png,.jpg"
+                                            />
+                                            <label htmlFor="myProductImage" className="me-2">
+                                                Click to upload image &nbsp;
+                                                <FaUpload />
+                                            </label>
+                                            <div className="flex-column justify-content-center align-items-center"></div>
+                                        </div>
+                                        <div className="d-flex flex-row flex-wrap"></div>
                                     </div>
                                 </div>
                             </div>

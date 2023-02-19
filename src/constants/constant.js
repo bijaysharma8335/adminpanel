@@ -44,7 +44,7 @@ export const themeDark = {
     bg: "bg-dark",
     table: "table-dark td th tr table-dark tbody tr",
     form: "form-control-dark form-select-dark",
-    card: "card-dark",
+    card: "card-dark card",
 };
 
 export const themeLight = {

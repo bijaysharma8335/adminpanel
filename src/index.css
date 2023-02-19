@@ -40,13 +40,16 @@ input[type="number"] {
 .country-select__input-group input {
     box-shadow: unset !important;
 }
-.form-control,
-.form-select,
+
 .form-check-input,
 .dropdown-toggle {
     box-shadow: unset !important;
 }
-
+.form-control,
+.form-select {
+    box-shadow: unset !important;
+    /* background-color: unset !important;  */
+}
 .width-83vw {
     /* margin-left: unset !important; */
     width: 77vw;
@@ -94,7 +97,11 @@ table tbody tr {
     display: flex;
     justify-content: flex-end;
 }
-
+.order-detail-header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2;
+}
 .grid3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -145,6 +152,10 @@ table tbody tr {
 }
 .card {
     background-color: unset !important;
-    border-color: unset;
+
+    border: unset;
     /* --bs-card-border-color: unset; */
+}
+.container {
+    max-height: 100vh;
 }

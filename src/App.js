@@ -53,7 +53,7 @@ const App = () => {
         <div
             className={
                 backgroundTheme === "dark"
-                    ? `${themeDark.bg}  ${themeDark.table} ${themeDark.card} ${themeDark.form} border-1`
+                    ? `${themeDark.bg}  ${themeDark.table} ${themeDark.card} ${themeDark.form} `
                     : `${themeLight.card} ${themeLight.table}`
             }
         >

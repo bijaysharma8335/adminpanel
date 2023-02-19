@@ -149,7 +149,7 @@ const CustomerDetail = ({ toggle }) => {
                                     </Row>
                                 </div>
                             </Row>
-                            <Table hover className="  my-2 ">
+                            <Table  className="  my-2 ">
                                 <thead>
                                     <tr>
                                         <th>ID</th>

@@ -7,10 +7,12 @@ import { GoDeviceMobile } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile, setProfile } from "../Redux/slice/profileSlice";
 import { getThemeColor } from "../Redux/slice/themeSlice";
+import { getBackgroundColor } from "./../Redux/slice/themeSlice";
 
 const Profile = ({ toggle }) => {
     const dispatch = useDispatch();
     const color = useSelector(getThemeColor);
+    const background = useSelector(getBackgroundColor);
     const profile = useSelector(getProfile);
     const [authShow, setAuthShow] = useState(false);
     const [editProfileShow, setEditProfileShow] = useState(false);
@@ -78,13 +80,19 @@ const Profile = ({ toggle }) => {
                         </Card>
                         <Card className="my-2 p-2">
                             <span className="fw-bold my-2">Payment Method</span>
-                            <span className=" text-secondary my-2">
+                            <span className="  my-2">
                                 <FaCcVisa size="2em" className="mx-1 " />
                                 Visa *******7548
                             </span>
                             <span>Next billing charged $48</span>
                             <div>
-                                <i className="text-secondary">Auto Pay on July 20,2021</i>
+                                <i
+                                    className={
+                                        background === "light" ? "text-primary" : "text-info"
+                                    }
+                                >
+                                    Auto Pay on July 20,2021
+                                </i>
                                 <span className=" mx-2 text-warning cursor">Edit Payment Info</span>
                             </div>
                             <div className="my-2">
@@ -93,7 +101,7 @@ const Profile = ({ toggle }) => {
                         </Card>
                         <Card className="my-2 p-2">
                             <span>Notification Preferences</span>
-                            <span className="text-secondary my-2">
+                            <span className=" my-2">
                                 Control all our newsletter and email related notifications to your
                                 email
                             </span>

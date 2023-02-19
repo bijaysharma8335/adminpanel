@@ -5,13 +5,15 @@ import { MdAddCircle } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 import { useNavigate } from "react-router-dom";
-import { categories } from "../../constants/categories";
+
 import usePagination from "../../custom hooks/usePagination";
 import PaginationList from "../../Pages/PaginationList";
 import { useSelector } from "react-redux";
 import { getThemeColor } from "../../Redux/slice/themeSlice";
+import { getCategories } from "../../Redux/slice/categorySlice";
 
 const CategoryList = ({ toggle, setToggle }) => {
+    const categories = useSelector(getCategories);
     const navigate = useNavigate();
     const color = useSelector(getThemeColor);
     const { indexOfFirstItem, currentData, pageNumbers, currentPage, pagesCount, setCurrentPage } =
@@ -70,7 +72,7 @@ const CategoryList = ({ toggle, setToggle }) => {
                         </div>
                     </Row>
 
-                    <Table  className=" mx-1 my-1">
+                    <Table className=" mx-1 my-1">
                         <thead className="cursor">
                             <tr>
                                 <th>#</th>

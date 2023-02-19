@@ -3,14 +3,15 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
-import { MdCategory } from "react-icons/md";
-import { BiNotepad, BiDetail } from "react-icons/bi";
+import { MdCategory, MdInventory2 } from "react-icons/md";
+import { BiNotepad, BiDetail, BiPurchaseTag } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { TbDiscount, TbFileInvoice, TbTruckReturn } from "react-icons/tb";
 import { IoIosAddCircle } from "react-icons/io";
 import { AiFillEdit } from "react-icons/ai";
 import { BsCalculatorFill, BsList } from "react-icons/bs";
 import { HiOutlineViewGrid } from "react-icons/hi";
+import { FcDepartment } from "react-icons/fc";
 
 export const SidebarData = [
     {
@@ -163,7 +164,7 @@ export const SidebarData = [
     {
         title: "Inventory",
         path: "#",
-        icon: <TbDiscount />,
+        icon: <MdInventory2 />,
 
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -182,17 +183,17 @@ export const SidebarData = [
             {
                 title: "Suppliers",
                 path: "/stock/suppliers",
-                icon: <TbTruckReturn />,
+                icon: <FaIcons.FaWarehouse />,
             },
             {
                 title: "Purchase",
                 path: "/stock/purchase",
-                icon: <TbTruckReturn />,
+                icon: <BiPurchaseTag />,
             },
             {
                 title: "Department",
                 path: "/stock/department",
-                icon: <TbTruckReturn />,
+                icon: <FcDepartment />,
             },
         ],
     },

@@ -6,6 +6,7 @@ import { getThemeColor } from "../../Redux/slice/themeSlice";
 
 const ProductButtonGroup = ({ type }) => {
     const color = useSelector(getThemeColor);
+    
     return (
         <div className=" justify-content-end">
             <div size="sm" className="mb-2 border p-1">

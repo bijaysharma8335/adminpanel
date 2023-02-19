@@ -81,7 +81,7 @@ const AddCoupon = ({ toggle }) => {
                                 <h3>Coupon Information</h3>
                                 <Form>
                                     <Row>
-                                        <div className="col-6 ">
+                                        <div className="col-6 my-2">
                                             <div>
                                                 <span className="fw-bold">Coupon Code</span>
                                                 <Form.Control
